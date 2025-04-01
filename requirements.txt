@@ -1,0 +1,9 @@
+python-dotenv
+PyPDF2
+requests
+PyQt5  
+beautifulsoup4
+email
+rich
+PyMuPDF
+psutil
