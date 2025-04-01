@@ -1,0 +1,130 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:c68c:0:b0:21c:10c3:3c59 with SMTP id e12csp8415501eig;
+        Tue, 31 Dec 2024 15:43:23 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGaklV+jF7T/uHKTzqk/BP6TnS5ZQ8mbXUErDrN799znKfRhCOHN90TfJYQ6M+vmUi9STd2
+X-Received: by 2002:a05:6a21:7187:b0:1e5:f930:c710 with SMTP id adf61e73a8af0-1e5f930c921mr46136967637.20.1735688603184;
+        Tue, 31 Dec 2024 15:43:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1735688603; cv=none;
+        d=google.com; s=arc-20240605;
+        b=TxJU17PaPetoC7m/nRpbmHO3HOH5tc2I5TfJyfWuJSmwbrySDxcDj6sTI7JCBN4b1s
+         mrf8Q17RXJi9l/ONeVJnlLg6mEfuLO7tOt9p2PAFDUMRma1xfgYoGr9UdON9fhkq10NM
+         7rruWpZRbKLU3mVntdUTju8J8nmS1hkLUHbz6bYMFZ5WQk4CyokrWCSt8vYbdAVcA8He
+         +lKvMCqfqc4fy8Jh2twTnbg+XBAvmIKULJD9g8RSWTs0Pd+cfhw36M37oN1kU5bg6Ehx
+         FO8yOpv80qjve0SQRntv1n0vtdM9iToBcJ/FKre+RL1yEDnjwhaYtqyBQwzwTyZflPW6
+         BkXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=dkim-signature:content-transfer-encoding:mime-version:subject
+         :message-id:cc:to:from:date;
+        bh=7m7toJPjczRtVyzxWNzaYuKNZRJkWxZ90ddkobxVJ/g=;
+        fh=JZqGQBiCVOIPdW2taY8xou3+/d5gTf39oDJIBD+JCXY=;
+        b=GlEkuhEx2mrLIkraYCzvVIbQK392DvIKU/UQ1kXr3j5trs2VsjoYSv8JpGQZY882dW
+         x6jn7aGvlc4ETYRnmSYz3bMcA1I0IHY2DiaHncjpCHLcNTMG1TTf8u7fXRNCFXsKv5Yg
+         np7iz2EhQ+pIqxFDvnHyHQT/VOZy9OB3RQCPDPrIJBXHShwRs5/VJ/gGDXNOuca6FYTd
+         2Q/jiD9XF5QbzAwfWnjVysPzYzuZoFW+rpIEB8+BEs7Hd7/90YnmVwpXAAhulUahG5iF
+         XyxZkvsXgP7mV9nWXC+UDB0nyNBZFNUBzYFO5nwKlnHhNzK7q13UMqIJLbS/VPd+ARiZ
+         BE1w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=fail header.i=@muasamcong.gov.vn header.s=muasamcong header.b=F2r8vQSe;
+       spf=pass (google.com: domain of info@muasamcong.gov.vn designates 103.186.152.41 as permitted sender) smtp.mailfrom=info@muasamcong.gov.vn;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=muasamcong.gov.vn
+Return-Path: <info@muasamcong.gov.vn>
+Received: from Mail.muasamcong.gov.vn (mail.muasamcong.gov.vn. [103.186.152.41])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-842aef0660csi30249162a12.164.2024.12.31.15.43.22
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 31 Dec 2024 15:43:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of info@muasamcong.gov.vn designates 103.186.152.41 as permitted sender) client-ip=103.186.152.41;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@muasamcong.gov.vn header.s=muasamcong header.b=F2r8vQSe;
+       spf=pass (google.com: domain of info@muasamcong.gov.vn designates 103.186.152.41 as permitted sender) smtp.mailfrom=info@muasamcong.gov.vn;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=muasamcong.gov.vn
+Received: from egp-email-be-16-czpmj ([172.16.20.63])
+	(user=info@muasamcong.gov.vn mech=LOGIN bits=0)
+	by Mail.muasamcong.gov.vn  with ESMTPA id 4BVNhKIk024575-4BVNhKIl024575;
+	Wed, 1 Jan 2025 06:43:20 +0700
+Date: Wed, 1 Jan 2025 06:43:19 +0700 (ICT)
+From: =?UTF-8?Q?H=E1=BB=87_th=E1=BB=91ng_m=E1=BA=A1ng_=C4=91?=
+ =?UTF-8?Q?=E1=BA=A5u_th=E1=BA=A7u_qu=E1=BB=91c_gia?=
+ <info@muasamcong.gov.vn>
+To: ctyxaydungala@gmail.com
+Cc: ctyxaydungala@gmail.com, ctyxaydungala@gmail.com
+Message-ID: <819336933.6538.1735688599986@egp-email-be-16-czpmj>
+Subject: =?UTF-8?Q?Th=C3=B4ng_b=C3=A1o_n=E1=BB=99p_Chi_ph?=
+ =?UTF-8?Q?=C3=AD_duy_tr=C3=AC_t=C3=AAn_v=C3=A0_d=E1=BB=AF_?=
+ =?UTF-8?Q?li=E1=BB=87u_tr=C3=AAn_h=E1=BB=87_th=E1=BB=91ng_m?=
+ =?UTF-8?Q?=E1=BA=A1ng_=C4=91=E1=BA=A5u_th=E1=BA=A7u_qu=E1=BB=91c_gia?=
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-FEAS-Auth-User: info@muasamcong.gov.vn
+X-FEAS-Client-IP: 172.16.20.63
+X-FE-Policy-ID: 0:1:0:SYSTEM
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; d=muasamcong.gov.vn; s=muasamcong; c=relaxed/relaxed;
+ h=date:from:to:cc:message-id:subject:mime-version:content-type;
+ bh=7m7toJPjczRtVyzxWNzaYuKNZRJkWxZ90ddkobxVJ/g=;
+ b=F2r8vQSeu+CktdYxOQjF5Qj0fc83sE80KCs4RWSjo8pHRl3+YRMBtGEktMbPkR3Hd/R9xPuEm1R0
+	S2XO2ZOBhe4m/Jk1gnGaVHokyGWxZiEkJNL7zXRpDl7wxtXGN7h0aV9ayUy78APySZ6OFfAC4ROb
+	atzUUM0OBASdzNZ8C6KS5NK8h+w/nwERYSoXxepT4aBG5WKkLFf9V/PMtptfAxZelnStP6Idu2kn
+	QRV8eBbtfnX6hOgK70KqTh23jnuiU35dTTBLhJ5IqiwaEOiV3HTJOy7LWTMKTr6QogAiweMkkR6r
+	Dl3xNNMOH7CuZoZ5Grf4uNM6Mfp8IixQN8rYEw==
+
+<p>T=E1=BB=95 ch=E1=BB=A9c v=E1=BA=ADn h=C3=A0nh H=E1=BB=87 th=E1=BB=91ng M=
+=E1=BA=A1ng =C4=91=E1=BA=A5u th=E1=BA=A7u qu=E1=BB=91c gia k=C3=ADnh ch=C3=
+=A0o Qu=C3=BD =C4=91=C6=A1n v=E1=BB=8B!</p><p>Nh=C3=A0 th=E1=BA=A7u vui l=
+=C3=B2ng thanh to=C3=A1n ph=C3=AD duy tr=C3=AC h=E1=BB=93 s=C6=A1 v=C3=A0 n=
+=C4=83ng l=E1=BB=B1c Nh=C3=A0 th=E1=BA=A7u tr=C3=AAn h=E1=BB=87 th=E1=BB=91=
+ng theo n=E1=BB=99i dung b=C3=AAn d=C6=B0=E1=BB=9Bi.</p><p>N=E1=BA=BFu Nh=
+=C3=A0 th=E1=BA=A7u =C4=91=C3=A3 thanh to=C3=A1n kho=E1=BA=A3n ph=C3=AD, vu=
+i l=C3=B2ng b=E1=BB=8F qua email n=C3=A0y.</p><p>Qu=C3=BD<strong> </strong>=
+<strong style=3D"color: rgb(92, 92, 92);">C=C3=B4ng ty TNHH MTV X=C3=A2y D=
+=E1=BB=B1ng A.L.A</strong> vui l=C3=B2ng thanh to=C3=A1n h=E1=BA=A1ng m=E1=
+=BB=A5c chi ph=C3=AD sau :</p><p><strong style=3D"color: rgb(92, 92, 92);">=
+<table border=3D'1' style=3D'border-collapse: collapse;'><tr bgcolor=3D"#09=
+a3ee"><th>H=E1=BA=A1ng m=E1=BB=A5c chi ph=C3=AD</th><th>N=E1=BB=99i dung</t=
+h><th>Ng=C3=A0y ph=C3=A1t sinh</th><th>Th=E1=BB=9Di h=E1=BA=A1n n=E1=BB=99p=
+</th><th>S=E1=BB=91 ti=E1=BB=81n (VN=C4=90)</th><th>Thu=E1=BA=BF (%)</th><t=
+h>T=E1=BB=95ng ti=E1=BB=81n (VN=C4=90)</th></tr><td>Chi ph=C3=AD duy tr=C3=
+=AC</td><td style=3D"width: 300px;">Chi ph=C3=AD duy tr=C3=AC t=C3=AAn v=C3=
+=A0 h=E1=BB=93 s=C6=A1 tr=C3=AAn h=E1=BB=87 th=E1=BB=91ng m=E1=BA=A1ng =C4=
+=91=E1=BA=A5u th=E1=BA=A7u qu=E1=BB=91c gia<br/>N=C4=83m: 2025</td><td>01/0=
+1/2025</td><td>31/03/2025</td><td>300,000</td><td>10</td><td>330,000</td></=
+tr><tr><td>T=E1=BB=95ng tr=E1=BA=A3 (VND)</td><td colspan=3D"6">330,000</td=
+></tr></table></strong></p><p>B=E1=BA=B1ng ch=E1=BB=AF:</p><p>Qu=C3=BD Nh=
+=C3=A0 th=E1=BA=A7u vui l=C3=B2ng ki=E1=BB=83m tra th=C3=B4ng tin v=C3=A0 t=
+hanh to=C3=A1n cho Trung t=C3=A2m ch=E1=BA=ADm nh=E1=BA=A5t ng=C3=A0y<stron=
+g> 31/03/2025&nbsp;&nbsp;&nbsp;</strong></p><p>Qu=C3=A1 h=E1=BA=A1n thanh t=
+o=C3=A1n,<strong style=3D"color: rgb(92, 92, 92);">&nbsp;t=C3=A0i kho=E1=BA=
+=A3n&nbsp;</strong>c=E1=BB=A7a qu=C3=BD =C4=91=C6=A1n v=E1=BB=8B s=E1=BA=BD=
+ b=E1=BB=8B<strong> </strong><strong style=3D"color: rgb(92, 92, 92);">t=E1=
+=BA=A1m ng=C6=B0ng&nbsp;</strong>theo quy =C4=91=E1=BB=8Bnh&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;</p><p>- T=E1=BB=95ng =C4=91=C3=A0i Trung t=C3=A2m h=E1=BB=97=
+ tr=E1=BB=A3 ng=C6=B0=E1=BB=9Di d=C3=B9ng h=E1=BB=87 th=E1=BB=91ng eGP: 190=
+0 6126</p><p>- Email: muasamcong@idnes.onmicrosoft.com</p><p>- =C4=90=E1=BB=
+=8Ba ch=E1=BB=89 ti=E1=BA=BFp nh=E1=BA=ADn th=C3=B4ng tin: T=E1=BA=A7ng 8, =
+T=C3=B2a th=C3=A1p VIT TOWER, S=E1=BB=91 519, Ph=E1=BB=91 Kim M=C3=A3, Ph=
+=C6=B0=E1=BB=9Dng Ng=E1=BB=8Dc Kh=C3=A1nh, Qu=E1=BA=ADn Ba =C4=90=C3=ACnh, =
+Th=C3=A0nh ph=E1=BB=91 H=C3=A0 N=E1=BB=99i&nbsp;&nbsp;</p><p>Mong s=E1=BB=
+=9Bm nh=E1=BA=ADn =C4=91=C6=B0=E1=BB=A3c ph=E1=BA=A3n h=E1=BB=93i c=E1=BB=
+=A7a Qu=C3=BD Nh=C3=A0 th=E1=BA=A7u.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>=
+=C4=90=E1=BB=83 th=E1=BB=B1c hi=E1=BB=87n thanh to=C3=A1n, Qu=C3=BD <strong=
+ style=3D"color: rgb(92, 92, 92);">C=C3=B4ng ty TNHH MTV X=C3=A2y D=E1=BB=
+=B1ng A.L.A</strong><strong> </strong>c=C3=B3 th=E1=BB=83 th=E1=BB=B1c hi=
+=E1=BB=87n qua theo c=C3=A1c h=C3=ACnh th=E1=BB=A9c thanh to=C3=A1n sau:&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p>1. Thanh to=C3=A1n tr=E1=BB=B1c tuy=E1=BA=
+=BFn tr=C3=AAn h=E1=BB=87 th=E1=BB=91ng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p=
+><strong><a href=3D"https://muasamcong.mpi.gov.vn/egp/epaymentfe/epayment-i=
+nfo/request-fee?taxCode=3D3602510564">L=E1=BA=ADp y=C3=AAu c=E1=BA=A7u than=
+h to=C3=A1n</a> </strong></p><p>2. Thanh to=C3=A1n t=E1=BA=A1i qu=E1=BA=A7y=
+ t=E1=BA=A1i c=C3=A1c =C4=91i=E1=BB=83m giao d=E1=BB=8Bch c=E1=BB=A7a ng=C3=
+=A2n h=C3=A0ng BIDV&nbsp;</p><p>3. Chuy=E1=BB=83n kho=E1=BA=A3n v=C3=A0o t=
+=C3=A0i kho=E1=BA=A3n c=E1=BB=A7a trung t=C3=A2m</p><p>- T=C3=AAn t=C3=A0i =
+kho=E1=BA=A3n: Trung t=C3=A2m =C4=91=E1=BA=A5u th=E1=BA=A7u qua m=E1=BA=A1n=
+g qu=E1=BB=91c gia</p><p>&nbsp;- S=E1=BB=91 t=C3=A0i kho=E1=BA=A3n: 96210vn=
+3602510564</p><p>&nbsp;- T=E1=BA=A1i ng=C3=A2n h=C3=A0ng: BIDV chi nh=C3=A1=
+nh =C4=90=E1=BB=91ng =C4=90a&nbsp;&nbsp;&nbsp;&nbsp;</p><p><span style=3D"b=
+ackground-color: rgb(233, 236, 239);">(Ch=C3=BA =C3=BD: Khi thanh to=C3=A1n=
+ Nh=C3=A0 th=E1=BA=A7u n=C3=AAn ghi =C4=91=E1=BA=A7y =C4=91=E1=BB=A7 th=C3=
+=B4ng tin v=C3=A0o ph=E1=BA=A7n N=E1=BB=99i dung =C4=91=E1=BB=83 tra so=C3=
+=A1t)</span>&nbsp;&nbsp;&nbsp;&nbsp;</p><p>Tr=C3=A2n tr=E1=BB=8Dng c=E1=BA=
+=A3m =C6=A1n!</p>

@@ -1,0 +1,1425 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:82d9:0:b0:21c:10c3:3c59 with SMTP id 25csp194267eil;
+        Thu, 30 Jan 2025 21:20:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH+9CHoc85z0WFwNCqr25YD8vjzuH5EwES8c/6bvMQBl3Fo1++d124zvj/RyjsclhFvphBt
+X-Received: by 2002:a05:6a20:2585:b0:1e1:cd9c:3775 with SMTP id adf61e73a8af0-1ed7a4c7d2emr15958662637.12.1738300814969;
+        Thu, 30 Jan 2025 21:20:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738300814; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Mspsv9dSpZ9bgBVLLYH0uca2Asba/HDfpRNr5GaaOAJxk2lKgzwizehV6lHOryieTx
+         aLIg2pgM0AtdoCRtiFvMHPymU56POOHTesmyflfuaXb1eqrnLwn60Qu7yZuE/AcuVG2Y
+         fEzPjlqJhaAeqDvAwwphsPouP2Nca1nxc00BX3GUqlAaGUaQ8g4BCatY8aRYN+8DG2s6
+         SDx8+optmzfcUQb5I6P6yoh5ozOw6jlL7guYU2PPOE3kimF6xFOM0pqxmMsa8eDeUsKg
+         uKlcC75HP3fnAXj7DCwUQN6jHE4t1XJOvJQWhBmdvlcs/3Fap0D7yNSFjpTkypcT6joT
+         VDDQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:content-transfer-encoding:loopback
+         :list-unsubscribe:list-unsubscribe-post:subject:to:from:date
+         :mime-version:dkim-signature:dkim-signature;
+        bh=sY7OTOw3afesNluUY8kcIxkLeTT0WmhY/K1GsYc+uoE=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=Wp/W5PsvOR16JOF15EDCHfXXV6n8NPUX1RjgYYYz/lq/rVtKW3dXH6AY+JuNylwson
+         YU9g+ZIfR1MqSdm1/RB1u0uWBCYlFABSZge124xmqcChJP08RV2zbmpUBSnVwuFlYoiW
+         fVKXku5RP34j7SNhGPR+CyVfwz5HWkWUd2up3TNb8ThbbFHWPYoFlPf63ZhYtLJNnc5I
+         f1z0AXKioiezc0TrrqoZSjrw1MSx4Fb5PRe2jak4tUmB4T9df9VnRp1ZI8M4cTlE/Qat
+         Xl6Xxq9rpaNNy59JLxjj40jOwZK0dytUZBa6sKkgTo2b6vInj/M3335dHxU9g0xHloB9
+         dxVA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e-mail.hoyoverse.com header.s=y4ezvj26dngguknfrbwjtb7j3hyhz22x header.b=ckFUcwd8;
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b=vtTQYu3C;
+       spf=pass (google.com: domain of 01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com designates 54.240.113.52 as permitted sender) smtp.mailfrom=01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=e-mail.hoyoverse.com
+Return-Path: <01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com>
+Received: from a113-52.smtp-out.us-west-2.amazonses.com (a113-52.smtp-out.us-west-2.amazonses.com. [54.240.113.52])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-acec077a53bsi3462529a12.416.2025.01.30.21.20.14
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 30 Jan 2025 21:20:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com designates 54.240.113.52 as permitted sender) client-ip=54.240.113.52;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e-mail.hoyoverse.com header.s=y4ezvj26dngguknfrbwjtb7j3hyhz22x header.b=ckFUcwd8;
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b=vtTQYu3C;
+       spf=pass (google.com: domain of 01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com designates 54.240.113.52 as permitted sender) smtp.mailfrom=01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@mail-us2.e-mail.hoyoverse.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=e-mail.hoyoverse.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=y4ezvj26dngguknfrbwjtb7j3hyhz22x; d=e-mail.hoyoverse.com;
+	t=1738300814;
+	h=Mime-Version:Date:From:To:Subject:List-Unsubscribe-Post:List-Unsubscribe:Content-Type:Content-Transfer-Encoding:Message-ID;
+	bh=C+t9zOtylCZngcrAPG525ZKvoG7c1OZDSXmZfgWrD+Y=;
+	b=ckFUcwd8hucUR5d51RhCWuElOIIePmwmZF5jpV0x3sedC2yXh+zx88aGF5HQ3Df8
+	wlL3oLbANiOA4XOZriCCbQgfESokzWwsz5CDPSAORmsLWAhspe6QFwoTZBMqoPDOR4u
+	Dd7F6FtDikkMAWxZvFssA0BfVQA15PFNacjRlhLdGDTnGW8yYKjhBHZeWHUtilNfGTQ
+	OZhnclKKQqtzCnizMbzIxRr5C1O+ASn+kFQX/8nx6zPIgb1FwlOlRqLCO9/NW477mlm
+	azBecR4BLVr+thsjosKu4ba+8tr2v1+YYS7fLZ0v013GOB1M5g8dbOXVS7vOe6SsBU4
+	hBON8Wj2YA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=7v7vs6w47njt4pimodk5mmttbegzsi6n; d=amazonses.com; t=1738300814;
+	h=Mime-Version:Date:From:To:Subject:List-Unsubscribe-Post:List-Unsubscribe:Content-Type:Content-Transfer-Encoding:Message-ID:Feedback-ID;
+	bh=C+t9zOtylCZngcrAPG525ZKvoG7c1OZDSXmZfgWrD+Y=;
+	b=vtTQYu3CzOTnx7w5duPm1QDtoE2gX6kGUXDCDDe3IR4iFL/ghAtKXrOWzJFAye7N
+	Ddz3hvGlDoDv63RdSSp6bP3caXNxEr1tAvcPbrEfPgmgcwHcRk9kn8F2/pB+IHElh2k
+	zLpM6M32bt43s5rw8/kXbhZ9Dfy3mGWqyXhfSg8I=
+Mime-Version: 1.0
+Date: Fri, 31 Jan 2025 05:20:14 +0000
+From: "P.A.I.M.O.N" <noreply.news@e-mail.hoyoverse.com>
+To: ctyxaydungala@gmail.com
+Subject: =?UTF-8?q?C=E1=BA=A3m_=C6=A0n_S=E1=BB=B1_=E1=BB=A6ng_H=E1=BB=99_C?= =?UTF-8?q?=E1=BB=A7a_Nh=C3=A0_L=E1=BB=AF_H=C3=A0nh:_1600_Nguy=C3=AAn_Th?=
+ =?UTF-8?q?=E1=BA=A1ch_=C4=90ang_Ch=E1=BB=9D_B=E1=BA=A1n_=C4=90=E1=BA=BFn_?=
+ =?UTF-8?q?Nh=E1=BA=ADn_|_Genshin_Impact?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: https://webstatic.hoyoverse.com/ys/event/e20200424unsubscribe/index.html?from=noreply.news%40e-mail.hoyoverse.com&lang=vi-vn&sign=e74ba97b023f931fb792ab4b84775104&to=ctyxaydungala%40gmail.com
+Loopback: 4764-14313-2993999-vi_vn
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000@us-west-2.amazonses.com>
+Feedback-ID: ::1.us-west-2.ci3lZKCwvSA9hMJ5L3goTOdCwo1M7tMBLAF9fxmI2tM=:AmazonSES
+X-SES-Outgoing: 2025.01.31-54.240.113.52
+
+<img alt=3D"" src=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/I0/01010194ba=
+cd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/3uHXqp5dAtNazwjIlrJyVfrN=
+8To=3D412" style=3D"display: none; width: 1px; height: 1px;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head>
+<META NAME=3D"ROBOTS" CONTENT=3D"NOINDEX, NOFOLLOW"><META NAME=3D"referrer"=
+ CONTENT=3D"no-referrer">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0" />
+<!--[if !mso]><!-->
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<!--<![endif]-->
+<meta name=3D"apple-mobile-web-app-capable" content=3D"yes" />
+<meta name=3D"format-detection" content=3D"telephone=3Dno" />
+<meta name=3D"format-detection" content=3D"email=3Dno" />
+<link href=3D"https://fonts.googleapis.com/css?family=3DSource+Sans+Pro&dis=
+play=3Dswap" rel=3D"stylesheet" />
+<link href=3D"https://fonts.googleapis.com/css?family=3DMontserrat:800&disp=
+lay=3Dswap" rel=3D"stylesheet" />
+<link href=3D"https://fonts.googleapis.com/css2?family=3DNoto+Sans+JP&displ=
+ay=3Dswap" rel=3D"stylesheet">
+<link href=3D"https://fonts.googleapis.com/css2?family=3DKanit&display=3Dsw=
+ap" rel=3D"stylesheet">
+<!--[if mso]> <link href=3D"https://fonts.googleapis.com/css?family=3DSourc=
+e+Sans+Pro&display=3Dswap" rel=3D"stylesheet" type=3D"text/css" />=20
+<link href=3D"https://fonts.googleapis.com/css?family=3DMontserrat:extrabol=
+d&display=3Dswap" rel=3D"stylesheet" type=3D"text/css" />=20
+<link href=3D"https://fonts.googleapis.com/css2?family=3DNoto+Sans+JP&displ=
+ay=3Dswap" rel=3D"stylesheet">
+<link href=3D"https://fonts.googleapis.com/css2?family=3DKanit&display=3Dsw=
+ap" rel=3D"stylesheet">
+<![endif]-->
+<title>C=E1=BA=A3m =C6=A0n S=E1=BB=B1 =E1=BB=A6ng H=E1=BB=99 C=E1=BB=A7a Nh=
+=C3=A0 L=E1=BB=AF H=C3=A0nh: 1600 Nguy=C3=AAn Th=E1=BA=A1ch =C4=90ang Ch=E1=
+=BB=9D B=E1=BA=A1n =C4=90=E1=BA=BFn Nh=E1=BA=ADn | Genshin Impact</title><!=
+--[if mso]>=C2=A0=C2=A0 <style type=3D"text/css">=C2=A0=C2=A0=C2=A0=C2=A0 .=
+exposant { vertical-align: top;mso-text-raise: 55%; font-size: 60% ; line-h=
+eight:1.5; }=C2=A0=C2=A0=C2=A0 .indice { vertical-align: bottom;mso-text-lo=
+wer: 55%; font-size: 60% ; line-height:1.5; }=C2=A0 </style> <![endif]-->
+<style type=3D"text/css">
+/* thai */
+@font-face {
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/kanit/v7/nKKZ-Go6G5tXcraBGwCYdA.woff2)=
+ format('woff2');
+unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+@font-face {
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/kanit/v7/nKKZ-Go6G5tXcraaGwCYdA.woff2)=
+ format('woff2');
+unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-0=
+1A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+*[x-apple-data-detectors],.unstyle-auto-detected-links *,.aBn {border-botto=
+m: 0 !important;cursor: default !important;color: inherit !important;text-d=
+ecoration: none !important;font-size: inherit !important;font-family: inher=
+it !important;font-weight: inherit !important;line-height: inherit !importa=
+nt;}
+#outlook a { padding: 0; }
+
+body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; margin: 0; padding: 0; }
+.ExternalClass { width: 100%; }
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div { line-height: 100%; }
+.img-swap:hover img { max-height: 0px !important; height:0px !important;}
+.rollover:hover .main{
+max-height: 0px !important;
+}
+.rollover:hover .alt{
+max-height: none !important;
+}
+#backgroundTable { margin: 0; padding: 0; width: 100% !important; line-heig=
+ht: 100% !important; }
+img { outline: none; text-decoration: none; -ms-interpolation-mode: bicubic=
+; }
+.image_fix { display: block; }
+a img { border: none; }
+p { margin: 1em 0; }
+br { line-height: 100%; }
+td { border-collapse: collapse; }
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; border-spacing: 0px; }
+br { line-height: normal; }
+div { border: 0px; }
+a[x-apple-data-detectors] { color: inherit !important; text-decoration: non=
+e !important; font-size: inherit !important; font-family: inherit !importan=
+t; font-weight: inherit !important; line-height: inherit !important; }
+div[style*=3D"margin: 16px 0"] { margin: 0 !important; }
+img + div {display:none !important;}
+.exposant {position: relative;bottom: 0px;font-size: 70%;line-height: norma=
+l;vertical-align: super;text-decoration:none !important;}
+.indice {position: relative;bottom: 0px;font-size: 70%;line-height: normal;=
+vertical-align: bottom;text-decoration:none !important;}
+@media only screen and (min-width: 800px){
+.hide {display: none !important;max-height: 0 !important;mso-hide: all !imp=
+ortant;overflow: hidden !important;font-size: 0 !important;line-height: 0 !=
+important;padding: 0 !important;}
+.show {display: block !important;}
+.btn-hover:hover {background-color: #9f3020!important;color: #ffffff!import=
+ant;}
+.btn-hover-change:hover {background-color: #FF971A!important;color: #FFFFFF=
+!important;}
+.btn-hover-change2:hover {background-color: #EA561F!important;color: #FFFFF=
+F!important;}
+.img-hover:hover {opacity: 0.8!important; }
+.responsiveSpacer {display: inline-block !important;}
+}
+@media screen and (max-width: 480px) {
+.s-fullWidth { display: block !important; width: 100% !important; height: a=
+uto !important; max-width:100% !important }
+.s-hide { display: none !important; max-height: 0 !important; mso-hide: all=
+ !important; overflow: hidden !important; font-size: 0 !important; line-hei=
+ght: 0 !important; padding: 0 !important; }
+.s-show { display: block !important; max-height: none !important; line-heig=
+ht: 100% !important; font-size: inherit !important; }
+.s-hackgmail { display: none; display: none!important; }
+.s-w250 { width: 250px !important; height: auto !important; max-width:250px=
+ !important; }=20
+.s-fullWidth370 { display: block !important; width: 90% !important; height:=
+ auto !important; max-width:90% !important }
+}
+</style>
+<!--[if mso]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>9=
+6</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+</head>
+<body bgcolor=3D"#f6d09b" style=3D"background-color:#f6d09b; margin-left:au=
+to; margin-right:auto; width:100%; max-width:100%" >
+<style type=3D"text/css">
+@media yahoo and (max-width: 560px) {
+.s-show {display:block!important; max-height: none !important; line-height:=
+ 100% !important; font-size: inherit !important;}
+}
+</style>
+<center>
+<span style=3D"display: none; font-size: 1px; max-height: 0px; max-width: 0=
+px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">=
+=C4=90=C4=83ng nh=E1=BA=ADp ngay =C4=91=E1=BB=83 tr=E1=BA=A3i nghi=E1=BB=87=
+m s=E1=BB=B1 ki=E1=BB=87n T=E1=BA=BFt H=E1=BA=A3i =C4=90=C4=83ng v=C3=A0 nh=
+=E1=BA=ADn qu=C3=A0 h=E1=BA=A5p d=E1=BA=ABn!</span><div id=3D"container" st=
+yle=3D"background-color:#f6d09b;" ></div><!-- Insert &#847;&zwnj;&nbsp; hac=
+k after hidden preview text -->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;
+</div><div id=3D"container" style=3D"width: 100%; height: auto; margin: 0; =
+padding: 0; background-color:#f6d09b;" >
+<!-- EMAIL*****************************************************************=
+******* -->
+<!-- BODY******************************************************************=
+****** -->
+<table cellpadding=3D"0" cellspacing=3D"0"  style=3D"width: 100%; min-width=
+: 100%; height: auto; background-image: url('') ;background-color: #f6d09b;=
+" role=3D"presentation">
+<tr>
+<td align=3D"center" style=3D"width: 100%; min-width: 100%; height: auto; p=
+adding: 0;">
+<!--[if mso]>
+<table cellpadding=3D"0" cellspacing=3D"0"  style=3D"width: 800px; margin: =
+0 auto;">
+<tr>
+<td style=3D"width: 800px; height: auto; padding: 0; text-align: center;bac=
+kground-color: #bf4e3d;">
+<![endif]-->
+
+<table class=3D"s-fullWidth" cellpadding=3D"0" cellspacing=3D"0"  style=3D"=
+width: 100%; max-width: 800px; height: auto; background-color: #ffefd5;" ro=
+le=3D"presentation">
+<tr>
+<td align=3D"center" style=3D"width: 100%; min-width: 100%; height: auto; p=
+adding: 0;">=20
+<div class=3D"s-fullWidth" style=3D"width: 100%; max-width: 800px; height: =
+auto; margin: 0; padding: 0; background-image: url(''); background-repeat: =
+repeat; background-position: top center; background-size: 100%; background-=
+color: #ffefd5;"><table cellpadding=3D"0" cellspacing=3D"0"  style=3D"width=
+: 100%; min-width: 100%; height: auto; background-color: #f6d09b;" role=3D"=
+presentation">
+
+<tr>
+<td align=3D"center" style=3D"width: 100%; min-width: 100%; height: auto; p=
+adding: 0;">
+<div class=3D"s-fullWidth" style=3D"width: 100%; max-width: 800px; height: =
+auto; padding: 0; ">
+<table cellpadding=3D"0" cellspacing=3D"0"  style=3D"width: 100%; min-width=
+: 100%; height: auto; padding: 0; background-color: #bf4e3d;" role=3D"prese=
+ntation"><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+<tr>
+<td style=3D"width: 100%; height: auto; padding: 0; text-align: center; " a=
+lign=3D"center">
+<a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fgenshin.=
+hoyoverse.com%2Fvi%2Fhome%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=
+=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-v=
+n_HeaderLogoOnly%2B01Headerlogo%2BGihp/1/01010194bacd7330-dd5fc252-15d1-4cf=
+1-a98e-eff14bf89bba-000000/dbE-8R-rjQa5Wv1ffLauzYWDzN8=3D412" target=3D"_bl=
+ank" style=3D"display: block;"><img class=3D"img-hover" src=3D"https://fast=
+cdn.hoyoverse.com/static-resource-v2/2023/07/10/186423488cba10816ddf07a9ce2=
+c0d45_383466962765731890.png" alt=3D"Logo" width=3D"130" style=3D"display: =
+inline-block; border: none;max-width: 130px;">
+</a>
+</td>
+
+</tr><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table><!-- BEGIN IMAGE WITH MOBILE -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;" >
+<tr>
+<td align=3D"center" valign=3D"top">
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;" class=3D"s-hide" >
+<tr>
+<td><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo=
+.link%2FHUGD1iqR3%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26ut=
+m_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_HeaderI=
+mageNB-wMobile%2B01Header%2BGamedownload/1/01010194bacd7330-dd5fc252-15d1-4=
+cf1-a98e-eff14bf89bba-000000/svtwdAHBeXBy-oBFqdyFT8MV9SY=3D412" target=3D"_=
+blank" ><img class=3D"img-hover s-fullwidth" src=3D"https://fastcdn.hoyover=
+se.com/static-resource-v2/2025/01/23/f29ed3d2511539e3a5590da6e0e4d842_68806=
+68525253755567.jpg" alt=3D"Img" style=3D"display:block; max-width:800px; wi=
+dth:100%; height:auto; color:#5F4935; font-size:17px; line-height:140%; fon=
+t-weight: bold; border-bottom:3px hidden #fc9a3e;border-radius: 0 0 10px 10=
+px;" width=3D"800"/></a></td></tr></table><!--[if !mso]><!-->
+<div class=3D"s-show" style=3D"font-size:0;max-height:0;overflow:hidden;dis=
+play:none;">
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td align=3D"center"><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0=
+/https:%2F%2Fhoyo.link%2FHUGD1iqR3%3Futm_source=3Demail%26utm_medium=3Dcrm%=
+26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_conten=
+t=3Dvi-vn_HeaderImageNB-wMobilem%2B01Header%2BGamedownload/1/01010194bacd73=
+30-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/9it-5xAJGKhyuzZ-XJVy02rLAzk=
+=3D412" target=3D"_blank" ><img class=3D"img-hover s-fullWidth" src=3D"http=
+s://fastcdn.hoyoverse.com/static-resource-v2/2025/01/23/f29ed3d2511539e3a55=
+90da6e0e4d842_6880668525253755567.jpg" alt=3D"Img" style=3D"display:block; =
+width:100%; height:auto;border-bottom:3px hidden #fc9a3e;border-radius: 0 0=
+ 10px 10px;" /></a></td></tr></table></div>
+<!--<![endif]--> </td>
+</tr>
+</table>=20
+<!-- BB --><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:17px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">=F0=9F=8E=89 Nh=C3=A0 L=E1=BB=AF H=C3=A0nh, T=E1=BA=BFt H=
+=E1=BA=A3i =C4=90=C4=83ng vui v=E1=BA=BB!<br/>S=E1=BB=B1 ki=E1=BB=87n T=E1=
+=BA=BFt H=E1=BA=A3i =C4=90=C4=83ng m=E1=BB=97i n=C4=83m m=E1=BB=99t l=E1=BA=
+=A7n hi=E1=BB=87n =C4=91=C3=A3 <strong style=3D"color:#5F4935" >m=E1=BB=9F =
+to=C3=A0n b=E1=BB=99 giai =C4=91o=E1=BA=A1n</strong>, tham gia =C4=91=E1=BB=
+=83 <strong style=3D"color:#5F4935" >mi=E1=BB=85n ph=C3=AD nh=E1=BA=ADn tra=
+ng ph=E1=BB=A5c Xiangling</strong> v=C3=A0 <strong style=3D"color:#5F4935" =
+>t=C3=B9y ch=E1=BB=8Dn m=E1=BB=9Di nh=C3=A2n v=E1=BA=ADt 4 sao Liyue</stron=
+g>!<br/>Qu=C3=A0 c=E1=BA=A3m =C6=A1n T=E1=BA=BFt H=E1=BA=A3i =C4=90=C4=83ng=
+ v=E1=BB=9Bi <strong style=3D"color:#5F4935" >Nguy=C3=AAn Th=E1=BA=A1ch =C3=
+=971600</strong> s=E1=BA=BD =C4=91=C6=B0=E1=BB=A3c l=E1=BA=A7n l=C6=B0=E1=
+=BB=A3t g=E1=BB=ADi qua h=C3=B2m th=C6=B0 trong game c=E1=BB=A7a b=E1=BA=A1=
+n, =C4=91i=E1=BB=83m danh 7 ng=C3=A0y trong phi=C3=AAn b=E1=BA=A3n c=C3=B2n=
+ c=C3=B3 th=E1=BB=83 nh=E1=BA=ADn =C4=91=C6=B0=E1=BB=A3c <strong style=3D"c=
+olor:#5F4935" >M=E1=BB=91i Duy=C3=AAn V=C6=B0=C6=A1ng V=E1=BA=A5n =C3=9710<=
+/strong><sup>[1]</sup>, =C4=91=E1=BB=ABng b=E1=BB=8F l=E1=BB=A1!</font></td=
+></tr><tr><td style=3D" height:10px;" height=3D"10">&nbsp;</td></tr></table=
+><!-- END SUB AC TITLE - STD --><!-- BEGIN SA CTA -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"><!--[if mso]><t=
+able role=3D"presentation" width=3D"800"  cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"border-collapse:collapse; width:800px" align=3D"center"><tr><td=
+ valign=3D"top" ><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+800px;padding-bottom:15px;" class=3D"s-fullWidth" align=3D"center"><div ali=
+gn=3D"center"><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-co=
+m:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://ho=
+yo.link/5D4iFHAL?utm_source=3Demail&utm_medium=3Dcrm&utm_id=3D2&utm_campaig=
+n=3DGI-E-MK-RCL-53BONUSGreeting-0131&utm_content=3Dvi-vn_1CTACTA+01Header+G=
+amedownload" target=3D"_blank" style=3D"height:65px;v-text-anchor:middle;wi=
+dth:350px" arcsize=3D"0.5" strokecolor=3D"#bf4e3d" fill=3D"t"><v:fill type=
+=3D"tile" src=3D"" color=3D"#bf4e3d" /><w:anchorlock/><center style=3D"colo=
+r: #ffffff; font-family: Tahoma, Geneva, sans-serif; font-size:17px; font-w=
+eight:bold;text-transform: uppercase;">=C4=90=C4=83ng Nh=E1=BA=ADp Ngay</ce=
+nter></v:roundrect><![endif]--><a   class=3D"btn-hover"  href=3D"https://n8=
+q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2F5D4iFHAL%3Futm_so=
+urce=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-5=
+3BONUSGreeting-0131%26utm_content=3Dvi-vn_1CTACTA%2B01Header%2BGamedownload=
+/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/IvX8i2-slUC=
+2yANHbsZO6t7-FBk=3D412" style=3D"background-color:#bf4e3d;background-image:=
+url(''); background-position: center center; background-size:cover;border:0=
+px solid #bf4e3d;border-radius:32.5px;color: #ffffff; font-family: Tahoma, =
+Geneva, sans-serif; font-size:17px; font-weight:bold;text-transform: upperc=
+ase;display:inline-block;line-height:65px;text-align:center;text-decoration=
+:none;width:350px;-webkit-text-size-adjust:none;mso-hide:all;" target=3D"_b=
+lank">=C4=90=C4=83ng Nh=E1=BA=ADp Ngay</a>
+</div></div>
+<!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr><tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr>
+</table>
+<!-- END SA --><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:14px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">[1] Qu=C3=A0 c=E1=BA=A3m =C6=A1n T=E1=BA=BFt H=E1=BA=A3i =
+=C4=90=C4=83ng s=E1=BA=BD =C4=91=C6=B0=E1=BB=A3c ph=C3=A1t t=E1=BB=AB 01/02=
+ - 05/02. =C4=90=E1=BB=83 bi=E1=BA=BFt th=C3=AAm chi ti=E1=BA=BFt ph=C3=BAc=
+ l=E1=BB=A3i vui l=C3=B2ng xem t=E1=BA=A1i <a href=3D"https://n8q2q9p0.r.us=
+-west-2.awstrack.me/L0/https:%2F%2Fwww.hoyolab.com%2Farticle%2F36471182%3Fu=
+tm_source=3Demail%26utm_medium=3Dgame%26utm_id=3D2%26utm_campaign=3DGI-E-MK=
+-RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14b=
+f89bba-000000/Wjga7Rg1588ONxjQTBWt902w0NY=3D412"  target=3D"_blank" style=
+=3D"color:#5F4935;" text-decoration:underline;" class=3D"btn-hover" >Th=C3=
+=B4ng B=C3=A1o Ch=C3=ADnh Th=E1=BB=A9c</a>.</font></td></tr><tr><td style=
+=3D" height:10px;" height=3D"10">&nbsp;</td></tr></table><!-- END SUB AC TI=
+TLE - STD --><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN AC TITLE With BG IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"padding:0px;background-image: url('https://fastcdn.hoyoverse.com/static-re=
+source-v2/2025/01/17/fc061d873f9102dcbb9805111b66ea5f_1172189413758240888.p=
+ng'); background-repeat: no-repeat; background-position: center center; bac=
+kground-size: 800px;" align=3D"center" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;width:340px;=
+" width=3D"340" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center" ><tr>=
+<td style=3D"height:30px;" height=3D"30">&nbsp;</td></tr><tr><td style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%;col=
+or:#5F4935;  text-align:center; " ><strong><span  style=3D"font-family: Tah=
+oma, Geneva, sans-serif;font-size:14px; line-height:140%;color:#5F4935;  te=
+xt-align:center; ">Hi=E1=BB=87n =C4=90=C3=A3 M=E1=BB=9F<br/></span>S=E1=BB=
+=AD K=C3=BD C=E1=BA=A7u Nguy=E1=BB=87n</strong></td></tr><tr><td style=3D" =
+height:30px;" height=3D"30">&nbsp;</td></tr></table></td></tr></table><!-- =
+END AC TITLE with BG IMG --><!-- BB --><!-- BEGIN BANNER NO MOBILE -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td align=3D"center">
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;" >
+<tr align=3D"center">
+<td ><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoy=
+o.link%2Fsz4M304gI%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26u=
+tm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_Banner=
+-STD%2B03Character%2BChronicledWish/1/01010194bacd7330-dd5fc252-15d1-4cf1-a=
+98e-eff14bf89bba-000000/uFAGJAO15YjLASFLmbk0Yk2FgBM=3D412" target=3D"_blank=
+" ><img class=3D"img-hover s-fullWidth370" src=3D"https://fastcdn.hoyoverse=
+.com/static-resource-v2/2025/01/17/64101d0ffd9ab69be0e946ebfc9a225b_1844284=
+094125189994.png" style=3D"display:block; max-width:750px; width:100%; heig=
+ht:auto; color:#5F4935; font-size:17px; line-height:140%; font-weight: bold=
+; font-family:Tahoma, Geneva, sans-serif;border:3px hidden #fc9a3e;border-r=
+adius:20px;" width=3D"750" /></a></td>
+</tr>
+</table>
+</td>
+</tr><tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr>
+</table>
+<!-- END BANNER --><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:17px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">Trong th=E1=BB=9Di gian s=E1=BB=B1 ki=E1=BB=87n, Nh=C3=A0=
+ L=E1=BB=AF H=C3=A0nh c=C3=B3 th=E1=BB=83 <strong style=3D"color:#5F4935" >=
+t=C3=B9y ch=E1=BB=8Dn v=C3=A0 =C4=91=E1=BB=8Bnh chu=E1=BA=A9n </strong>m=E1=
+=BB=99t nh=C3=A2n v=E1=BA=ADt 5 sao ho=E1=BA=B7c m=E1=BB=99t v=C5=A9 kh=C3=
+=AD 5 sao =C4=91=E1=BB=83 t=C4=83ng t=E1=BB=B7 l=E1=BB=87 nh=E1=BA=ADn =C4=
+=91=C6=B0=E1=BB=A3c v=E1=BA=ADt ph=E1=BA=A9m =C4=91=C3=B3 trong c=E1=BA=A7u=
+ nguy=E1=BB=87n "K=C3=BD =E1=BB=A8c Ng=E1=BB=8Dc Nham" k=E1=BB=B3 n=C3=A0y!=
+</font></td></tr><tr><td style=3D" height:10px;" height=3D"10">&nbsp;</td><=
+/tr></table><!-- END SUB AC TITLE - STD --><!-- BEGIN 2CTA -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;width:360px;" class=3D"s-fullWid=
+th" valign=3D"top"><div style=3D"display:inline-block;vertical-align:top;wi=
+dth:100%;max-width:360px;padding-bottom:15px;" ><div><!--[if mso]><v:roundr=
+ect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-micros=
+oft-com:office:word" href=3D"https://hoyo.link/5D4iFHAL?utm_source=3Demail&=
+utm_medium=3Dcrm&utm_id=3D2&utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131=
+&utm_content=3Dvi-vn_2CTACTA1+03Character+ChronicledWishGamedownload" targe=
+t=3D"_blank" style=3D"height:65px;v-text-anchor:middle;width:330px" arcsize=
+=3D"0.5" strokecolor=3D"#bf4e3d" fill=3D"t"><v:fill type=3D"tile" src=3D"" =
+color=3D"#bf4e3d" /><w:anchorlock/><center style=3D"color: #ffffff; font-fa=
+mily: Tahoma, Geneva, sans-serif; font-size:17px; font-weight:bold;text-tra=
+nsform: uppercase;">V=C3=A0o Game</center></v:roundrect><![endif]--><a   cl=
+ass=3D"btn-hover"  href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/http=
+s:%2F%2Fhoyo.link%2F5D4iFHAL%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_=
+id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi=
+-vn_2CTACTA1%2B03Character%2BChronicledWishGamedownload/1/01010194bacd7330-=
+dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/SUPZZ0g2WIS4hM6Xih-1Vk247VQ=3D4=
+12" style=3D"background-color:#bf4e3d;background-image:url(''); background-=
+position: center center; background-size:cover;border:0px solid #bf4e3d;bor=
+der-radius:32.5px;color: #ffffff; font-family: Tahoma, Geneva, sans-serif; =
+font-size:17px; font-weight:bold;text-transform: uppercase;display:inline-b=
+lock;line-height:65px;text-align:center;text-decoration:none;width:330px;-w=
+ebkit-text-size-adjust:none;mso-hide:all;" target=3D"_blank">V=C3=A0o Game<=
+/a></div></div></td><td style=3D"font-size:0;text-align:center;width:360px;=
+" class=3D"s-fullWidth" valign=3D"top"><div style=3D"display:inline-block;v=
+ertical-align:top;width:100%;max-width:360px;padding-bottom:15px;" ><div><!=
+--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" href=3D"https://www.hoyolab.com/=
+article/36495289?utm_source=3Demail&utm_medium=3Dcrm&utm_id=3D2&utm_campaig=
+n=3DGI-E-MK-RCL-53BONUSGreeting-0131&utm_content=3Dvi-vn_2CTACTA2+03Charact=
+er+ChronicledWish" target=3D"_blank" style=3D"height:65px;v-text-anchor:mid=
+dle;width:330px" arcsize=3D"0.5" strokecolor=3D"#bf4e3d" fill=3D"t"><v:fill=
+ type=3D"tile" src=3D"" color=3D"#bf4e3d" /><w:anchorlock/><center style=3D=
+"color: #ffffff; font-family: Tahoma, Geneva, sans-serif; font-size:17px; f=
+ont-weight:bold;text-transform: uppercase;">T=C3=ACm Hi=E1=BB=83u Th=C3=AAm=
+</center></v:roundrect><![endif]--><a   class=3D"btn-hover"  href=3D"https:=
+//n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2Fsz4M304gI%3Fu=
+tm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-=
+RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_2CTACTA2%2B03Character%2BChr=
+onicledWish/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/=
+0QsLes-FsXXMhB-CnYC34OZG5RA=3D412" style=3D"background-color:#bf4e3d;backgr=
+ound-image:url(''); background-position: center center; background-size:cov=
+er;border:0px solid #bf4e3d;border-radius:32.5px;color: #ffffff; font-famil=
+y: Tahoma, Geneva, sans-serif; font-size:17px; font-weight:bold;text-transf=
+orm: uppercase;display:inline-block;line-height:65px;text-align:center;text=
+-decoration:none;width:330px;-webkit-text-size-adjust:none;mso-hide:all;" t=
+arget=3D"_blank">T=C3=ACm Hi=E1=BB=83u Th=C3=AAm</a></div></div>
+</td>
+</tr>
+</table>
+<!-- END 2CTA --><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN AC TITLE With BG IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"padding:0px;background-image: url('https://fastcdn.hoyoverse.com/static-re=
+source-v2/2025/01/17/fc061d873f9102dcbb9805111b66ea5f_1172189413758240888.p=
+ng'); background-repeat: no-repeat; background-position: center center; bac=
+kground-size: 800px;" align=3D"center" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;width:340px;=
+" width=3D"340" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center" ><tr>=
+<td style=3D"height:30px;" height=3D"30">&nbsp;</td></tr><tr><td style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%; co=
+lor:#5F4935; text-align:center; " ><strong><center>S=E1=BB=B1 Ki=E1=BB=87n =
+=C4=90=E1=BA=B7c S=E1=BA=AFc <br/>=C4=90ang Di=E1=BB=85n Ra</center></stron=
+g></td></tr><tr><td style=3D" height:30px;" height=3D"30">&nbsp;</td></tr><=
+/table></td></tr></table><!-- END AC TITLE with BG IMG --><!-- BB --><!-- B=
+EGIN STD LEFT IMAGE -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top" ><!--[if mso]><=
+table role=3D"presentation" width=3D"800"  cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"border-collapse:collapse; width:800px"><tr><td valign=3D"top" =
+style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+380px;"   dir=3D"ltr" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td align=3D"center"><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0=
+/https:%2F%2Fhoyo.link%2FvG8LsMnxy%3Futm_source=3Demail%26utm_medium=3Dcrm%=
+26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_conten=
+t=3Dvi-vn_1ITTC-380pxNoBorder%2B05Cmevent%2BH5/1/01010194bacd7330-dd5fc252-=
+15d1-4cf1-a98e-eff14bf89bba-000000/e73NuVity_teIFmOcyQUHkJ7MxQ=3D412" targe=
+t=3D"_blank" ><img class=3D"img-hover s-fullWidth370" src=3D"https://fastcd=
+n.hoyoverse.com/static-resource-v2/2025/01/23/9ce60a049bc29fa1288fd67bf3704=
+a76_892326663069631006.jpg" alt=3D"Img" style=3D"display:block; max-width:3=
+80px; width:100%; height:auto; color:#5F4935; font-size:17px; line-height:1=
+40%; font-weight: bold; "width=3D"380"  /></a></td></tr></table></div>
+<!--[if mso]> </td><td valign=3D"top" style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+380px;"  dir=3D"ltr" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td style=3D"padding-left:20px; padding-right:20px" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" ><tr>
+<td align=3D"center" style=3D"font-family: Tahoma, Geneva, sans-serif;font-=
+size:28px;; line-height:140%;color:#5F4935; text-align:left; padding: 10px =
+0;" ><strong><font color=3D"#5F4935">B=C3=A1t K=E1=BB=B3 D=C3=A2y M=C3=A2y<=
+/font></strong><br/></td></tr><tr><td align=3D"left" style=3D"font-family: =
+Tahoma, Geneva, sans-serif;font-size:17px; line-height:140%; color:#5F4935;=
+ text-align:left;" >H=C3=A3y c=C3=B9ng b=C3=BAp b=C3=AA d=C3=A2y m=C3=A2y t=
+=C3=A1i hi=E1=BB=87n l=E1=BA=A1i C=C3=A2u Chuy=E1=BB=87n B=C3=A1t K=E1=BB=
+=B3, c=C3=B9ng =C4=91=C3=B3n T=E1=BA=BFt H=E1=BA=A3i =C4=90=C4=83ng vui v=
+=E1=BA=BB nh=C3=A9!<br/>Tham gia =C4=91=E1=BB=83 nh=E1=BA=ADn <strong style=
+=3D"color:#5F4935" >Nguy=C3=AAn Th=E1=BA=A1ch =C3=97120</strong> nh=C3=A9!<=
+/td></tr>=C2=A0=20
+<tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr><tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"><div style=3D"d=
+isplay:inline-block;vertical-align:top;width:100%;max-width:380px;padding-b=
+ottom:15px;" class=3D"s-fullWidth"><div><!--[if mso]><v:roundrect xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:off=
+ice:word" href=3D"https://act.hoyoverse.com/ys/event/e20250126lantern-a862t=
+u/index.html?game_biz=3Dhk4e_global&hyl_presentation_style=3Dfullscreen&hyl=
+_auth_required=3Dtrue&hyl_landscape=3Dtrue&hyl_hide_status_bar=3Dtrue?utm_s=
+ource=3Demail&utm_medium=3Dcrm&utm_id=3D2&utm_campaign=3DGI-E-MK-RCL-53BONU=
+SGreeting-0131&utm_content=3Dvi-vn_1ITTC-380pxCTANoBorder+05Cmevent+H5" tar=
+get=3D"_blank" style=3D"height:65px;v-text-anchor:middle;width:330px" arcsi=
+ze=3D"0.5" strokecolor=3D"#bf4e3d" fill=3D"t"><v:fill type=3D"tile" src=3D"=
+" color=3D"#bf4e3d" /><w:anchorlock/><center style=3D"color: #ffffff; font-=
+family: Tahoma, Geneva, sans-serif; font-size:17px; font-weight:bold;text-t=
+ransform: uppercase;">=C4=90=E1=BA=BFn =C4=90=E1=BB=83 Tham Gia</center></v=
+:roundrect><![endif]--><a   class=3D"btn-hover"  href=3D"https://n8q2q9p0.r=
+.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2FvG8LsMnxy%3Futm_source=3D=
+email%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSG=
+reeting-0131%26utm_content=3Dvi-vn_1ITTC-380pxCTANoBorder%2B05Cmevent%2BH5/=
+1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/vRqpBLBHpg5a=
+GX-3T3XibjOv-b4=3D412" style=3D"background-color:#bf4e3d;background-image:u=
+rl(''); background-position: center center; background-size:cover;border:0p=
+x solid #bf4e3d;border-radius:32.5px;color: #ffffff; font-family: Tahoma, G=
+eneva, sans-serif; font-size:17px; font-weight:bold;text-transform: upperca=
+se;display:inline-block;line-height:65px;text-align:center;text-decoration:=
+none;width:330px;-webkit-text-size-adjust:none;mso-hide:all;" target=3D"_bl=
+ank">=C4=90=E1=BA=BFn =C4=90=E1=BB=83 Tham Gia</a></div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></div><!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table> <!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:20px;" height=3D"20">&nbsp;</td>
+</tr>
+</table>
+<!-- BF --><!-- BEGIN STD LEFT IMAGE -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top" dir=3D"rtl"><!-=
+-[if mso]><table role=3D"presentation" width=3D"800"  cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"border-collapse:collapse; width:800px"><tr><td vali=
+gn=3D"top" style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+380px;"   dir=3D"ltr" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td align=3D"center"><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0=
+/https:%2F%2Fhoyo.link%2Fk4letzn55%3Futm_source=3Demail%26utm_medium=3Dcrm%=
+26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_conten=
+t=3Dvi-vn_1ITTC-380pxRTL%2B06Bonus%2BWings/1/01010194bacd7330-dd5fc252-15d1=
+-4cf1-a98e-eff14bf89bba-000000/UeyfQ7YYIeu4a9D46WQoZ98jOnE=3D412" target=3D=
+"_blank" ><img class=3D"img-hover s-fullWidth370" src=3D"https://fastcdn.ho=
+yoverse.com/static-resource-v2/2024/11/13/044575836c0390fb2d0c24cb664b5456_=
+943525132985838845.png" alt=3D"Img" style=3D"display:block; max-width:380px=
+; width:100%; height:auto; color:#5F4935; font-size:17px; line-height:140%;=
+ font-weight: bold; border:3px hidden #fc9a3e;border-radius:20px;"width=3D"=
+380"  /></a></td></tr></table></div>
+<!--[if mso]> </td><td valign=3D"top" style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+380px;"  dir=3D"ltr" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td style=3D"padding-left:20px; padding-right:20px" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" ><tr>
+<td align=3D"center" style=3D"font-family: Tahoma, Geneva, sans-serif;font-=
+size:28px;; line-height:140%;color:#5F4935; text-align:left; padding: 10px =
+0;" ><strong><font color=3D"#5F4935">Nh=E1=BA=ADn H=E1=BA=A1n Gi=E1=BB=9D</=
+font></strong><br/></td></tr><tr><td align=3D"left" style=3D"font-family: T=
+ahoma, Geneva, sans-serif;font-size:17px; line-height:140%; color:#5F4935; =
+text-align:left;" >=C4=90=C4=83ng nh=E1=BA=ADp ngay =C4=91=E1=BB=83 nh=E1=
+=BA=ADn Phong Chi D=E1=BB=B1c "C=C3=A1nh V=E1=BA=ADn M=E1=BB=87nh =C4=90an =
+Xen".</td></tr>=C2=A0=20
+<tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr><tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"><div style=3D"d=
+isplay:inline-block;vertical-align:top;width:100%;max-width:380px;padding-b=
+ottom:15px;" class=3D"s-fullWidth"><div><!--[if mso]><v:roundrect xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:off=
+ice:word" href=3D"https://hoyo.link/5D4iFHAL?utm_source=3Demail&utm_medium=
+=3Dcrm&utm_id=3D2&utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131&utm_conte=
+nt=3Dvi-vn_1ITTC-380pxCTARTL+06Bonus+WingsGameDownload" target=3D"_blank" s=
+tyle=3D"height:65px;v-text-anchor:middle;width:330px" arcsize=3D"0.5" strok=
+ecolor=3D"#bf4e3d" fill=3D"t"><v:fill type=3D"tile" src=3D"" color=3D"#bf4e=
+3d" /><w:anchorlock/><center style=3D"color: #ffffff; font-family: Tahoma, =
+Geneva, sans-serif; font-size:17px; font-weight:bold;text-transform: upperc=
+ase;">Nh=E1=BA=ADn Ngay</center></v:roundrect><![endif]--><a   class=3D"btn=
+-hover"  href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fho=
+yo.link%2F5D4iFHAL%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26u=
+tm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_1ITTC-=
+380pxCTARTL%2B06Bonus%2BWingsGameDownload/1/01010194bacd7330-dd5fc252-15d1-=
+4cf1-a98e-eff14bf89bba-000000/KIhbTbAkbtEld3cToGU01xV22jU=3D412" style=3D"b=
+ackground-color:#bf4e3d;background-image:url(''); background-position: cent=
+er center; background-size:cover;border:0px solid #bf4e3d;border-radius:32.=
+5px;color: #ffffff; font-family: Tahoma, Geneva, sans-serif; font-size:17px=
+; font-weight:bold;text-transform: uppercase;display:inline-block;line-heig=
+ht:65px;text-align:center;text-decoration:none;width:330px;-webkit-text-siz=
+e-adjust:none;mso-hide:all;" target=3D"_blank">Nh=E1=BA=ADn Ngay</a></div><=
+/div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></div><!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table> <!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:20px;" height=3D"20">&nbsp;</td>
+</tr>
+</table>
+<!-- BF --><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:14px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">* S=E1=BB=B1 ki=E1=BB=87n k=E1=BA=BFt th=C3=BAc khi k=E1=
+=BA=BFt th=C3=BAc phi=C3=AAn b=E1=BA=A3n 5.3.</font></td></tr><tr><td style=
+=3D" height:10px;" height=3D"10">&nbsp;</td></tr></table><!-- END SUB AC TI=
+TLE - STD --><!-- BEGIN AC TITLE With BG IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"padding:0px;background-image: url('https://fastcdn.hoyoverse.com/static-re=
+source-v2/2025/01/17/fc061d873f9102dcbb9805111b66ea5f_1172189413758240888.p=
+ng'); background-repeat: no-repeat; background-position: center center; bac=
+kground-size: 800px;" align=3D"center" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;width:340px;=
+" width=3D"340" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center" ><tr>=
+<td style=3D"height:30px;" height=3D"30">&nbsp;</td></tr><tr><td style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%; co=
+lor:#5F4935; text-align:center; " ><strong><center>Th=C3=B4ng Tin C=E1=BA=
+=A7u Nguy=E1=BB=87n</center></strong></td></tr><tr><td style=3D" height:30p=
+x;" height=3D"30">&nbsp;</td></tr></table></td></tr></table><!-- END AC TIT=
+LE with BG IMG --><!-- BB --><!-- BEGIN BANNER NO MOBILE -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td align=3D"center">
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;" >
+<tr align=3D"center">
+<td ><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoy=
+o.link%2FrjWhrPozK%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26u=
+tm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_Banner=
+-STD%2B08Character%2BWish/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14b=
+f89bba-000000/kdmKzD6ArM8YfRsORc-4XWOgs3Q=3D412" target=3D"_blank" ><img cl=
+ass=3D"img-hover s-fullWidth370" src=3D"https://fastcdn.hoyoverse.com/stati=
+c-resource-v2/2025/01/17/5c637a9ae936f74389bc7f0154a38e5b_73993361762251908=
+97.jpg" style=3D"display:block; max-width:750px; width:100%; height:auto; c=
+olor:#5F4935; font-size:17px; line-height:140%; font-weight: bold; font-fam=
+ily:Tahoma, Geneva, sans-serif;border:3px hidden #fc9a3e;border-radius:20px=
+;" width=3D"750" /></a></td>
+</tr>
+</table>
+</td>
+</tr><tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr>
+</table>
+<!-- END BANNER --><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:17px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">Nh=C3=A2n v=E1=BA=ADt 5 sao gi=E1=BB=9Bi h=E1=BA=A1n <str=
+ong style=3D"color:#5F4935" >Arlecchino, Clorinde</strong> hi=E1=BB=87n =C4=
+=91=C3=A3 m=E1=BB=9F c=E1=BA=A7u nguy=E1=BB=87n h=E1=BA=A1n gi=E1=BB=9D!<br=
+/>C=C3=B9ng t=E1=BB=9Bi t=C3=ACm hi=E1=BB=83u m=E1=BB=99t ch=C3=BAt v=E1=BB=
+=81 chi=E1=BA=BFn l=C6=B0=E1=BB=A3c b=E1=BB=93i d=C6=B0=E1=BB=A1ng c=E1=BB=
+=A7a h=E1=BB=8D nh=C3=A9!</font></td></tr><tr><td style=3D" height:10px;" h=
+eight=3D"10">&nbsp;</td></tr></table><!-- END SUB AC TITLE - STD --><!-- BE=
+GIN 2CTA -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;width:360px;" class=3D"s-fullWid=
+th" valign=3D"top"><div style=3D"display:inline-block;vertical-align:top;wi=
+dth:100%;max-width:360px;padding-bottom:15px;" ><div><!--[if mso]><v:roundr=
+ect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-micros=
+oft-com:office:word" href=3D"https://www.hoyolab.com/circles/2/28/feed?page=
+_type=3D28&page_sort=3Dhot?utm_source=3Demail&utm_medium=3Dcrm&utm_id=3D2&u=
+tm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131&utm_content=3Dvi-vn_2CTACTA1=
++08Character+Guide" target=3D"_blank" style=3D"height:65px;v-text-anchor:mi=
+ddle;width:330px" arcsize=3D"0.5" strokecolor=3D"#bf4e3d" fill=3D"t"><v:fil=
+l type=3D"tile" src=3D"" color=3D"#bf4e3d" /><w:anchorlock/><center style=
+=3D"color: #ffffff; font-family: Tahoma, Geneva, sans-serif; font-size:17px=
+; font-weight:bold;text-transform: uppercase;">Chi=E1=BA=BFn L=C6=B0=E1=BB=
+=A3c B=E1=BB=93i D=C6=B0=E1=BB=A1ng</center></v:roundrect><![endif]--><a   =
+class=3D"btn-hover"  href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/ht=
+tps:%2F%2Fhoyo.link%2FbkQUP6x5g%3Futm_source=3Demail%26utm_medium=3Dcrm%26u=
+tm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_2CTACTA1%2B08Character%2BGuide/1/01010194bacd7330-dd5fc252-15d1-4c=
+f1-a98e-eff14bf89bba-000000/vlLqgGyu5G-U5lKNK64a0DTWUq0=3D412" style=3D"bac=
+kground-color:#bf4e3d;background-image:url(''); background-position: center=
+ center; background-size:cover;border:0px solid #bf4e3d;border-radius:32.5p=
+x;color: #ffffff; font-family: Tahoma, Geneva, sans-serif; font-size:17px; =
+font-weight:bold;text-transform: uppercase;display:inline-block;line-height=
+:65px;text-align:center;text-decoration:none;width:330px;-webkit-text-size-=
+adjust:none;mso-hide:all;" target=3D"_blank">Chi=E1=BA=BFn L=C6=B0=E1=BB=A3=
+c B=E1=BB=93i D=C6=B0=E1=BB=A1ng</a></div></div></td><td style=3D"font-size=
+:0;text-align:center;width:360px;" class=3D"s-fullWidth" valign=3D"top"><di=
+v style=3D"display:inline-block;vertical-align:top;width:100%;max-width:360=
+px;padding-bottom:15px;" ><div><!--[if mso]><v:roundrect xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" h=
+ref=3D"https://hoyo.link/5D4iFHAL?utm_source=3Demail&utm_medium=3Dcrm&utm_i=
+d=3D2&utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131&utm_content=3Dvi-vn_2=
+CTACTA2+08Character+CharacterGamedownload" target=3D"_blank" style=3D"heigh=
+t:65px;v-text-anchor:middle;width:330px" arcsize=3D"0.5" strokecolor=3D"#bf=
+4e3d" fill=3D"t"><v:fill type=3D"tile" src=3D"" color=3D"#bf4e3d" /><w:anch=
+orlock/><center style=3D"color: #ffffff; font-family: Tahoma, Geneva, sans-=
+serif; font-size:17px; font-weight:bold;text-transform: uppercase;">V=C3=A0=
+o Game</center></v:roundrect><![endif]--><a   class=3D"btn-hover"  href=3D"=
+https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2F5D4iFHA=
+L%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-=
+E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_2CTACTA2%2B08Character%=
+2BCharacterGamedownload/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf8=
+9bba-000000/ZK1DZj1EiR7_H2GvOe2r2l_bGOA=3D412" style=3D"background-color:#b=
+f4e3d;background-image:url(''); background-position: center center; backgro=
+und-size:cover;border:0px solid #bf4e3d;border-radius:32.5px;color: #ffffff=
+; font-family: Tahoma, Geneva, sans-serif; font-size:17px; font-weight:bold=
+;text-transform: uppercase;display:inline-block;line-height:65px;text-align=
+:center;text-decoration:none;width:330px;-webkit-text-size-adjust:none;mso-=
+hide:all;" target=3D"_blank">V=C3=A0o Game</a></div></div>
+</td>
+</tr>
+</table>
+<!-- END 2CTA --><!-- BEGIN AC TITLE With BG IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"padding:0px;background-image: url('https://fastcdn.hoyoverse.com/static-re=
+source-v2/2025/01/17/fc061d873f9102dcbb9805111b66ea5f_1172189413758240888.p=
+ng'); background-repeat: no-repeat; background-position: center center; bac=
+kground-size: 800px;" align=3D"center" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;width:340px;=
+" width=3D"340" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center" ><tr>=
+<td style=3D"height:30px;" height=3D"30">&nbsp;</td></tr><tr><td style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%; co=
+lor:#5F4935; text-align:center; " ><strong><center>=C4=90i=E1=BB=83m Danh <=
+br/>Nh=E1=BA=ADn Nguy=C3=AAn Th=E1=BA=A1ch!</center></strong></td></tr><tr>=
+<td style=3D" height:30px;" height=3D"30">&nbsp;</td></tr></table></td></tr=
+></table><!-- END AC TITLE with BG IMG --><!-- BB --><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN BANNER NO MOBILE -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td align=3D"center">
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;" >
+<tr align=3D"center">
+<td ><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoy=
+o.link%2FmdBFOIXno%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26u=
+tm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_Banner=
+-STD%2B09Hylstandard%2BDailyCheckin/1/01010194bacd7330-dd5fc252-15d1-4cf1-a=
+98e-eff14bf89bba-000000/xVhX_az5lls9KaVfHLR-qSRXe-I=3D412" target=3D"_blank=
+" ><img class=3D"img-hover s-fullWidth370" src=3D"https://fastcdn.hoyoverse=
+.com/static-resource-v2/2024/11/06/ae49019032016bdcb354dd0e57822f9d_7776303=
+81464548047.png" style=3D"display:block; max-width:750px; width:100%; heigh=
+t:auto; color:#5F4935; font-size:17px; line-height:140%; font-weight: bold;=
+ font-family:Tahoma, Geneva, sans-serif;border:3px hidden #fc9a3e;border-ra=
+dius:20px;" width=3D"750" /></a></td>
+</tr>
+</table>
+</td>
+</tr><tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr>
+</table>
+<!-- END BANNER --><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN SUB AC TITLE - STD -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"8=
+0%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr><td style=3D"font-family: Tahoma, Geneva, sans-serif;font-size:17px; li=
+ne-height:140%; color:#5F4935; text-align:center; padding: 0 15px;" ><font =
+color=3D"#5F4935">Tham gia =C4=91i=E1=BB=83m danh c=E1=BB=99ng =C4=91=E1=BB=
+=93ng HoYoLAB s=E1=BA=BD nh=E1=BA=ADn =C4=91=C6=B0=E1=BB=A3c Nguy=C3=AAn Th=
+=E1=BA=A1ch v=C3=A0 c=C3=A1c ph=E1=BA=A7n th=C6=B0=E1=BB=9Fng kh=C3=A1c.</f=
+ont></td></tr><tr><td style=3D" height:10px;" height=3D"10">&nbsp;</td></tr=
+></table><!-- END SUB AC TITLE - STD --><!-- BEGIN SA CTA -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"><!--[if mso]><t=
+able role=3D"presentation" width=3D"800"  cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"border-collapse:collapse; width:800px" align=3D"center"><tr><td=
+ valign=3D"top" ><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+800px;padding-bottom:15px;" class=3D"s-fullWidth" align=3D"center"><div ali=
+gn=3D"center"><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-co=
+m:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://ac=
+t.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=3De202102251931481&h=
+yl_auth_required=3Dtrue&hyl_presentation_style=3Dfullscreen?utm_source=3Dem=
+ail&utm_medium=3Dcrm&utm_id=3D2&utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-=
+0131&utm_content=3Dvi-vn_1CTACTA+09Hylstandard+DailyCheckin" target=3D"_bla=
+nk" style=3D"height:65px;v-text-anchor:middle;width:350px" arcsize=3D"0.5" =
+strokecolor=3D"#bf4e3d" fill=3D"t"><v:fill type=3D"tile" src=3D"" color=3D"=
+#bf4e3d" /><w:anchorlock/><center style=3D"color: #ffffff; font-family: Tah=
+oma, Geneva, sans-serif; font-size:17px; font-weight:bold;text-transform: u=
+ppercase;">=C4=90=E1=BA=BFn =C4=90i=E1=BB=83m Danh</center></v:roundrect><!=
+[endif]--><a   class=3D"btn-hover"  href=3D"https://n8q2q9p0.r.us-west-2.aw=
+strack.me/L0/https:%2F%2Fhoyo.link%2FmdBFOIXno%3Futm_source=3Demail%26utm_m=
+edium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%=
+26utm_content=3Dvi-vn_1CTACTA%2B09Hylstandard%2BDailyCheckin/1/01010194bacd=
+7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/YT7f8zH8ATsCwtF_COaARxKWXz=
+U=3D412" style=3D"background-color:#bf4e3d;background-image:url(''); backgr=
+ound-position: center center; background-size:cover;border:0px solid #bf4e3=
+d;border-radius:32.5px;color: #ffffff; font-family: Tahoma, Geneva, sans-se=
+rif; font-size:17px; font-weight:bold;text-transform: uppercase;display:inl=
+ine-block;line-height:65px;text-align:center;text-decoration:none;width:350=
+px;-webkit-text-size-adjust:none;mso-hide:all;" target=3D"_blank">=C4=90=E1=
+=BA=BFn =C4=90i=E1=BB=83m Danh</a>
+</div></div>
+<!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr><tr><td style=3D" height:20px;" height=3D"20">&nbsp;</td></tr>
+</table>
+<!-- END SA --><!-- BEGIN AC TITLE With BG IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"background-color:#bf4e3d" ><!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table><!-- BEGIN STD right -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;"  valign=3D"top" dir=3D"rtl"><!=
+--[if mso]><table role=3D"presentation" width=3D"800"  cellpadding=3D"0" ce=
+llspacing=3D"0" style=3D"border-collapse:collapse; width:800px" dir=3D"rtl"=
+><tr><td valign=3D"top" align=3D"right" style=3D"width:220px;" dir=3D"ltr">=
+<![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+220px;" class=3D"s-fullWidth">
+<table align=3D"center" role=3D"presentation" style=3D"border-collapse:coll=
+apse;" dir=3D"ltr" width=3D"220" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td align=3D"center" ><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L=
+0/https:%2F%2Fhoyo.link%2FewD9j0OpH%3Futm_source=3Demail%26utm_medium=3Dcrm=
+%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_conte=
+nt=3Dvi-vn_1ITTCColorchange-LongText-200pxRTL%2B10Cmevent%2BHYLbenefit/1/01=
+010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/5I0jdT9nQ06tyIXp=
+030ACeLsbJg=3D412" target=3D"_blank" ><img class=3D"img-hover" src=3D"https=
+://fastcdn.hoyoverse.com/static-resource-v2/2024/11/14/dda527cbc092d876833b=
+e5a0b52bb3d9_5022335484780189602.png" alt=3D"Img" style=3D"display:block; m=
+ax-width:150px; width:100%; height:auto; color:#5F4935; font-size:17px; lin=
+e-height:140%; font-weight: bold;border:3px hidden #fc9a3e;border-radius:20=
+px;" width=3D"200"  /></a></td></tr></table></div><!--[if mso]></td><td val=
+ign=3D"top" style=3D"width:400px;" dir=3D"ltr"><![endif]--><div style=3D"di=
+splay:inline-block;vertical-align:top;width:100%;max-width:500px;" class=3D=
+"s-fullWidth" dir=3D"ltr">
+<table role=3D"presentation" style=3D"border-collapse:collapse;" dir=3D"ltr=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td style=3D"padding-left:20px; padding-right:20px" class=3D"xs-half-Paddin=
+gText">
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" ><tr><td align=3D"center" style=3D=
+"font-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%; =
+font color=3D"#ffffff"; text-align:LEFT;font-weight:bold;" >&nbsp;</td></tr=
+><tr><td align=3D"left" style=3D"font-family: Tahoma, Geneva, sans-serif;fo=
+nt-size:17px; line-height:140%; color:#ffffff; text-align:LEFT; " >=C4=90=
+=E1=BB=83 bi=E1=BA=BFt th=C3=AAm th=C3=B4ng tin ph=C3=BAc l=E1=BB=A3i, h=C3=
+=A3y =C4=91=E1=BA=BFn HoYoLAB - Khu Ph=C3=BAc L=E1=BB=A3i Game =C4=91=E1=BB=
+=83 xem nh=C3=A9!</td></tr><tr><td align=3D"right" style=3D"font-family: Ta=
+homa, Geneva, sans-serif;font-size:17px; line-height:140%; color:#5F4935; t=
+ext-align:right;padding: 10px 0;" >
+<a class=3D"btn-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fhoyo.link%2FewD9j0OpH%3Futm_source=3Demail%26utm_medium=3Dcrm%2=
+6utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_1ITTCColorchange-LongText-200pxtCTARTL%2B10Cmevent%2BHYLbenefit/1/=
+01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/9qc1jgjUF-8CKy=
+2HUnUEl-jY2Z0=3D412" target=3D"_blank" style=3D"color: #ffffff; font-family=
+: Tahoma, Geneva, sans-serif; font-size: 17px;; font-weight: bold; text-ali=
+gn: right; text-transform: uppercase; text-decoration: underline; ">=C4=90=
+=E1=BA=BFn Ngay >>> </a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table></div><!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table> <!-- BB --><!-- BF --></td></tr></table><!-- BEGIN AC TITLE With B=
+G IMG-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center"><tr><td style=3D=
+"padding:0px;background-image: url('https://fastcdn.hoyoverse.com/static-re=
+source-v2/2025/01/17/fc061d873f9102dcbb9805111b66ea5f_1172189413758240888.p=
+ng'); background-repeat: no-repeat; background-position: center center; bac=
+kground-size: 800px;" align=3D"center" >
+<table role=3D"presentation" style=3D"border-collapse:collapse;width:340px;=
+" width=3D"340" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center" ><tr>=
+<td style=3D"height:30px;" height=3D"30">&nbsp;</td></tr><tr><td style=3D"f=
+ont-family: Tahoma, Geneva, sans-serif;font-size:28px; line-height:140%; co=
+lor:#5F4935; text-align:center; " ><strong><center>C=C3=B4ng C=E1=BB=A5 C=
+=E1=BB=99ng =C4=90=E1=BB=93ng HoYoLAB</center></strong></td></tr><tr><td st=
+yle=3D" height:30px;" height=3D"30">&nbsp;</td></tr></table></td></tr></tab=
+le><!-- END AC TITLE with BG IMG --><!-- BB --><!-- BEGIN 3Module IMAGE -->
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0"  align=3D"center">=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"  ><!--[if mso]>=
+<table role=3D"presentation" width=3D"800"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse; width:800px"><tr><td valign=3D"to=
+p" style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+390px;" class=3D"s-fullWidth" dir=3D"ltr">
+<table align=3D"center" role=3D"presentation" style=3D"border-collapse:coll=
+apse;" width=3D"95%" cellspacing=3D"0" cellpadding=3D"0" >
+
+<tr>
+<td bgcolor=3D"rgba(255, 255, 255, 0.5)" style=3D"background-color:rgba(255=
+, 255, 255, 0.5);padding-left:10px; padding-right:10px;border: 0px solid ; =
+border-radius: 10px; cursor: pointer; " >
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr><td colspan=3D"2" align=3D"right" style=3D"font-family: Tahoma, Geneva,=
+ sans-serif;font-size:17px; line-height:140%; color:#5F4935; text-align:rig=
+ht;padding: 10px 0;" >
+<a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fhoyo.link%2FmdBFOIXno%3Futm_source=3Demail%26utm_medium=3Dcrm%2=
+6utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_3Module1%2B11Hyltools%2BHyldailycheckin/1/01010194bacd7330-dd5fc25=
+2-15d1-4cf1-a98e-eff14bf89bba-000000/IAOiCYPhmAsv7WnpP-cHLaitbaA=3D412" tar=
+get=3D"_blank" ><img class=3D"img-hover" src=3D"https://fastcdn.hoyoverse.c=
+om/static-resource-v2/2023/10/13/3838cf12f23659f2a3c33c1b77efb268_524620786=
+1016160109.png" style=3D"display:block; max-width:400px; width:100%; height=
+:auto;" class=3D"s-fullWidth" width=3D"400"  /></a>
+</td>
+</tr><tr><td align=3D"left" style=3D"font-family: Tahoma, Geneva, sans-seri=
+f;font-size:17px; line-height:140%; color:#5F4935; text-align:LEFT; padding=
+: 10px;" >=C4=90i=E1=BB=83m Danh Nh=E1=BA=ADn Nguy=C3=AAn Th=E1=BA=A1ch</td=
+><td align=3D"right" style=3D"width:45px;font-family: Tahoma, Geneva, sans-=
+serif;font-size:17px; line-height:140%; color:#5F4935; text-align:right;pad=
+ding: 10px 0;" ><a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2=
+.awstrack.me/L0/https:%2F%2Fhoyo.link%2FmdBFOIXno%3Futm_source=3Demail%26ut=
+m_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-01=
+31%26utm_content=3Dvi-vn_3ModuleArrow1%2B11Hyltools%2BHyldailycheckin/1/010=
+10194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/hDVUrTa-fz-Odf9pv=
+qpjJH1JuyQ=3D412" target=3D"_blank" ><img class=3D"img-hover" src=3D"https:=
+//fastcdn.hoyoverse.com/static-resource-v2/2025/01/17/5adb679e418b8365bc721=
+e8ce0588205_1368397497916157251.png" alt=3D" >>>" style=3D"display:block; m=
+ax-width:45px; width:100%; height:auto;" width=3D"45"  /></a>
+</td>
+</tr><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+=C2=A0<tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+</table></div>
+<!--[if mso]> </td><td valign=3D"top" style=3D"width:400px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+380px;" class=3D"s-fullWidth" dir=3D"ltr">
+<table align=3D"center" role=3D"presentation" style=3D"border-collapse:coll=
+apse;" width=3D"95%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td bgcolor=3D"rgba(255, 255, 255, 0.5)" style=3D"background-color:rgba(255=
+, 255, 255, 0.5);padding-left:10px; padding-right:10px;border: 0px solid ; =
+border-radius: 10px; cursor: pointer;align:center " >
+<table  align=3D"center" role=3D"presentation"  style=3D"border-collapse:co=
+llapse;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+<tr><td align=3D"center" style=3D"width:100px;">
+<a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fhoyo.link%2FnfJTyUv1b%3Futm_source=3Demail%26utm_medium=3Dcrm%2=
+6utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_3Module2%2B11Hyltools%2BHylbattlerecord/1/01010194bacd7330-dd5fc25=
+2-15d1-4cf1-a98e-eff14bf89bba-000000/aH_jSYgA4JthYqzJSRZ6rn2wvMc=3D412" tar=
+get=3D"_blank" ><img class=3D"img-hover" src=3D"https://webstatic.hoyoverse=
+.com/upload/static-resource/2023/03/30/af6b07f55720d0b9be0da66cf0b63a9c_935=
+254306722907690.png" style=3D"display:block; max-width:60px; width:100%; he=
+ight:auto;" class=3D"s-fullWidth" width=3D"60"  /></a>
+</td><td align=3D"left" style=3D"font-family: Tahoma, Geneva, sans-serif;fo=
+nt-size:17px; line-height:140%; color:#5F4935; text-align:LEFT; padding: 10=
+px;" >Xem Chi=E1=BA=BFn T=C3=ADch C=E1=BB=A7a B=E1=BA=A1n</td><td align=3D"=
+right" style=3D"width:45px;font-family: Tahoma, Geneva, sans-serif;font-siz=
+e:17px; line-height:140%; color:#5F4935; text-align:right;padding: 10px 0;"=
+ ><a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L=
+0/https:%2F%2Fhoyo.link%2FnfJTyUv1b%3Futm_source=3Demail%26utm_medium=3Dcrm=
+%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_conte=
+nt=3Dvi-vn_3ModuleArrow2%2B11Hyltools%2BHylbattlerecord/1/01010194bacd7330-=
+dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/vAQxrZ9Y88R5cPXYSZQsUZb8PMM=3D4=
+12" target=3D"_blank" ><img class=3D"img-hover" src=3D"https://fastcdn.hoyo=
+verse.com/static-resource-v2/2025/01/17/5adb679e418b8365bc721e8ce0588205_13=
+68397497916157251.png" alt=3D" >>>" style=3D"display:block; max-width:45px;=
+ width:100%; height:auto;" width=3D"45"  /></a>
+</td>
+</tr><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+</table>
+</td>
+</tr><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>=C2=A0<tr=
+>
+<td bgcolor=3D"rgba(255, 255, 255, 0.5)" style=3D"background-color:rgba(255=
+, 255, 255, 0.5);padding-left:10px; padding-right:10px;border: 0px solid ; =
+border-radius: 10px; cursor: pointer;align:center " >
+<table role=3D"presentation"  style=3D"border-collapse:collapse;" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" >
+<tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+<tr><td align=3D"center" style=3D"width:100px;">
+<a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fhoyo.link%2FDEw8wCys9%3Futm_source=3Demail%26utm_medium=3Dcrm%2=
+6utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_3Module3%2B11Hyltools%2BHylresource/1/01010194bacd7330-dd5fc252-15=
+d1-4cf1-a98e-eff14bf89bba-000000/S1GIuZRX_RNGBe1grex08nCTWQA=3D412" target=
+=3D"_blank" ><img class=3D"img-hover" src=3D"https://webstatic.hoyoverse.co=
+m/upload/static-resource/2023/04/07/f474ba482f38a2f2420dc31c1876d155_885096=
+5305284336702.png" style=3D"display:block; max-width:60px; width:100%; heig=
+ht:auto;" class=3D"s-fullWidth" width=3D"60"  /></a>
+</td><td align=3D"left" style=3D"font-family: Tahoma, Geneva, sans-serif;fo=
+nt-size:17px; line-height:140%; color:#5F4935; text-align:LEFT; padding: 10=
+px;" >T=C3=ACm Ki=E1=BA=BFm V=E1=BB=8B Tr=C3=AD T=C3=A0i Nguy=C3=AAn</td><t=
+d align=3D"right"  style=3D"width:45px; font-family: Tahoma, Geneva, sans-s=
+erif;font-size:17px; line-height:140%; color:#5F4935; text-align:right;padd=
+ing: 10px 0;" ><a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.=
+awstrack.me/L0/https:%2F%2Fhoyo.link%2FDEw8wCys9%3Futm_source=3Demail%26utm=
+_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-013=
+1%26utm_content=3Dvi-vn_3ModuleArrow3%2B11Hyltools%2BHylresource/1/01010194=
+bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/0PSR19uxVTbRWnjzRO8c_l=
+cKTuA=3D412" target=3D"_blank" ><img class=3D"img-hover" src=3D"https://fas=
+tcdn.hoyoverse.com/static-resource-v2/2025/01/17/5adb679e418b8365bc721e8ce0=
+588205_1368397497916157251.png" alt=3D" >>>" style=3D"display:block; max-wi=
+dth:45px; width:100%; height:auto;" width=3D"45"  /></a>
+</td>
+</tr><tr><td style=3D"height:10px;" height=3D"10">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+</table></div><!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table> <!-- BB -->
+<table role=3D"presentation" width=3D"100%"  cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:20px;" height=3D"20">&nbsp;</td>
+</tr>
+</table>
+<!-- BF --><!-- BB -->
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;">
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+</table>
+
+
+<!-- BEGIN FOOTER -->
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%; min-width:=
+ 100%; height: auto; background-color: #bf4e3d;" role=3D"presentation">
+<tr>
+<td align=3D"center" style=3D"width: 100%; min-width: 100%; height: auto; p=
+adding: 0;">
+<!--[if mso]>
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 800px; margin: 0=
+ auto;">
+<tr>
+<td style=3D"width: 800px; height: auto; padding: 0; text-align: center;bac=
+kground-color: #bf4e3d;">
+<![endif]-->
+<table role=3D"presentation" style=3D"border-collapse:collapse;max-width: 8=
+00px; height: auto;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"center" bgcolor=3D"#bf4e3d" >=20
+<tr>
+<td style=3D"font-size:0;text-align:center;" valign=3D"top"><!--[if mso]><t=
+able role=3D"presentation" width=3D"800" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"border-collapse:collapse; width:800px"><tr><td valign=3D"top" st=
+yle=3D"width:800px;"><![endif]-->
+<div style=3D"display:inline-block;vertical-align:top;width:100%;max-width:=
+800px; " class=3D"s-fullwidth">
+<table role=3D"presentation" style=3D"border-collapse:collapse;" width=3D"9=
+0%" align=3D"center"cellspacing=3D"0" cellpadding=3D"0" >
+<tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr>
+<tr >
+<td align =3D "center" style=3D"padding:5px; ">
+<div style=3D"max-width:700px;width:85%;color:#ffe1ac;font-size:18px;line-h=
+eight:130%;">
+<a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fhoyo.link%2FZzjnpdp5v%3Futm_source=3Demail%26utm_medium=3Dcrm%2=
+6utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=
+=3Dvi-vn_FooterHP%2B12Footer%2BGihp/1/01010194bacd7330-dd5fc252-15d1-4cf1-a=
+98e-eff14bf89bba-000000/o6XIi6MLbxDTQ1cs-h827meNhRA=3D412" target=3D"_blank=
+" style=3D"display: inline-block; text-decoration: underline;color:#ffe1ac;=
+font-family: Tahoma, Geneva, sans-serif; font-weight: bold; font-size: 18px=
+;line-height:150%;text-transform:uppercase; " >Trang Ch=E1=BB=A7</a>&nbsp;|=
+&nbsp;<a class=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.=
+me/L0/https:%2F%2Fhoyo.link%2FqCaS8o6UH%3Futm_source=3Demail%26utm_medium=
+=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm=
+_content=3Dvi-vn_FooterRedeemCode%2B12Footer%2BGiRedeemCode/1/01010194bacd7=
+330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/zhFe6XhuPsWHJcVwnxfyk_Tts_Y=
+=3D412" target=3D"_blank" style=3D"display: inline-block; text-decoration: =
+underline;color:#ffe1ac;font-family: Tahoma, Geneva, sans-serif; font-weigh=
+t: bold; font-size: 18px;line-height:150%;text-transform:uppercase; " >M=C3=
+=A3 Qu=C3=A0</a>&nbsp;|&nbsp;<a class=3D"img-hover" href=3D"https://n8q2q9p=
+0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2F1X3kFBAL%3Futm_source=
+=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BON=
+USGreeting-0131%26utm_content=3Dvi-vn_FooterPaymentCenter%2B12Footer%2BGiPa=
+ymentCenter/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/=
+KaLIz0sZd63x6mlxHLO8pgHy23U=3D412" target=3D"_blank" style=3D"display: inli=
+ne-block; text-decoration: underline;color:#ffe1ac;font-family: Tahoma, Gen=
+eva, sans-serif; font-weight: bold; font-size: 18px;line-height:150%;text-t=
+ransform:uppercase; " >Trung T=C3=A2m N=E1=BA=A1p</a>&nbsp;|&nbsp;<a class=
+=3D"img-hover" href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2=
+F%2Fhoyo.link%2FWRy2givsE%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=
+=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-v=
+n_FooterNews%2B12Footer%2BGiNews/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e=
+-eff14bf89bba-000000/bU0Pqe6rKVwv4TpYo0e30bgWv-U=3D412" target=3D"_blank" s=
+tyle=3D"display: inline-block; text-decoration: underline;color:#ffe1ac;fon=
+t-family: Tahoma, Geneva, sans-serif; font-weight: bold; font-size: 18px;li=
+ne-height:150%;text-transform:uppercase; " >Tin T=E1=BB=A9c</a>
+</div>
+</td>
+</tr><tr>
+<td style=3D" height:10px;" height=3D"10">&nbsp;</td>
+</tr><tr>
+<td align =3D "center" style=3D"padding:5px; "><div style=3D"max-width:720p=
+x;width:90%;color:#ffe1ac">
+<a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fwww.face=
+book.com%2FGenshinImpact.vi%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_i=
+d=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131/1/01010194bacd7330-=
+dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/QAssxAAaLR5PEKjAGFdEUeWADxg=3D4=
+12" target=3D"_blank" ><img class=3D"img-hover" src=3D"https://webstatic.ho=
+yoverse.com/upload/static-resource/2023/02/17/0cee64a846a48d2f3765aff88a0b1=
+c0b_2503688046067948915.png" align=3D"center" alt=3D"Facebook" style=3D"wid=
+th:50px;padding:10px;" width=3D"50" border=3D"0" /></a><a href=3D"https://n=
+8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Ftwitter.com%2FGenshinImpact%=
+3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-=
+MK-RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff1=
+4bf89bba-000000/DG4AR_375JhoZxL3_WT6DhQj6Kg=3D412" target=3D"_blank" ><img =
+class=3D"img-hover" src=3D"https://fastcdn.hoyoverse.com/static-resource-v2=
+/2024/09/03/d75b723071186b8944e6d98fe6c0939d_4953226999589366264.png" align=
+=3D"center" alt=3D"Twitter" style=3D"width:50px;padding:10px;" width=3D"50"=
+ border=3D"0" /></a><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/=
+https:%2F%2Fapi.whatsapp.com%2Fsend%3Fphone=3D13109207335%26text=3DHello,%2=
+520Paimon%26utm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campai=
+gn=3DGI-E-MK-RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1=
+-a98e-eff14bf89bba-000000/m2TuAPT64ITZGd5JGv1rMhMdxxo=3D412" target=3D"_bla=
+nk" ><img class=3D"img-hover" src=3D"https://webstatic.hoyoverse.com/upload=
+/static-resource/2023/02/20/f861b019ac0cbe4d269a124e18b642b4_71560322245460=
+67495.png" align=3D"center" alt=3D"VK" style=3D"width:50px;padding:10px;" w=
+idth=3D"50" border=3D"0" /></a><a href=3D"https://n8q2q9p0.r.us-west-2.awst=
+rack.me/L0/https:%2F%2Fwww.youtube.com%2Fchannel%2FUCiS882YPwZt1NfaM0gR0D9Q=
+%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E=
+-MK-RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff=
+14bf89bba-000000/FBtWgNYY7pKQt-LoPOR1t6sCkyA=3D412" target=3D"_blank" ><img=
+ class=3D"img-hover" src=3D"https://webstatic.hoyoverse.com/upload/static-r=
+esource/2023/02/17/a66584df9011db6931a116016d4c52d9_5684238749662297822.png=
+" align=3D"center" alt=3D"YouTube" style=3D"width:50px;padding:10px;" width=
+=3D"50" border=3D"0" /></a><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack=
+.me/L0/https:%2F%2Fwww.instagram.com%2Fgenshinimpact%2F%3Futm_source=3Demai=
+l%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreet=
+ing-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/u2K=
+9Td9UJHSSd0DEdMs7UeCo-hU=3D412" target=3D"_blank" ><img class=3D"img-hover"=
+ src=3D"https://webstatic.hoyoverse.com/upload/static-resource/2023/02/17/c=
+8de35b31802da6e084525abe73a2b42_4483031037803953209.png" align=3D"center" a=
+lt=3D"Instagram" style=3D"width:50px;padding:10px;" width=3D"50" border=3D"=
+0" /></a><a href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2=
+Fwww.tiktok.com%2F@genshin_impact_vn%3Futm_source=3Demail%26utm_medium=3Dcr=
+m%26utm_id=3D2%26utm_campaign=3DGI-E-MK-RCL-53BONUSGreeting-0131/1/01010194=
+bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/CzY1z9R1NcToSn0qspKD_Z=
+hqvL8=3D412" target=3D"_blank" ><img class=3D"img-hover" src=3D"https://web=
+static.hoyoverse.com/upload/static-resource/2023/02/17/1d5f2bfe6e15334bfb88=
+ecd6a8d8bc87_8549987164051584645.png" align=3D"center" alt=3D"TikTok" style=
+=3D"width:50px;padding:10px;" width=3D"50" border=3D"0" /></a><a href=3D"ht=
+tps://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fdiscord.gg%2Fgenshini=
+mpact%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=
+=3DGI-E-MK-RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a=
+98e-eff14bf89bba-000000/LG4s6AygZ98Wu2ZWb_TSoYQuh9E=3D412" target=3D"_blank=
+" ><img class=3D"img-hover" src=3D"https://webstatic.hoyoverse.com/upload/s=
+tatic-resource/2023/02/17/8fab234a986c0b7477cb9bb1a7721bb1_3636250263344621=
+383.png" align=3D"center" alt=3D"Discord" style=3D"width:50px;padding:10px;=
+" width=3D"50" border=3D"0" /></a><a href=3D"https://n8q2q9p0.r.us-west-2.a=
+wstrack.me/L0/https:%2F%2Fwww.hoyolab.com%2Fcircles%2F2%2F27%2Fofficial%3Fu=
+tm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-MK-=
+RCL-53BONUSGreeting-0131/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf=
+89bba-000000/3jsiysWRspsu8P5Ojuo0XnRxulc=3D412" target=3D"_blank" ><img cla=
+ss=3D"img-hover" src=3D"https://fastcdn.hoyoverse.com/static-resource-v2/20=
+24/09/03/ae42c30c84ea4fba53dcca112e9fcfcc_5763378537046814581.png" align=3D=
+"center" alt=3D"HoYoLAB" style=3D"width:50px;padding:10px;" width=3D"50" bo=
+rder=3D"0" /></a></div></td></tr><tr><td style=3D" height:20px;" height=3D"=
+20">&nbsp;</td></tr><tr><td style=3D"height:20px;" height=3D"20">&nbsp;</td=
+></tr><tr><td align=3D"center"><img src=3D"https://webstatic.hoyoverse.com/=
+upload/static-resource/2022/02/21/135baf163a8371f40f64ba8c9caa4bbc_79940544=
+60726074880.png" alt=3D"HoYoverse" style=3D"display:block;" width=3D"200" h=
+eight=3D"auto" /></td></tr><tr><td style=3D"height:20px;" height=3D"20">&nb=
+sp;</td></tr><tr><td align=3D"center"><span style=3D"display: block;font-fa=
+mily: Tahoma, Geneva, sans-serif;font-size: 10px; line-height: 130%; color:=
+ #ffe1ac; text-align: center; margin: 0px;">N=E1=BA=BFu b=E1=BA=A1n kh=C3=
+=B4ng mu=E1=BB=91n ti=E1=BA=BFp t=E1=BB=A5c nh=E1=BA=ADn th=C6=B0, vui l=C3=
+=B2ng nh=E1=BA=A5n <a target=3D"_blank" href=3D"https://n8q2q9p0.r.us-west-=
+2.awstrack.me/L0/https:%2F%2Fwebstatic.hoyoverse.com%2Fys%2Fevent%2Fe202004=
+24unsubscribe%2Findex.html%3Ffrom=3Dnoreply.news%2540e-mail.hoyoverse.com%2=
+6lang=3Dvi-vn%26sign=3De74ba97b023f931fb792ab4b84775104%26to=3Dctyxaydungal=
+a%2540gmail.com/1/01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000=
+000/I6mGtUVqizpb331QyV9rPG8fyyQ=3D412">h=E1=BB=A7y =C4=91=C4=83ng k=C3=BD</=
+a><br/><br/>L=C6=B0u =C3=BD, sau khi h=E1=BB=A7y =C4=91=C4=83ng k=C3=BD, b=
+=E1=BA=A1n s=E1=BA=BD kh=C3=B4ng nh=E1=BA=ADn =C4=91=C6=B0=E1=BB=A3c email =
+qu=E1=BA=A3ng c=C3=A1o t=E1=BB=AB HoYoverse n=E1=BB=AFa, b=E1=BA=A1n c=C3=
+=B3 th=E1=BB=83 s=E1=BA=BD b=E1=BB=8F l=E1=BB=A1 l=E1=BB=9Di m=E1=BB=9Di th=
+=E1=BB=AD nghi=E1=BB=87m, n=E1=BB=99i dung =C4=91=E1=BB=99c quy=E1=BB=81n c=
+=E1=BB=A7a c=E1=BB=99ng =C4=91=E1=BB=93ng v=C3=A0 th=C3=B4ng b=C3=A1o v=E1=
+=BB=81 t=C6=B0 c=C3=A1ch tham gia s=E1=BB=B1 ki=E1=BB=87n c=E1=BB=A7a ch=C3=
+=BAng t=C3=B4i. =C4=90=E1=BB=93ng th=E1=BB=9Di, b=E1=BA=A1n v=E1=BA=ABn s=
+=E1=BA=BD nh=E1=BA=ADn =C4=91=C6=B0=E1=BB=A3c c=C3=A1c email li=C3=AAn quan=
+ =C4=91=E1=BA=BFn t=C3=A0i kho=E1=BA=A3n v=C3=A0 giao d=E1=BB=8Bch c=E1=BB=
+=A7a m=C3=ACnh nh=C6=B0 b=C3=ACnh th=C6=B0=E1=BB=9Dng.</span></td>
+</tr>
+<tr><td style=3D"height:20px;" height=3D"20">&nbsp;</td></tr><tr><td style=
+=3D"height:20px;" height=3D"20">&nbsp;</td></tr>
+<tr><td align=3D"center"><img src=3D"https://webstatic.hoyoverse.com/upload=
+/static-resource/2021/07/15/de84d45673ae1d6c046bfe1141c57970_16346509263033=
+04529.png" align=3D"center" alt=3D"PS5/PS4" style=3D"width:100px;padding:10=
+px;" width=3D"100" border=3D"0" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src=3D"https://webstatic.hoyoverse.com/upload/static-resource/2021/07/=
+15/1904d3037182094c961166ec9bd65f25_535215849156002310.png" align=3D"center=
+" alt=3D"IOS" style=3D"width:100px;padding:10px;" width=3D"100" border=3D"0=
+" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src=3D"https://fastcdn.hoyoverse.com/static-resource-v2/2024/01/09/6a3=
+f27ef3b896fcaa08bc7855b0825ce_2971166310925966024.png" align=3D"center" alt=
+=3D"Android" style=3D"width:100px;padding:10px;" width=3D"100" border=3D"0"=
+ />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src=3D"https://fastcdn.hoyoverse.com/static-resource-v2/2024/07/25/8a1=
+d1321b260f2cd56eab3383d3466d0_3129998317281975539.png" align=3D"center" alt=
+=3D"Windows" style=3D"width:100px;padding:10px;" width=3D"100" border=3D"0"=
+ />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src=3D"https://webstatic.hoyoverse.com/upload/static-resource/2021/07/=
+15/5802b82263f46dbf63ec93132110f5e9_1937299779485925606.png" align=3D"cente=
+r" alt=3D"Epic" style=3D"width:30px;padding:10px;" width=3D"30" border=3D"0=
+" /></span></td> </tr><tr><td style=3D"height:20px;" height=3D"20">&nbsp;</=
+td></tr><tr><td align=3D"center"><span style=3D"display: block;font-family:=
+ Tahoma, Geneva, sans-serif;font-size: 10px; line-height: 130%; color: #ffe=
+1ac; text-align: center; margin: 0px;">"PlayStation Family Mark," "PS5 logo=
+" and "PS4 logo" are registered trademarks or trademarks of Sony Interactiv=
+e Entertainment Inc.<br/>
+Epic, Epic Games, Epic Games Store, the Epic Games Store logo, and Epic Onl=
+ine Services are trademarks and/or registered trademarks of Epic Games. All=
+ other trademarks are the property of their respective owners.</span></td>
+</tr>
+<tr><td style=3D"height:20px;" height=3D"20">&nbsp;</td></tr><tr><td style=
+=3D"height:20px;" height=3D"20">&nbsp;</td></tr><tr><td align=3D"center" ><=
+p style=3D"font-family: Tahoma, Geneva, sans-serif; font-weight: normal; fo=
+nt-size: 14px; line-height: 130%; color: #ffe1ac; "><a class=3D"img-hover" =
+href=3D"https://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2=
+FbfU7qKSS4%3Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campa=
+ign=3DGI-E-MK-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_FooterTerms/1/=
+01010194bacd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/va9ejbNYdNDzuf=
+vGOJwXk5MU_4Y=3D412" target=3D"_blank" style=3D"display: inline-block; text=
+-decoration: underline;color:#ffe1ac;font-family: Tahoma, Geneva, sans-seri=
+f; font-weight: normal; font-size: 14px; ">=C4=90i=E1=BB=81u Kho=E1=BA=A3n =
+D=E1=BB=8Bch V=E1=BB=A5</a>&nbsp;|&nbsp;<a class=3D"img-hover" href=3D"http=
+s://n8q2q9p0.r.us-west-2.awstrack.me/L0/https:%2F%2Fhoyo.link%2FT4w9Q2ekN%3=
+Futm_source=3Demail%26utm_medium=3Dcrm%26utm_id=3D2%26utm_campaign=3DGI-E-M=
+K-RCL-53BONUSGreeting-0131%26utm_content=3Dvi-vn_FooterPrivacy/1/01010194ba=
+cd7330-dd5fc252-15d1-4cf1-a98e-eff14bf89bba-000000/60nEikFcWxfpAHn_aAVEth-R=
+FAE=3D412" target=3D"_blank" style=3D"display: inline-block; text-decoratio=
+n: underline;color:#ffe1ac;font-family: Tahoma, Geneva, sans-serif; font-we=
+ight: normal; font-size: 14px; ">Ch=C3=ADnh S=C3=A1ch V=E1=BB=81 Quy=E1=BB=
+=81n Ri=C3=AAng T=C6=B0</a></p></td></tr><tr><td style=3D"height:20px;" hei=
+ght=3D"20">&nbsp;</td></tr><tr><td align=3D"center"><span style=3D"display:=
+ block;font-family: Tahoma, Geneva, sans-serif;font-size: 10px; line-height=
+: 130%; color: #ffe1ac; text-align: center; margin: 0px;">Copyright =C2=A9 =
+COGNOSPHERE. All Rights Reserved.</span></td>
+</tr><tr><td style=3D"height:20px;" height=3D"20">&nbsp;</td></tr><tr><td a=
+lign=3D"center"><span style=3D"display: block;font-family: Tahoma, Geneva, =
+sans-serif;font-size: 10px; line-height: 130%; color: #ffe1ac; text-align: =
+center; margin: 0px;">COGNOSPHERE PTE. LTD., 1 One-North Crescent, #06-01/0=
+2, Singapore (138538)</span></td>
+</tr>
+<tr><td style=3D"height:20px;" height=3D"20">&nbsp;</td></tr></table>
+</div>
+<!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table><!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>=20
+
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- ####END_footer#### -->=20
+<div class=3D"xs-hackgmail" style=3D"white-space:nowrap;font-size:15px;font=
+-family:monospace;line-height:0;display:none;"> </div>
+</div>
+</center>
+</body></html>

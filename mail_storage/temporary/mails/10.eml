@@ -1,0 +1,313 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:c68c:0:b0:21c:10c3:3c59 with SMTP id e12csp11393487eig;
+        Mon, 6 Jan 2025 07:11:08 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEyQinHPrtebsNNH43dHVqUJdeYS5lrbeECcTpLswBZdTL7z/OaFFJF1ANmhy3uCetNe147
+X-Received: by 2002:a17:90a:fc48:b0:2ee:8e75:4aeb with SMTP id 98e67ed59e1d1-2f452e49238mr93727487a91.17.1736176268587;
+        Mon, 06 Jan 2025 07:11:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736176268; cv=none;
+        d=google.com; s=arc-20240605;
+        b=U8B/xmDPJJdTpWrHNMa2npM6D7V1J8I8DtFSiZ1scj3NCThEnbEV/e9HpHJnK6hM6C
+         lNJUjlTGTRBBx/VC0qn2i/jXXhKA3QZXwsk0ikHD4La0OL8AJbahggGsIlNm6rw5/Xfj
+         nhvFqWmGVZsihc32wrDaurIWnJQToDYGc4DTd1SeAFCMZ5Sv2EJ6U121C+xw6cNFP1ts
+         LtBVWiH97tutmZUVgp9HAiFrJ42NFoQVEQXIiccdPpfX942Fdj5YwxDc1lbY0YmMG5q/
+         sp8GE6im/9vrfRXe5PMJwEwwxKVWtslcy4Ux/4GaVk11JFjPWiaRsESC4BFMBLuwtlSy
+         vHsg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=Zv/XsnEwI3oW24hV14XPFwT2VUFdqWVKdmqLmCamrM0=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=bbgkjYBgIiaQtNxeIqBHivbgM+0VJqEc5vldwr0aoF0ybe2m4GLnTncjpBZUBpY8y8
+         b4hVN3sBLcOifq44LCMzzCjmunWNoSZZqe0cTjlWWF8Ch1APrz6m79z9me10isqdsFBw
+         NfG8UzlcrWubtd+6ZZLsPm3xhEWpZMuQqkp/Hcjh5F97MLUPnlvz89LAKjX30CMVlH5X
+         s8pmSxtU/5MTcG2dhe4mHLi5NoK/SS6bqImfH3o/QA9JFWj2Zt86PHEX9HxXqgZFRzm3
+         4yd/sm+S8+OCVJSgSnG1f9onUpKXQX7Sw1EMajEmPWm0hoRt+8+O1PYK5eiX/YJIbC8p
+         Sh8g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@zoom.us header.s=sg header.b=V7K5GrcQ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="zmajlVF/";
+       spf=pass (google.com: domain of bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us designates 149.72.196.77 as permitted sender) smtp.mailfrom="bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zoom.us
+Return-Path: <bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us>
+Received: from wrqvcqqd.outbound-mail.sendgrid.net (wrqvcqqd.outbound-mail.sendgrid.net. [149.72.196.77])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-2f53bbfc12csi78708a91.165.2025.01.06.07.11.08
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Jan 2025 07:11:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us designates 149.72.196.77 as permitted sender) client-ip=149.72.196.77;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@zoom.us header.s=sg header.b=V7K5GrcQ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="zmajlVF/";
+       spf=pass (google.com: domain of bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us designates 149.72.196.77 as permitted sender) smtp.mailfrom="bounces+15570388-7248-ctyxaydungala=gmail.com@bounce-sg.zoom.us";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zoom.us
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=zoom.us;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=sg; bh=Zv/XsnEwI3oW24hV14XPFwT2VUFdqWVKdmqLmCamrM0=;
+	b=V7K5GrcQjfIbQHTqZKIvTgFwMqz60JybxLb2oKK5ekDc5OtDfVpC5AopQpH5IIKl318F
+	KcEHyiP3luo+YYhm6pfOiPM9Jk5ElhXg+NtMaZUFiQWaOm9HeEBGlPuB0l8omhLM1mNjUj
+	m2bEfBZUtRydFn1JC9cYBUug+Xj4cT9xd7eSC/9EchrjNHuYrVdMiwzJwMKYd/6/ljfC23
+	KFrS9eSOB2BbmptCvj+a6VLOk7RNjg3TLk/eRi34m0fLW2mqumeKs+MlMiwvafBDB9Bt2X
+	BjCTDb2Xq1etcRIDQUiJ6dv63zBGJl5gWxy4UtENwl15AY9Btkrin64ALIyQUsdw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=Zv/XsnEwI3oW24hV14XPFwT2VUFdqWVKdmqLmCamrM0=;
+	b=zmajlVF//pIPDeAuTVV4amvDe+a43j3ivhz4scbLV+i6gqIgt0vPfV7/IFJ2i+54XcJn
+	3OoJMSXOawmMqXbAdfExKHzVM5SDWoTdgN0RzNd+R800OLQbayVZU2YS0fm66dgCjwpn0H
+	jCoVR6yioQ5fo0bx8uQr5AHDQdzxh8Lm4=
+Received: by recvd-6d6d8c9b6-8gsr7 with SMTP id recvd-6d6d8c9b6-8gsr7-1-677BF28B-7D
+	2025-01-06 15:11:07.970721253 +0000 UTC m=+4556825.891180840
+Received: from MTU1NzAzODg (unknown)
+	by geopod-ismtpd-22 (SG) with HTTP
+	id OmBR2SrwQsON-OQvO4PqlA
+	Mon, 06 Jan 2025 15:11:07.916 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Mon, 06 Jan 2025 15:11:07 +0000 (UTC)
+From: TU VAN THUE CHUYEN NGHIEP <no-reply@zoom.us>
+Mime-Version: 1.0
+Message-ID: <OmBR2SrwQsON-OQvO4PqlA@geopod-ismtpd-22>
+Subject: Whiteboard shared with you:
+ =?UTF-8?B?8J+nkeKAjfCfkrzwn5OMIEThu4pDSCBW4bukIELDgU8gQ8OBTw==?=
+ =?UTF-8?B?IFRIVeG6viAyMDI0IOKAkyBHSeG6okkgUEjDgVAgVElOIEPhuqxZ?= CHO
+ =?UTF-8?B?TeG7jEkgRE9BTkggTkdISeG7hlAh?=
+X-Feedback-ID: 15570388:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EVQoDzj1+54n0Ghc5CcC7CJrt+xcdLvBmlG4YgxClVsWj8BjB36NUPm7Bw?=
+ =?us-ascii?Q?IgzO7AgK+2yuzIXkpK0HRrZREyOhTq8cFAjGLSW?=
+ =?us-ascii?Q?0tffiSv30DSfrPanztH6hvV+xX3DAAv=2F0rI0aK=2F?=
+ =?us-ascii?Q?KgabWi0CauxOJfxfmZpizOxkaTntDz8ZKNLi5ha?=
+ =?us-ascii?Q?=2FlfTOqTd+O6t5e5lZdBmkWi3x4RQzjGL1syHQ81?=
+ =?us-ascii?Q?rq7F3j3wXuYf1hZcaJ5upJjHNIoZa=2F4wLN2cEaW?=
+ =?us-ascii?Q?dey=2F?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BgYViiph3YimATmi9Yrfiw0PpanqNqM3eCKoZ?=
+ =?us-ascii?Q?EqO5YJoL1bFpGWrVJorQq1pv9bVWLGlg1BR0iQQ?=
+ =?us-ascii?Q?lKGeGYKhTF8nhCZFi+kYx23Qo4W0qiHISuopx=2Fm?=
+ =?us-ascii?Q?K2G8EaMyTEwVFucMzoPEZlbUpavEodII5Hf3ZqU?=
+ =?us-ascii?Q?Mz1lPzI8tjNwUjPO4CNF1bIM98nQpPYQ+Fpja+g?=
+ =?us-ascii?Q?7IYeliWrwHCLEt+mi4smCloGRgH+1wEGJj3DwKp?=
+ =?us-ascii?Q?=2FgT7TCXfJfWk1+mwHTwZgIwD1ltKTzK4tQSKEVl?=
+ =?us-ascii?Q?7gUs8SzOx6IJCSkImnvaRPOa2d7+1fz+5dKYxMZ?=
+ =?us-ascii?Q?MWI50rW+LddRypz6FlmM1p=2FkhDCZoDDHD7zGoKq?=
+ =?us-ascii?Q?4EWil36vsfRs4kGMFef0+pxocT4tE3UUkf+PYad?=
+ =?us-ascii?Q?NT4pcdHNt1ntnXenkctcluzRNww4fZYxHnwxbMe?=
+ =?us-ascii?Q?dywTzjqAFv5jsoDnnyFxrZOsxTmB3Lx8tBeOIEi?=
+ =?us-ascii?Q?t+71ctt4Z7+DrXKMo+piKslqGkQMhRbd1KEWc+s?=
+ =?us-ascii?Q?o8g+JwCoSV2shYbWGGWZ7VZeUbuFMQjHtFeszan?=
+ =?us-ascii?Q?by1U=2F75mvJfBFJyXxrvtgPeHPLJc+Mqcf9E2Bb=2F?=
+ =?us-ascii?Q?XQGr7HrBmpcVZpN6yrYVQDU+d+lGzbFGzQRMBBG?=
+ =?us-ascii?Q?nrk16vfUEx8RY4exKJoH09d1L7NTILOyKSAOfws?=
+ =?us-ascii?Q?HmrIS1mbtVujB46qo9yEknz8GfpQ1+y3YyVfEM4?=
+ =?us-ascii?Q?JbCViv+bN0mt153pOL22sOJx9=2FVbo1ZetOo3tPf?=
+ =?us-ascii?Q?T02VVpVNF3yNzwfx=2F9ss52JEaz=2F4yYMQgHtBATa?=
+ =?us-ascii?Q?II4vnt+h7r8ZtAF4IUID90JthQNa2bOR4VH6lEh?=
+ =?us-ascii?Q?E2hlwm6LNM9n6MMH+jJPqTU2nrSTBmYRNDPdquk?=
+ =?us-ascii?Q?Q=2FwjMglkX=2Fvp8trr6xPXX6NB7r=2F31FvxIL+YBdz?=
+ =?us-ascii?Q?63odvEpL0rOz5T6EdztVKFzUGl8=2FQK0hkl2lJTp?=
+ =?us-ascii?Q?mliFGx6UBEx+ibD3RhooN1Xcz7tSth=2F3fddklZX?=
+ =?us-ascii?Q?fjJl6nzUBY=3D?=
+To: ctyxaydungala@gmail.com
+X-Entity-ID: u001.6mUY7xs+tNnsNuz7tuXEzQ==
+
+<html>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+"/>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/></head>
+<body bgcolor=3D"#F7F9FA">
+<table width=3D"100%" align=3D"center" table-layout=3D"fixed" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#F7F9FA"
+       style=3D"padding:40px 40px 40px 40px; word-break:break-word; font-fa=
+mily:Helvetica Neue,Helvetica,Arial,sans-serif,serif,EmojiFont;">
+    <!-- email header -->
+    <tr>
+        <td style=3D"padding:0px 0px 0px 0px;">
+            <table width=3D"600" align=3D"center" table-layout=3D"fixed" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+                   bgcolor=3D"#0B5CFF"
+                   style=3D"min-width:600px;">
+                <tr>
+                    <td align=3D"left" style=3D"padding:28px 32px 28px 32px=
+;">
+                        <a href=3D"https://us05web.zoom.us">
+                            <img src=3D"https://click.zoom.us/l/84442/2022-=
+12-29/c4ns1t/84442/1672332921RKagdau8/Logo_white_2022.png" width=3D"110" he=
+ight=3D"25"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+
+
+
+
+
+    <!-- email body -->
+    <tr>
+        <td style=3D"padding:0px 0px 0px 0px">
+            <table width=3D"600" align=3D"center" table-layout=3D"fixed" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+                   bgcolor=3D"#FFFFFF"
+                   style=3D"min-width:600px; word-break:break-word; font-fa=
+mily:Helvetica Neue,Helvetica,Arial,sans-serif,serif,EmojiFont;">
+                <tr>
+                    <td style=3D"padding:32px 32px 0px 32px;
+                    font-style:normal; font-size:36px; font-weight:700; lin=
+e-height:40px; color:#131619;">
+                        TU VAN THUE CHUYEN NGHIEP &lt;deepucreamy91<br styl=
+e=3D"display:none;"/>+60228396<br style=3D"display:none;"/>@gmail<br style=
+=3D"display:none;"/>.com&gt; has invited you to edit the following whiteboa=
+rd:
+                    </td>
+                </tr>
+                <tr>
+                    <td style=3D"padding:32px 32px 0px 32px;
+                    font-style:normal; font-size:20px; font-weight:500; lin=
+e-height:24px; color:#222230;">
+                        =F0=9F=A7=91=E2=80=8D=F0=9F=92=BC=F0=9F=93=8C D=E1=
+=BB=8ACH V=E1=BB=A4 B=C3=81O C=C3=81O THU=E1=BA=BE 2024 =E2=80=93 GI=E1=BA=
+=A2I PH=C3=81P TIN C=E1=BA=ACY CHO M=E1=BB=8CI DOANH NGHI=E1=BB=86P!
+                    </td>
+                </tr>
+                    <tr>
+                        <td style=3D"padding:15px 32px 15px 32px;
+                        font-style:normal; font-size:20px; font-weight:400;=
+ line-height:23px; color:#000000;">
+                            &quot;TT&nbsp;li=C3=AAn&nbsp;h=E1=BB=87<br styl=
+e=3D"display:none;"/>:&nbsp;<br style=3D"display:none;"/>+&nbsp;84&nbsp;9&n=
+bsp;61&nbsp;708&nbsp;369&nbsp;(&nbsp;ZALO)<br/>=C4=90=C6=A1n&nbsp;v=E1=BB=
+=8B&nbsp;m=C3=ACnh&nbsp;c=E1=BA=A7n&nbsp;h=E1=BB=97&nbsp;tr=E1=BB=A3<br sty=
+le=3D"display:none;"/>:&nbsp;HO=C3=80N&nbsp;THI=E1=BB=86N&nbsp;B=C3=81O&nbs=
+p;C=C3=81O&nbsp;THU=E1=BA=BE&nbsp;QU=C3=9D&nbsp;4&nbsp;&amp;&nbsp;B=C3=81O&=
+nbsp;C=C3=81O&nbsp;T=C3=80I&nbsp;CH=C3=8DNH&nbsp;N=C4=82M&nbsp;2024<br/>B=
+=C3=AAn&nbsp;E&nbsp;ti=E1=BA=BFp&nbsp;t=E1=BB=A5c&nbsp;h=E1=BB=97&nbsp;tr=
+=E1=BB=A3&nbsp;DN&nbsp;tr=C3=AAn&nbsp;to=C3=A0n&nbsp;qu=E1=BB=91c<br style=
+=3D"display:none;"/>.&nbsp;Chi&nbsp;ph=C3=AD&nbsp;h=E1=BB=A3p&nbsp;l=C3=BD&=
+nbsp;cho&nbsp;DN&quot;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=3D"padding:8px 32px 0px 32px;">
+                            <img src=3D"https://us05nws.zoom.us/nws/das/api=
+/wb-default.jpg"
+                                 style=3D"width:360px; height:270px; border=
+-radius:8px; border:1px solid rgba(82, 82, 128, 0.18);">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align=3D"left" style=3D"padding:24px 32px 0px 3=
+2px;">
+                            <table height=3D"40" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" bgcolor=3D"#0E72ED"
+                                   style=3D"border-radius:10px;">
+                                <tr>
+                                    <td align=3D"center" style=3D"padding:8=
+px 16px 8px 16px; gap:8px">
+                                        <a href=3D"https://zoom.us/wb/doc/-=
+LAzGKfzQyWfBJ6v3xeTGQ"
+                                           style=3D"font-style:normal; font=
+-weight:600; font-size:16px; line-height:24px; text-decoration:none; color:=
+#FFFFFF;">
+                                            Open
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                <tr>
+                    <td align=3D"left" height=3D"48" style=3D"padding:32px =
+32px 32px 32px;
+                    font-style:normal; font-size:16px; font-weight:400; lin=
+e-height:20px; color:#131619">
+                        Best,<br/>Zoom
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- email footer -->
+<tr>
+    <td style=3D"padding:0px 0px 0px 0px;">
+        <table width=3D"600" align=3D"center" table-layout=3D"fixed" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+               bgcolor=3D"#FFFFFF"
+               style=3D"min-width:600px; padding:0px 32px 0px 32px; font-fa=
+mily:Helvetica Neue,Helvetica,Arial,sans-serif,serif,EmojiFont;">
+            <tr>
+                <td style=3D"padding:24px 0px 0px 0px">
+                    <table align=3D"center" width=3D"128" height=3D"32" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                            <td align=3D"center"
+                                style=3D"width:32px; height:32px; line-heig=
+ht:0px; padding:0px 0px 0px 0px; background:#F1F4F6; border-radius:100px;">
+                                <a href=3D"https://twitter.com/Zoom"
+                                   style=3D"text-decoration:none; display:i=
+nline-block;">
+                                    <img alt=3D"" border=3D"0" src=3D"https=
+://click.zoom.us/l/84442/2023-01-04/c4p58p/84442/1672868376w8GK1zrC/IconTwi=
+tter.png" style=3D"vertical-align:middle; width:14px; height:14px;"/>
+                                </a>
+                            </td>
+                            <td style=3D"width:16px; height:32px;"></td>
+                            <td align=3D"center"
+                                style=3D"width:32px; height:32px; line-heig=
+ht:0px; padding:0px 0px 0px 0px; background:#F1F4F6; border-radius:100px;">
+                                <a href=3D"https://www.linkedin.com/company=
+/zoom-video-communications"
+                                   style=3D"text-decoration:none; display:i=
+nline-block;">
+                                    <img alt=3D"" border=3D"0" src=3D"https=
+://click.zoom.us/l/84442/2023-01-04/c4p58h/84442/16728683768CGLYhOh/IconLin=
+kedIn.png" style=3D"vertical-align:middle; width:14px; height:14px;"/>
+                                </a>
+                            </td>
+                            <td style=3D"width:16px; height:32px;"></td>
+                            <td align=3D"center"
+                                style=3D"width:32px; height:32px; line-heig=
+ht:0px; padding:0px 0px 0px 0px; background:#F1F4F6; border-radius:100px;">
+                                <a href=3D"https://blog.zoom.us/"
+                                   style=3D"text-decoration:none; display:i=
+nline-block;">
+                                    <img alt=3D"" border=3D"0" src=3D"https=
+://click.zoom.us/l/84442/2023-01-04/c4p58l/84442/1672868376V1YWNaf9/IconRSS=
+.png" style=3D"vertical-align:middle; width:14px; height:14px;"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align=3D"center"
+                    style=3D"padding:16px 0px 0px 0px;
+                        font-style:normal; font-size:12px; font-weight:400;=
+ mso-line-height-rule:exactly; line-height:16px; color:#6E7680;">
+                    +1.888.799.9666<br/>
+                    =C2=A92025 Zoom Video Communications, Inc.
+                </td>
+            </tr>
+            <tr>
+                <td align=3D"center"
+                    style=3D"padding:16px 0px 32px 0px;
+                        font-style:normal; font-size:12px; font-weight:400;=
+ mso-line-height-rule:exactly; line-height:16px; color:#6E7680;">
+                    Visit <a href=3D"https://zoom.us" style=3D"color:#6E768=
+0" target=3D"_blank">Zoom.us</a>
+                    <br/>55 Almaden Blvd<br/>San Jose, CA 95113
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr></table>
+</body>
+</html>

@@ -1,0 +1,93 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a05:640c:1b56:b0:21c:10c3:3c59 with SMTP id z22csp1365735eiu;
+        Fri, 24 Jan 2025 22:02:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEFgA7wbGHpbc2i4TOL8KBhCZgIH2fsGZ72Gk1RT1rLFgp/EZJzH9O6+4IeR2xIeeZggNcR
+X-Received: by 2002:a05:6a20:1587:b0:1e1:a885:3e21 with SMTP id adf61e73a8af0-1eb2144d3fcmr56004898637.7.1737784935043;
+        Fri, 24 Jan 2025 22:02:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737784935; cv=none;
+        d=google.com; s=arc-20240605;
+        b=F3NXTklqxxdYlzffGDCXh99dfzn811FTjNREH9NZJkQq+P5GY0j54D6cTsU8nniGyg
+         +NguQiF4bHcaghgHiB5VY+EKvRGy7aZ4AWL3G2dghb9Em+JgtCKV/Xsr/o+gKAy7WM/q
+         SGzJbYsPp+xBA+ynlHeqH4tXI1J4zPD83wXpfTtTDiXcXC7Yt1uRzDzuA8qENM0ZTEZr
+         XYVlyjPrZPp+EG1reuF75rtily93EUuipi6DVttw9XTcgE1qBqKXn1CWyfyRSOnEyC99
+         TV0AYccXz8KVNAJQoboRapmu1rbcLN9dYZvXN+mhjoBPZ7heaV325JRB9RCkEoKLOjDr
+         iQBw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=eRU51KkoMYixCvAkNCY0jvxl76/J0dtbanOM7wuYZkM=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=Vdo5dtvAGof1cg590MP0+wupinBN+BlFguHBb7UTDwCJBhbpB71sN0TT16nx9a3T6H
+         +bhZQ9zeJTD2GrUkcZZ1BItiL6rjAt7FBCzs4s6G0NZbbixpzYrL7zIoCmzEeVd1Kk8+
+         AvM1mgVJb2gja8aplDa829uNNHH/726VDOrTUE3a+fQ7Q16nEqiyVs5UiKBucnpzzRYX
+         6bnbgU8nRrHuWxb7l1AggMSm+wURYJDgTf7XPxKamaD+llsY71GvyaHeekwIbzviWGHZ
+         eWpXRPzlATnVELh635e/ZH6vlfRuTLq2JFrUCRTMXSVvYh7qVQ596rjDqxjVNvoY6j4v
+         FdUQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=Q2Sj7cQ6;
+       spf=pass (google.com: domain of hoadondientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=hoadondientu@gdt.gov.vn
+Return-Path: <hoadondientu@gdt.gov.vn>
+Received: from DC-NET-MAILGW02-Public.vp.tct.vn (mail2.gdt.gov.vn. [103.9.200.38])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac48f897e6esi4697276a12.179.2025.01.24.22.02.14
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Fri, 24 Jan 2025 22:02:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of hoadondientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) client-ip=103.9.200.38;
+Authentication-Results: mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=Q2Sj7cQ6;
+       spf=pass (google.com: domain of hoadondientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=hoadondientu@gdt.gov.vn
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=gdt.gov.vn; i=@gdt.gov.vn; q=dns/txt; s=mail;
+  t=1737784935; x=1769320935;
+  h=date:from:to:message-id:subject:mime-version:
+   content-transfer-encoding;
+  bh=eRU51KkoMYixCvAkNCY0jvxl76/J0dtbanOM7wuYZkM=;
+  b=Q2Sj7cQ6CxVPmulNg/TEIqW2XQMlrMpBWzdNVGIb8wizWyrbd78jlRfn
+   uqUrL/v0KNmCa3/ftKCEw402WktW+4pYje3KNxwDvABOgIyaRYN1j8e1J
+   Ci5BRsVae0ux06gI/J5ZFPVoRN/k2LkuN5x4xvQQNs3LBxJODw93vpmzp
+   Cfvv0WcBMjJKTQ23DQgxktSzB2Ub9buTBiQAQPz3oM9y7nLzKllMfQ9oa
+   3ehr3aY8Dw1rPMgARK3+zlB0KYpcoGswpZrgSEAJlexPCpqZsP92mb+n2
+   qLFeMnfgyJWnwy77EJwaUewN04nmFXkP/0ewx+O2YBg5Fz5LEckS87G+x
+   Q==;
+X-CSE-ConnectionGUID: 8swpSFsSTjG8n+mHOSUSSg==
+X-CSE-MsgGUID: Pbp5uTpIThaywAs3OPNaTg==
+Received: from unknown (HELO tct-ehdcorems41.vp.tct.vn) ([10.64.98.223])
+  by DC-NET-MAILGW02-Private.vp.tct.vn with ESMTP; 25 Jan 2025 13:02:03 +0700
+Date: Sat, 25 Jan 2025 13:02:02 +0700 (ICT)
+From: hoadondientu@gdt.gov.vn
+To: ctyxaydungala@gmail.com
+Message-ID: <1711718844.5303250.1737784922492@tct-ehdcorems41.vp.tct.vn>
+Subject: =?utf-8?Q?Th=C3=B4ng_b=C3=A1o_c=E1=BB=A7a?=
+ =?utf-8?Q?_=E1=BB=A9ng_d=E1=BB=A5ng_H=C4=90=C4=90T?=
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div>K=C3=ADnh g=E1=BB=ADi: C=C3=94NG TY TNHH M=E1=BB=98T TH=C3=80NH VI=C3=
+=8AN X=C3=82Y D=E1=BB=B0NG A.L.A
+(M=C3=A3 s=E1=BB=91 Thu=E1=BA=BF: 3602510564)</div><br><div>Ng=C3=A0y 23/01=
+/2025, theo s=E1=BB=91 li=E1=BB=87u ghi nh=E1=BA=ADn tr=C3=AAn H=E1=BB=87 t=
+h=E1=BB=91ng H=C3=B3a =C4=91=C6=A1n =C4=91i=E1=BB=87n t=E1=BB=AD, NNT c=C3=
+=B3 gi=C3=A1 tr=E1=BB=8B h=C3=A0ng h=C3=B3a d=E1=BB=8Bch v=E1=BB=A5 b=C3=A1=
+n ra v=C6=B0=E1=BB=A3t qu=C3=A1 gi=C3=A1 tr=E1=BB=8B h=C3=A0ng t=E1=BB=93n =
+kho thu=E1=BB=99c di=E1=BB=87n c=E1=BA=A3nh b=C3=A1o r=E1=BB=A7i ro.<br><ta=
+ble style=3D'border:1px solid black; border-collapse:collapse;'><tr><th sty=
+le=3D'border:1px solid black; padding:5px;'>STT</th><th style=3D'border:1px=
+ solid black; padding:5px;'>M=C3=A3 s=E1=BB=91 thu=E1=BA=BF ng=C6=B0=E1=BB=
+=9Di b=C3=A1n</th><th style=3D'border:1px solid black; padding:5px;'>T=C3=
+=AAn ng=C6=B0=E1=BB=9Di b=C3=A1n</th><th style=3D'border:1px solid black; p=
+adding:5px;'>C=C6=A1 quan thu=E1=BA=BF qu=E1=BA=A3n l=C3=BD</th><th style=
+=3D'border:1px solid black; padding:5px;'>Ng=C3=A0y c=E1=BA=A5p MST</th><th=
+ style=3D'border:1px solid black; padding:5px;'>Ng=C3=A0nh ngh=E1=BB=81 kin=
+h doanh ch=C3=ADnh</th></tr><tr><td style=3D'border:1px solid black; paddin=
+g:5px;text-align:center;'>1</td><td style=3D'border:1px solid black; paddin=
+g:5px;text-align:center;'>3603183327</td><td style=3D'border:1px solid blac=
+k; padding:5px;'>C=C3=94NG TY TNHH QU=E1=BB=90C PH=C3=9A S=C6=A0N L=C3=82M<=
+/td><td style=3D'border:1px solid black; padding:5px;'>Huy=E1=BB=87n Th=E1=
+=BB=91ng Nh=E1=BA=A5t - Chi c=E1=BB=A5c Thu=E1=BA=BF khu v=E1=BB=B1c Tr=E1=
+=BA=A3ng Bom - Th=E1=BB=91ng Nh=E1=BA=A5t</td><td style=3D'border:1px solid=
+ black; padding:5px;text-align:center;'>28/05/2014</td><td style=3D'border:=
+1px solid black; padding:5px;'>Khai th=C3=A1c =C4=91=C3=A1, c=C3=A1t, s=E1=
+=BB=8Fi, =C4=91=E1=BA=A5t s=C3=A9t (B0810)</td></tr></table></div><br><div>=
+K=C3=ADnh th=C3=B4ng b=C3=A1o!</div>

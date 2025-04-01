@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><TBaoThueDTu><TBaoThue id="_NODE_TO_SIGN"><TTinChung><CQT><maCQT>71302</maCQT><tenCQT>Thành phố Long Khánh - Chi cục Thuế khu vực Long Khánh - Cẩm Mỹ </tenCQT><DVu><maDVu>ETAX</maDVu><tenDVu>ETAX</tenDVu><pbanDVu>1.1.0</pbanDVu></DVu></CQT><NNhanTBaoThue><maNNhan>3602510564</maNNhan><tenNNhan>CÔNG TY TNHH MỘT THÀNH VIÊN XÂY DỰNG A.L.A</tenNNhan><diaChiNNhan/></NNhanTBaoThue><TTinTBaoThue><maTBao>801</maTBao><tenTBao>V/v: Xác nhận nộp chứng từ nộp thuế điện tử</tenTBao><pbanTBao>2.2.0</pbanTBao><soTBao>NTDT360251056400023012025194357842</soTBao><ngayTBao>23/01/2025 19:43:57</ngayTBao></TTinTBaoThue></TTinChung><NDungTBao><trangThai>Y</trangThai><ngayHoSo>23/01/2025 19:43:57</ngayHoSo><maHoSo>9</maHoSo><tenHoSo>Giấy nộp tiền vào ngân sách nhà nước</tenHoSo><maGiaoDichDTu>11220250294505247</maGiaoDichDTu><lyDo/><hotline/><url>https://thuedientu.gdt.gov.vn</url><maHoSoDvc>732.75.18.G12-250123-17130245397229</maHoSoDvc><GiayNopTien><CTietGNT><soGNT>00000360251056401202528235683</soGNT><taiKhoanTN>050082506443</taiKhoanTN><maNHTM>STB</maNHTM><tenNHTM>Ngân hàng TMCP Sài gòn Thương Tín</tenNHTM><mstThuHuong>3602510564</mstThuHuong><tenNTH>CÔNG TY TNHH MỘT THÀNH VIÊN XÂY DỰNG A.L.A</tenNTH><maKBNN>1766</maKBNN><tenKBNN>KBNN Long Khánh - Đồng Nai</tenKBNN><maCQTHU>1054333</maCQTHU><tenCQTHU>Thành phố Long Khánh - Chi cục Thuế khu vực Long Khánh - Cẩm Mỹ </tenCQTHU><tongSoKhoan>1</tongSoKhoan><ngayNopGNT>23/01/2025 19:43:57</ngayNopGNT><maNguyenTe>VND</maNguyenTe><tongTienNSNN>3000000</tongTienNSNN></CTietGNT></GiayNopTien></NDungTBao></TBaoThue><CKyDTu><Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="signatureProperties"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"><InclusiveNamespaces xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="#default"/></CanonicalizationMethod><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2002/06/xmldsig-filter2"><XPath xmlns="http://www.w3.org/2002/06/xmldsig-filter2" Filter="intersect">//TBaoThue</XPath></Transform><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>2pxb2gaipT+yT4MIc76zpdF0emI=</DigestValue></Reference><Reference URI="#TimeSignatureTCT"><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>9/gjS47M0sUjwTKynIz3ZIWTDXs=</DigestValue></Reference></SignedInfo><SignatureValue>KgTDnvO7b/sPgYE1IcraSjQx4mmfcIv7rR/UVru08BLZ+KW7WOVDubxMQWw6UvHUGUUZ2YVXrFg7
+FO1i/NWktWLHOcXEYP1Di2CSvWN4Ww820SWAb4556MzvLzZHpd+efaqNH3ENcrDx8Vhco0uentHD
+wc9eFq8fIboxm1cSI19tgtCELhkLFEjCzMy47xbKp+LdMm/uMeYPfw/l58DhlDQ+GU6Ik1qjqSSk
+lrm43nZPGPOHcNhs5I4cRaVfVq9D6/9Cx8s7NphpHeXk+iqn10pgFYXB9mYqu/YxTyDdUSKflYNC
+aQEJ86kJIs5JWxWyjzepZZEYNZuHCXoE7w2vVg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>389R3V8CsclSouIjOk5VQHSMtUr74Bo5H2txfSmGowrmJcuo2oknyGG4Dv7lPU1M3V3GKtub3EJB
+gHscj2z51IOOR+j6zZq/7w9srrxFEg7jRAFZX5wfh/ut86rzaZSBU/2hwYYaWpy829AJ+GRfeSM+
+AQZuN7wmS0+t4TwakGmE2ep8d4+jcXYmA+0FeYEAqwlhMJYPbgW+NjPMMB+DTe73BkPqLrHM+KNE
+lBOH/RIw2RnVYP56eW/RqB84XE9JhEbLleC7gj9p01Nm1zQknL8jwDexPpDJCsCOl2HLehGZeozk
+n/2fhF/IlcrjZ1uAZ0xhwfs5TJMS+yy3ZXQtYQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509SubjectName>CN=Tổng cục Thuế,O=MST:0100231226,C=VN|TGKY=23012025194357</X509SubjectName><X509Certificate>MIIFfjCCBGagAwIBAgIDazy1MA0GCSqGSIb3DQEBBQUAMFkxCzAJBgNVBAYTAlZOMR0wGwYDVQQK
+DBRCYW4gQ28geWV1IENoaW5oIHBodTErMCkGA1UEAwwiQ28gcXVhbiBjaHVuZyB0aHVjIHNvIEJv
+IFRhaSBjaGluaDAeFw0xNzA1MDQwODQ0NThaFw0yNzA1MDIwODQ0NThaMEQxCzAJBgNVBAYTAlZO
+MRcwFQYDVQQKDA5NU1Q6MDEwMDIzMTIyNjEcMBoGA1UEAwwTVOG7lW5nIGPhu6VjIFRodeG6vzCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN/PUd1fArHJUqLiIzpOVUB0jLVK++AaOR9r
+cX0phqMK5iXLqNqJJ8hhuA7+5T1NTN1dxirbm9xCQYB7HI9s+dSDjkfo+s2av+8PbK68RRIO40QB
+WV+cH4f7rfOq82mUgVP9ocGGGlqcvNvQCfhkX3kjPgEGbje8JktPreE8GpBphNnqfHePo3F2JgPt
+BXmBAKsJYTCWD24FvjYzzDAfg03u9wZD6i6xzPijRJQTh/0SMNkZ1WD+enlv0agfOFxPSYRGy5Xg
+u4I/adNTZtc0JJy/I8A3sT6QyQrAjpdhy3oRmXqM5J/9n4RfyJXK42dbgGdMYcH7OUyTEvsst2V0
+LWECAwEAAaOCAmIwggJeMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgWgMAsGA1UdDwQEAwIE
+8DApBgNVHSUEIjAgBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcUAgIwHwYJYIZIAYb4QgEN
+BBIWEFVzZXIgU2lnbiBvZiBCVEMwHQYDVR0OBBYEFCUeMA8n53T1rwdKoFXUxc0xquIcMIGVBgNV
+HSMEgY0wgYqAFJ44mtYplYlqBX8q/18Bl7RXMGayoW+kbTBrMQswCQYDVQQGEwJWTjEdMBsGA1UE
+CgwUQmFuIENvIHlldSBDaGluaCBwaHUxPTA7BgNVBAMMNENvIHF1YW4gY2h1bmcgdGh1YyBzbyBj
+aHV5ZW4gZHVuZyBDaGluaCBwaHUgKFJvb3RDQSmCAQMwCQYDVR0SBAIwADBfBggrBgEFBQcBAQRT
+MFEwHwYIKwYBBQUHMAGGE2h0dHA6Ly9vY3NwLmNhLmJ0Yy8wLgYIKwYBBQUHMAKGImh0dHA6Ly9j
+YS5idGMvcGtpL3B1Yi9jZXJ0L2J0Yy5jcnQwMAYJYIZIAYb4QgEEBCMWIWh0dHA6Ly9jYS5idGMv
+cGtpL3B1Yi9jcmwvYnRjLmNybDAwBglghkgBhvhCAQMEIxYhaHR0cDovL2NhLmJ0Yy9wa2kvcHVi
+L2NybC9idGMuY3JsMF4GA1UdHwRXMFUwJ6AloCOGIWh0dHA6Ly9jYS5idGMvcGtpL3B1Yi9jcmwv
+YnRjLmNybDAqoCigJoYkaHR0cDovL2NhLmdvdi52bi9wa2kvcHViL2NybC9idGMuY3JsMA0GCSqG
+SIb3DQEBBQUAA4IBAQAZaW+HR+tKHzW36+msqcSYjg+0F+fnEfz3xnpnfEzYYsdXieDOG/0Z7y0L
+prEQtj3mbbtAzWiF3DxCHGU1wrdJopvGuWV/LESNMnAJSlM8TZIPvW9ZcKEd4FNpMYBbTaY4pTPy
+JiPJJ7LAbUcmJfbswTHuYYZpDaXqKRDwDRE4scM6Gs9U8HawzDWVkGdU/8Fsrb9M9lSzlLDYTvgs
++wdYyB4hRWkh9DMJshDsobb1OlFmSRNEpAbcCAx17uWnjGjsAL/Tx1FLuujspiWBYgnX1TcnRHeA
+hhCGDEFA4bYjn/c9sGNHTxEAEcCuxIcWpxEdmxqFNdaGYIHJzEQKi3Vb</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="TimeSignatureTCT" Target="signatureProperties"><DateTimeStamp>23012025194357</DateTimeStamp></SignatureProperty></SignatureProperties></Object></Signature></CKyDTu></TBaoThueDTu>

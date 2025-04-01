@@ -1,0 +1,111 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:a144:0:b0:21c:10c3:3c59 with SMTP id k4csp6683998eic;
+        Mon, 20 Jan 2025 23:33:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGZjtLVd0TfCMzhmCmVSeN3qgj81ofTjg1KEyrpf46OCB9MFmzpNPGR+1DDC9jo5WrZrD7j
+X-Received: by 2002:a05:6a21:9990:b0:1e3:e836:8aea with SMTP id adf61e73a8af0-1eb2147cfafmr25385149637.14.1737444834647;
+        Mon, 20 Jan 2025 23:33:54 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737444834; cv=none;
+        d=google.com; s=arc-20240605;
+        b=dqKjXz7JtBKN7cQOWS6ZepEoTQT1S5p9ziSoMQwPuzGL51UTHDxEDSPNLC/VOi5F31
+         w/cPEzfqJn4MSwvJvsQts8WnxqG0YYx6d3pBeQ5bSuKvuim8kw7G11YhsTW0D/3W+144
+         txMBxqi99WNGZGk6p+2fmf6Zz5G4pVSAaAQtKjcmIeS74aN2K4vCNLwt/FIVh2dZWrbe
+         EfIMVgM6CDHHHc3N5v6155gNHhGHtKTVySRl5Pc4B1GEqujdFgoe4TdOex3+2ptlojp3
+         t7TazgA3YiBWgVfcxmnh+zh0hIlzLd4auPGrqf+5uOaD7RDJLg25Y2VHkLjThOECaccu
+         Fjdw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:content-transfer-encoding:subject:date:to:from
+         :mime-version:dkim-signature:dkim-filter;
+        bh=Q5KrcM5PaD8RQRSTIMsEHYSdb/p9WB/FPnlaAEaXx60=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=exBViS+DeLwzpm9ePQ6Jkptq8dyW+6Wge+8SboCZx+r3EQnb0BI84pVGDV7WGv7TeY
+         v3xtoqkbpyb+8ARuvEbVWjdo59TyqqaCBh8bvClkxmTK6dKoUNbl25SXqIcQ5Ccw9bH5
+         89rQEMgRl63CTxxQBW41R3nOJXHjmeKy8wZ+dCB4N28m17C2bhECJ2NraDNt5x86uMfr
+         XzbRkv5ikJPL1oR0iKiVjDBw9g+mhp//7OB2mapuPuM69byrPq7TcsG1UywUPYiN0ojh
+         LH89m3T+fAI3ZEpW4osL8/SBM12Rca37/N/TTrPl4KjY1Ac8BFEZ56j8xWJ/yxKAsGNL
+         Czqg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@softdreams.vn header.s=82CF2C24-88F0-11E7-A56F-89ACEAAFAFD3 header.b=mDd31NLH;
+       spf=pass (google.com: domain of hoadon-noreply@softdreams.vn designates 123.31.38.151 as permitted sender) smtp.mailfrom=hoadon-noreply@softdreams.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=softdreams.vn
+Return-Path: <hoadon-noreply@softdreams.vn>
+Received: from softdreams.vn (mail.softdreams.vn. [123.31.38.151])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-a9bdbd01665si13199674a12.466.2025.01.20.23.33.54
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 20 Jan 2025 23:33:54 -0800 (PST)
+Received-SPF: pass (google.com: domain of hoadon-noreply@softdreams.vn designates 123.31.38.151 as permitted sender) client-ip=123.31.38.151;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@softdreams.vn header.s=82CF2C24-88F0-11E7-A56F-89ACEAAFAFD3 header.b=mDd31NLH;
+       spf=pass (google.com: domain of hoadon-noreply@softdreams.vn designates 123.31.38.151 as permitted sender) smtp.mailfrom=hoadon-noreply@softdreams.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=softdreams.vn
+Received: from localhost (localhost [127.0.0.1])
+	by softdreams.vn (Postfix) with ESMTP id A3DB165B7B
+	for <ctyxaydungala@gmail.com>; Tue, 21 Jan 2025 14:35:49 +0700 (+07)
+Received: from softdreams.vn ([127.0.0.1])
+	by localhost (softdreams.vn [127.0.0.1]) (amavisd-new, port 10032)
+	with ESMTP id gqNLaCiKeZnu for <ctyxaydungala@gmail.com>;
+	Tue, 21 Jan 2025 14:35:46 +0700 (+07)
+X-Amavis-Modified: Mail body modified (using disclaimer) - softdreams.vn
+DKIM-Filter: OpenDKIM Filter v2.10.3 softdreams.vn 8F3B767A28
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=softdreams.vn;
+	s=82CF2C24-88F0-11E7-A56F-89ACEAAFAFD3; t=1737444946;
+	bh=Q5KrcM5PaD8RQRSTIMsEHYSdb/p9WB/FPnlaAEaXx60=;
+	h=MIME-Version:From:To:Date:Message-Id;
+	b=mDd31NLHJGD8Uu8wRwr5d9bP64wdPx2dRsKNcMXn9tWhZ9bVDo3hnWNy0Rxbnv/zm
+	 g4tZbYuVhz7CEGk0dKZ7sZDItk/HTtMPIdsxniR0kScp5s1T5JWWwqW9Z7RLApxXjz
+	 qXY4BgYaKLFb5ZeumSWA2es7rr4v9NxRrg5VMKZo=
+MIME-Version: 1.0
+From: hoadon-noreply@softdreams.vn
+To: ctyxaydungala@gmail.com
+Date: 21 Jan 2025 14:33:50 +0700
+Subject: =?utf-8?B?IEjDs2EgxJHGoW4gxJFp4buHbiB04butIHPhu5E6IDMxOCAt?=
+ =?utf-8?B?IEPDlE5HIFRZIFROSEggSMOSQSBUSMOATkggVEnhur5OIGvDrW5oIGfh?=
+ =?utf-8?B?u61pIGtow6FjaCBow6BuZyBDw5RORyBUWSBUTkhIIE3hu5hUIFRIw4BO?=
+ =?utf-8?B?SCBWScOKTiBYw4JZIEThu7BORyBBLkwuQSA=?=
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+Message-Id: <20250121073546.8F3B767A28@softdreams.vn>
+
+DQo8cD48Yj5Lw61uaCBn4butaSBRdcO9IGtow6FjaCBow6BuZyw8L2I+PC9wPg0KPHA+DQpDw5RORyBU
+WSBUTkhIIEjDkkEgVEjDgE5IIFRJ4bq+TiwgTcOjIHPhu5EgdGh14bq/IDM2MDE4Mjg1OTQgeGluIHRy
+w6JuIHRy4buNbmcgY+G6o20gxqFuIFF1w70ga2jDoWNoIGjDoG5nIMSRw6MgdGluIGTDuW5nIGThu4tj
+aCB24bulLCBow6BuZyBow7NhIGPhu6dhIGNow7puZyB0w7RpLg0KPC9wPg0KPHA+DQpDw5RORyBUWSBU
+TkhIIEjDkkEgVEjDgE5IIFRJ4bq+TiB24burYSBwaMOhdCBow6BuaCBow7NhIMSRxqFuIMSRaeG7h24g
+dOG7rSDEkeG6v24gUXXDvSBraMOhY2ggQ8OUTkcgVFkgVE5ISCBN4buYVCBUSMOATkggVknDik4gWMOC
+WSBE4buwTkcgQS5MLkEsIE3DoyBz4buRIHRodeG6vyA8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj48Yj4z
+NjAyNTEwNTY0PC9iPjwvc3Bhbj4gduG7m2kgdGjDtG5nIHRpbiBjaGkgdGnhur90IG5oxrAgc2F1Og0K
+PC9wPg0KPHA+DQogS8O9IGhp4buHdSBt4bqrdSBz4buRIGjDs2EgxJHGoW46IDxzcGFuIHN0eWxlPSJj
+b2xvcjpyZWQiPjxiPjFDMjVUVFQ8L2I+PC9zcGFuPg0KPC9wPg0KPHA+DQpT4buRIGjDs2EgxJHGoW46
+IDxzcGFuIHN0eWxlPSJjb2xvcjpyZWQiPjxiPjMxODwvYj48L3NwYW4+DQo8L3A+DQo8cD4NCk5nw6B5
+IGjDs2EgxJHGoW46IDxzcGFuIHN0eWxlPSJjb2xvcjpyZWQiPjxiPjIxLzAxLzIwMjU8L2I+PC9zcGFu
+Pg0KPC9wPg0KPHA+DQpUaeG7gW4gdGh14bq/OiA8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj48Yj41NDAs
+NzQxPC9iPjwvc3Bhbj4NCjwvcD4NCjxwPg0KVOG7lW5nIHRp4buBbiB0aGFuaCB0b8OhbjogPHNwYW4g
+c3R5bGU9ImNvbG9yOnJlZCI+PGI+NywzMDAsMDAwPC9iPjwvc3Bhbj4NCjwvcD4NCjxwPk3DoyBj4bun
+YSBjxqEgcXVhbiB0aHXhur86IDxzcGFuIHN0eWxlPSJjb2xvcjogcmVkIj48Yj4wMDZERjMwQzQwQjFB
+MTRCQ0RBMDJGREI3QURCMzgwQjZBPC9iPjwvc3Bhbj48L3A+DQo8cD4NCk3DoyB0cmEgY+G7qXU6IDxz
+cGFuIHN0eWxlPSJjb2xvcjpyZWQiPjxiPmc2ajNGOEo3MDMwNjY3NDk5OTM2MTMwPC9iPjwvc3Bhbj4N
+CjwvcD4NCjxwPg0KUXXDvSBraMOhY2ggdnVpIGzDsm5nIHRydXkgY+G6rXAgPGEgaHJlZj0iaHR0cDov
+LzM2MDE4Mjg1OTRoZC5lYXN5aW52b2ljZS52bi9JbnZvaWNlL1ZpZXdGcm9tRW1haWw/dG9rZW49TVVN
+eU5WUlVWRjlmTXpFNGZHYzJhak5HT0VvM01ETXdOalkzTkRrNU9UTTJNVE13Ij48Yj5saW5rPC9iPjwv
+YT4gxJHhu4MgeGVtIHbDoCBraeG7g20gdHJhIGjDs2EgxJHGoW4gZ+G7kWMgaG/hurdjIDxhIGhyZWY9
+Imh0dHA6Ly8zNjAxODI4NTk0aGQuZWFzeWludm9pY2Uudm4vSW52b2ljZS9Eb3dubG9hZEludlBkZj90
+b2tlbj1NVU15TlZSVVZGOWZNekU0ZkdjMmFqTkdPRW8zTURNd05qWTNORGs1T1RNMk1UTXciPjxiPmxp
+bms8L2I+PC9hPiDEkeG7gyB04bqjaSBuaGFuaCBow7NhIMSRxqFuIGThuqFuZyBQREYuDQo8L3A+DQo8
+cD4NClNvZnRkcmVhbXMgcmEgbeG6r3Qgc+G6o24gcGjhuqltIDxiPkVhc3lQSVQ8L2I+IC0gUGjhuqdu
+IG3hu4FtIGvDqiBraGFpIMSRw6FwIOG7qW5nIMSR4bqneSDEkeG7pyBuZ2hp4buHcCB24bulIGzhuq1w
+IGNo4bupbmcgdOG7qyBraOG6pXUgdHLhu6sgdGh14bq/IFROQ04gxJFp4buHbiB04butLiBYZW0gbmdh
+eSB04bqhaSA8YSBocmVmPSJodHRwczovL2Vhc3ktcGl0LmVhc3lpbnZvaWNlLmNvbS52bi8iIHRhcmdl
+dD0iX2JsYW5rIj4gaHR0cHM6Ly9lYXN5LXBpdC5lYXN5aW52b2ljZS5jb20udm4vIDwvYT4NCjwvcD4N
+CjxwPg0KCTxzcGFuIHN0eWxlPSJjb2xvcjpyZWQiPjxiPkNow7ogw706PC9iPjwvc3Bhbj48c3Bhbj48
+aT48Yj4gxJDDonkgbMOgIG1haWwgdOG7sSDEkeG7mW5nIHThu6sgaOG7hyB0aOG7kW5nLiBRdcO9IGto
+w6FjaCB2dWkgbMOybmcga2jDtG5nIHRy4bqjIGzhu51pIG1haWwgbsOgeS48L2I+PC9pPjwvc3Bhbj4N
+CjwvcD4NCjxwPg0KVHLDom4gdHLhu41uZyAuLy4NCjwvcD4NCjxkaXYgc3R5bGU9ImxpbmUtaGVpZ2h0
+OiBub3JtYWwiPg0KICAgICAgICA8cD5I4buHIHRo4buRbmcgaMOzYSDEkcahbiDEkWnhu4duIHThu60g
+RWFzeUludm9pY2U8L3A+DQogICAgICAgIDxwPsSQxrDhu6NjIGN1bmcgY+G6pXAgYuG7n2kgQ8O0bmcg
+dHkgY+G7lSBwaOG6p24gxJHhuqd1IHTGsCBjw7RuZyBuZ2jhu4cgdsOgIHRoxrDGoW5nIG3huqFpIFNv
+ZnRkcmVhbXMuPC9wPg0KICAgICAgICA8cD5XZWJzaXRlOiA8YSBocmVmPSJodHRwczovL2Vhc3lpbnZv
+aWNlLnZuIiB0YXJnZXQ9Il9ibGFuayI+IGh0dHBzOi8vZWFzeWludm9pY2Uudm4gPC9hPiAtIFThu5Vu
+ZyDEkcOgaSBo4buXIHRy4bujOiAxOTAwIDMzIDY5IC0gMTkwMCA1NiA1NiA1MzwvcD4NCiAgICA8L2Rp
+dj4NCgo8UFJFPihudWxsKTwvcHJlPgo=
+

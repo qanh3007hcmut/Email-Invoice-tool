@@ -1,0 +1,139 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a05:640c:1b56:b0:21c:10c3:3c59 with SMTP id z22csp1383776eiu;
+        Fri, 24 Jan 2025 23:04:36 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEA8H7UP35Et9jLZwSZ14IP5NHVnCp1OglcEKLh0nl2CLpenbBrxnm3Cp4yqMvrUz8Zq995
+X-Received: by 2002:a17:902:f644:b0:215:8d29:af2d with SMTP id d9443c01a7336-21c3563060amr579904945ad.38.1737788676012;
+        Fri, 24 Jan 2025 23:04:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737788676; cv=none;
+        d=google.com; s=arc-20240605;
+        b=S10n+TrGsH4siGjX3Z3+a4+r2UD0lr+xo6aS0pg2KTiaNu80gzpYvSxKqN7195esYB
+         wG/fqbx7SMKVPForzEHlZ+DGCnSbFpRUPHjPHa6dZChwf78KASwzZz/eYatLMiSzBjDv
+         G9pGNCz5qeN/7rwVz7eQWq26bzRhmk/xA7E8NgeuWiEQE9WZM9kUoGGsxcRBNSILoAo+
+         XKe0fBD3rTuVtmSsc4nhNMrRKjeaNXb2KoP2HJg+o4v5JehnHPBDDtp5y7veJ8w5DXxs
+         P6AD3nZcTf2goZPQ0QM7Cvw4VxT03P4CTsOkBzpAsMkpIMkcRdIjZyQBE9qtCztjL6eN
+         aQ5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:content-id:mime-version:to:message-id
+         :subject:date:from:dkim-signature:dkim-filter;
+        bh=bve0p0BnN8k+P9Qnqb/SIoxif0Dlck9yPAcQZmIDbpo=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=X5xTW26aJx8sSZ7YwH1HJ6+/pcbz4B7xy0hg7xZMuF8FvuyT6Llgy1byO8BNAPxFdJ
+         R1/AHlT71prwxoxuivn+CGksoUBBoFzZ4Wx+BtxG8Zu7SAJly0s9+aeKeEhunsIE2t8P
+         1R/8ayh7X4EgIVt1JOoF/DWgY4FWkiDGh2juZ/EnQ3yEw464dJq9uxvOTu2QKxoKkiGK
+         WnBSL0JcI6ZMqbOP0BXVXevPd7iJPw0eoy0y5Ud7DTU+BCeaTosFsdnvw4SwUOQJ+kKz
+         DP3NdYGcpxlgfnkyellm688RrOpkFo0QW3H4m3UCVgcIWnmllIJwIviBQcmQMIqvFXMT
+         U1wA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@vnpt-invoice.vn header.s=303F7602-45A5-11EF-9CBE-725C9E5711BF header.b=TUj9m5WD;
+       spf=pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.83 as permitted sender) smtp.mailfrom=hoadondientu@vnpt-invoice.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vnpt-invoice.vn
+Return-Path: <hoadondientu@vnpt-invoice.vn>
+Received: from vnpt-invoice.vn (vnpt-invoice.vn. [123.31.40.83])
+        by mx.google.com with ESMTPS id d9443c01a7336-21da414cd50si48297285ad.387.2025.01.24.23.04.35
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 24 Jan 2025 23:04:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.83 as permitted sender) client-ip=123.31.40.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@vnpt-invoice.vn header.s=303F7602-45A5-11EF-9CBE-725C9E5711BF header.b=TUj9m5WD;
+       spf=pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.83 as permitted sender) smtp.mailfrom=hoadondientu@vnpt-invoice.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vnpt-invoice.vn
+Received: from localhost (localhost [127.0.0.1])
+	by vnpt-invoice.vn (Postfix) with ESMTP id BC99F3CDB24
+	for <ctyxaydungala@gmail.com>; Sat, 25 Jan 2025 14:04:34 +0700 (ICT)
+Received: from vnpt-invoice.vn ([127.0.0.1])
+	by localhost (vnpt-invoice.vn [127.0.0.1]) (amavisd-new, port 10032)
+	with ESMTP id UWvVgGwnPdb8 for <ctyxaydungala@gmail.com>;
+	Sat, 25 Jan 2025 14:04:34 +0700 (ICT)
+Received: from localhost (localhost [127.0.0.1])
+	by vnpt-invoice.vn (Postfix) with ESMTP id 643453CDFEB
+	for <ctyxaydungala@gmail.com>; Sat, 25 Jan 2025 14:04:34 +0700 (ICT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 vnpt-invoice.vn 643453CDFEB
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vnpt-invoice.vn;
+	s=303F7602-45A5-11EF-9CBE-725C9E5711BF; t=1737788674;
+	bh=bve0p0BnN8k+P9Qnqb/SIoxif0Dlck9yPAcQZmIDbpo=;
+	h=From:Date:Message-Id:To:MIME-Version;
+	b=TUj9m5WDZSXz7HELY9mNLG/I5BsiNu6Rhh1O+JeyFZCYfFGpcBQrIimd2QBSyBduS
+	 s9jkKg7B3ofzksdJtUQWVDP1w9A/Wj9ujHUXWZQqiR6/99cBsGA3JqhzTqe07C5VVN
+	 kGjdavuQV3z0xviPwxxfNkZGbm2CNB5Ja1ZiBc2KqWQhYEDH+oHPobMzRSmK1zQqQP
+	 me6wbuTGepRmwedhDutHq5IBpWxHZKAXBKQbJE40qlYuOCM6o0G8kBz/+s/iNGABPl
+	 tX+eUepCpC5Wtvr+hwhie2lsymN8Gl5DlFRsqjnDPkTkBQSjnjfexOj9DqI3hSDB/y
+	 3+PjGSgPjhxFA==
+X-Virus-Scanned: amavisd-new at vnpt-invoice.vn
+Received: from vnpt-invoice.vn ([127.0.0.1])
+	by localhost (vnpt-invoice.vn [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id nrUNR9W1wBbH for <ctyxaydungala@gmail.com>;
+	Sat, 25 Jan 2025 14:04:34 +0700 (ICT)
+Received: from [10.165.17.61] (unknown [10.165.17.61])
+	by vnpt-invoice.vn (Postfix) with ESMTPSA id 433C93CDE3C
+	for <ctyxaydungala@gmail.com>; Sat, 25 Jan 2025 14:04:34 +0700 (ICT)
+From: EInvoice <hoadondientu@vnpt-invoice.vn>
+Date: Sat, 25 Jan 2025 14:04:33 +0700
+Subject: =?utf-8?b?VGjDtG5nIGLDoW8gcGjDoXQgaMOgbmggSMSQxJBULw==?=
+ E-InvoiceIssuing Notification
+Message-Id: <Y30U2SDC8PU4.C46NACPBPVQH1@10-165-17-61>
+To: ctyxaydungala@gmail.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Id: <Y30U2SDC8PU4.BTGGM0D3E63I@10-165-17-61>
+Content-Transfer-Encoding: quoted-printable
+
+ <b>K=C3=ADnh g=E1=BB=ADi Qu=C3=BD kh=C3=A1ch h=C3=A0ng, </b><br/> <b>=
+C=C3=B4ng Ty Li=C3=AAn Doanh H=E1=BB=AFu H=E1=BA=A1n Kh=C3=A1ch S=E1=BA=
+=A1n Chains Caravelle</b> tr=C3=A2n tr=E1=BB=8Dng c=E1=BA=A3m =C6=A1n =
+Qu=C3=BD kh=C3=A1ch h=C3=A0ng =C4=91=C3=A3 s=E1=BB=AD d=E1=BB=A5ng d=E1=
+=BB=8Bch v=E1=BB=A5 c=E1=BB=A7a ch=C3=BAng t=C3=B4i. <br/> Tr=C3=A2n t=
+r=E1=BB=8Dng g=E1=BB=ADi =C4=91=E1=BA=BFn Qu=C3=BD kh=C3=A1ch h=C3=A0n=
+g th=C3=B4ng tin h=C3=B3a =C4=91=C6=A1n =C4=91i=E1=BB=87n t=E1=BB=AD n=
+h=C6=B0 sau: <br/> - S=E1=BB=91 h=C3=B3a =C4=91=C6=A1n: 00000285 <br/>=
+ - M=E1=BA=ABu s=E1=BB=91: 1/002<br/> - K=C3=BD hi=E1=BB=87u: C25TRR <=
+br/> - M=C3=A3 tra c=E1=BB=A9u nhanh: 36b55b4090a24eeb98336425f0b83259=
+ <br/> Qu=C3=BD kh=C3=A1ch truy c=E1=BA=ADp h=C3=B3a =C4=91=C6=A1n: <a=
+ style=3D"color:#0000FF;text-decoration:underline" href=3D'https://car=
+avellesaigon-tt78.vnpt-invoice.com.vn/Email/EmailInvoiceView?token=3D5=
+5BBqJPbbC0KuTyVygR%2fBNAHS4z5d03oas1hEwQjpFo2aNJxBRVTdaGl%2f6zZeHAfWyu=
+qu6H72Xetglinei9jtw%3d%3d'>T=E1=BA=A1i =C4=91=C3=A2y </a> <br/>Qu=C3=BD=
+ kh=C3=A1ch t=E1=BA=A3i h=C3=B3a =C4=91=C6=A1n b=E1=BA=B1ng m=C3=A3 tr=
+a c=E1=BB=A9u nhanh: <a style=3D"color:#0000FF;text-decoration:underli=
+ne" href=3D'https://caravellesaigon-tt78.vnpt-invoice.com.vn/HomeNoLog=
+in/SearchByFkey/'>T=E1=BA=A1i =C4=91=C3=A2y </a> <br/><br/> =C4=90=C3=B4=
+=CC=81i v=C6=A1=CC=81i nh=C6=B0=CC=83ng ho=CC=81a =C4=91=C6=A1n =C4=91=
+a=CC=83 thanh toa=CC=81n, m=E1=BB=8Di th=C3=B4ng tin xin vui l=C3=B2ng=
+ li=C3=AAn h=E1=BB=87 B=E1=BB=99 ph=E1=BA=ADn K=E1=BA=BF To=C3=A1n Doa=
+nh Thu, s=E1=BB=91 =C4=91i=E1=BB=87n tho=E1=BA=A1i 028 3823 4999 (s=E1=
+=BB=91 n=E1=BB=99i b=E1=BB=99 27205) ho=E1=BA=B7c qua email: <a style=3D=
+"color:#0000FF;text-decoration:underline"> Income@Caravellehotel.com <=
+/a> <br/> =C4=90=C3=B4=CC=81i v=C6=A1=CC=81i nh=C6=B0=CC=83ng ho=CC=81=
+a =C4=91=C6=A1n ch=C6=B0a thanh toa=CC=81n, m=E1=BB=8Di th=C3=B4ng tin=
+ xin vui l=C3=B2ng li=C3=AAn h=E1=BB=87 B=E1=BB=99 ph=E1=BA=ADn K=E1=BA=
+=BF To=C3=A1n C=C3=B4ng N=C6=A1=CC=A3, s=E1=BB=91 =C4=91i=E1=BB=87n th=
+o=E1=BA=A1i 028 3823 4999 (s=E1=BB=91 n=E1=BB=99i b=E1=BB=99 27204) ho=
+=E1=BA=B7c qua email: <a style=3D"color:#0000FF;text-decoration:underl=
+ine"> Ar@Caravellehotel.com</a> <br/> Xin ch=C3=A2n th=C3=A0nh c=E1=BA=
+=A3m =C6=A1n <br/> <i>Xin l=C6=B0u =C3=BD: =C4=90=C3=A2y l=C3=A0 email=
+ g=E1=BB=ADi t=E1=BB=B1 =C4=91=E1=BB=99ng t=E1=BB=AB h=E1=BB=87 th=E1=BB=
+=91ng, vui l=C3=B2ng kh=C3=B4ng tr=E1=BA=A3 l=E1=BB=9Di v=E1=BB=81 =C4=
+=91=E1=BB=8Ba ch=E1=BB=89 email n=C3=A0y. </i><br/> ------------------=
+----------------------------------------------------------------------=
+---<br/> Dear valued customer, <br/> <b>Chains Caravelle Hotel Joint V=
+enture Company Limited</b> wishes to thank you for using our services.=
+ We would like to inform <b>the issuance of your e-invoice as follow. =
+</b> <br/> - Invoice number: 00000285 <br/> - Form: 1/002<br/> - Seria=
+l No : C25TRR <br/> - Viewing code : 36b55b4090a24eeb98336425f0b83259 =
+<br/> You can access the e-invoice via the link: <a style=3D"color:#00=
+00FF;text-decoration:underline" href=3D'https://caravellesaigon-tt78.v=
+npt-invoice.com.vn/Email/EmailInvoiceView?token=3D55BBqJPbbC0KuTyVygR%=
+2fBNAHS4z5d03oas1hEwQjpFo2aNJxBRVTdaGl%2f6zZeHAfWyuqu6H72Xetglinei9jtw=
+%3d%3d'>Click here</a><br/>You can download the e-invoice via the link=
+: <a style=3D"color:#0000FF;text-decoration:underline" href=3D'https:/=
+/caravellesaigon-tt78.vnpt-invoice.com.vn/HomeNoLogin/SearchByFkey/'>C=
+lick here </a> <br/><br/> For more detail relating to your paid e-invo=
+ice, please contact Accounting Department-Income section at 028 3823 4=
+999 (Ext: 27205) or by email: <a style=3D"color:#0000FF;text-decoratio=
+n:underline"> Income@Caravellehotel.com </a> <br/> For more detail rel=
+ating to your unpaid e-invoice, please contact Accounting Department-A=
+R section at 028 3823 4999 (Ext: 27204) or by email: <a style=3D"color=
+:#0000FF;text-decoration:underline"> Ar@Caravellehotel.com</a> <br/> <=
+br/> Best Regards, <br/> <i>This is an auto-generated email. Please do=
+ not reply.</i><br/>

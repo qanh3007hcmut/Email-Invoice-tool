@@ -1,0 +1,130 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:a144:0:b0:21c:10c3:3c59 with SMTP id k4csp4342581eic;
+        Thu, 16 Jan 2025 23:23:25 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGtHiiEluc4eMInPiGeqdHs5DwpsrMj6rkPgWp63n6/dk1NUHrI0OQW1hmXXh/MKYq5zpD8
+X-Received: by 2002:a05:6a20:841c:b0:1e1:ae9a:6316 with SMTP id adf61e73a8af0-1eb215ec18amr3005609637.35.1737098604795;
+        Thu, 16 Jan 2025 23:23:24 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737098604; cv=none;
+        d=google.com; s=arc-20240605;
+        b=etJ7qmNEqIQ7h4mWcL3YG1jKZQRy4y9XpFjedtUQCoUj5PC/GyTUO6PvKp3XAZBdit
+         4sUGbVZb6+r6Kah6QOYgw7SK4qNa+xqYTXkawyE+hRmNiRbKGHW9FqEt7LODZ/u6+tfA
+         xGMoAtcgluAT+6/7sqJlvF1/ysPjDpDAW+NXEySJFLoZpdYTucgQ+bRmmcGkl0Ylp5dN
+         2VTPSENiVCBJ7dFiIm7Jl/kMBH5zNndZ9zpjgfdEfug8vjcm2j+tu89uPdfTyfZFZhuz
+         6xCCQ8WrCZFD/f3k/3+pZaFX/NO8vaW96QjUHbFtgXgioOBQz1tK6z/qwM0zbecEJG1i
+         9VrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:content-id:to:message-id:subject:date
+         :dkim-signature:dkim-filter:from;
+        bh=GSAimT6UCR+V/ev3Lqk1d4zJx17DeHS4776QHKQy5R8=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=TRr5EEyXlDWFIeIARw/dCCen5i5ClY1d/2ae7y1TWuO4LTPRupD28hqXkREJ8C6dW+
+         FSOhh92V4Ml+gccnugGcEj/gvSWX5AHhI/ltDGDYMynsxnqc6cZcvbCzbE3peGXx2abY
+         nj5pb6RSGv8bclvrt0+V6Svo5xGFVmdA7SW3KKMN4zjiSUVWhxYvyGVfblok2DitNX4O
+         slS2Kg/KOK1seY5eD2ksmisx//thqU1Bwv+3BQPbO5UaCaqq5F8dIOL0n85pTpig7ey/
+         AidY67b8Z5Wb1P840pXcLf8hp7wwKS2q7BTti8+0CGGdPHuhmB3GOwfPNdNJ/rtB9Gmq
+         1yBQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@vnpt-invoice.vn header.s=1B94439A-45A5-11EF-9CFE-D1C3406186CB header.b=Az29Pr0o;
+       spf=pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.82 as permitted sender) smtp.mailfrom=hoadondientu@vnpt-invoice.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vnpt-invoice.vn
+Return-Path: <hoadondientu@vnpt-invoice.vn>
+Received: from vnpt-invoice.vn (mail.vnpt-invoice.vn. [123.31.40.82])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-a9bc9cd7a1csi2091849a12.54.2025.01.16.23.23.24
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 16 Jan 2025 23:23:24 -0800 (PST)
+Received-SPF: pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.82 as permitted sender) client-ip=123.31.40.82;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@vnpt-invoice.vn header.s=1B94439A-45A5-11EF-9CFE-D1C3406186CB header.b=Az29Pr0o;
+       spf=pass (google.com: domain of hoadondientu@vnpt-invoice.vn designates 123.31.40.82 as permitted sender) smtp.mailfrom=hoadondientu@vnpt-invoice.vn;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=vnpt-invoice.vn
+Received: from vnpt-invoice.vn (localhost [127.0.0.1])
+	by vnpt-invoice.vn (Postfix) with ESMTPS id 79FD858DC53
+	for <ctyxaydungala@gmail.com>; Fri, 17 Jan 2025 14:23:23 +0700 (ICT)
+From: EInvoice <hoadondientu@vnpt-invoice.vn>
+DKIM-Filter: OpenDKIM Filter v2.10.3 vnpt-invoice.vn 630BC58DB7B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vnpt-invoice.vn;
+	s=1B94439A-45A5-11EF-9CFE-D1C3406186CB; t=1737098603;
+	bh=GSAimT6UCR+V/ev3Lqk1d4zJx17DeHS4776QHKQy5R8=;
+	h=From:Date:Message-Id:To;
+	b=Az29Pr0o1G+rzDj+e1JYGMR4MDnuit9hRAebCd8Dhsc5kfaCEb6Ln3+bkEBZFkkBG
+	 R47OSYIFEIiI1cBDIME7VCkb4+r0pw6MofZ1C946JVlXrK/HzsPYHZ0alhzovBa7gr
+	 8bjaQTa7Ea8YA4NfmHpw5Pv+CgWY2CeZsO6uJb2bj91n0lgtHv74XdAlb6+A32TXU1
+	 XU1iFKgm7fiephrpKQGzWmTwlbMoIrH19WzrH1QClmdN6D9t6qaV6vjIcjKeBJ/IUd
+	 CheqMoBkHGAw5zvol2JPA5zeKhpXzQTqSn+WiurDRzyicPCv8LQY8/Ht4rCXN3EMpk
+	 Cxg4wHCeH5EFQ==
+Date: Fri, 17 Jan 2025 14:23:22 +0700
+Subject: =?utf-8?b?Q8OUTkcgVFkgVE5ISCBRVeG7kEMgUEjDmiBTxqBOIEzDgk0gLQ==?=
+ =?utf-8?b?IFRow7RuZyBiw6FvIEjDs2EgxJHGoW4gxJFp4buHbiB04butIGNobyBRdcO9IGtow6FjaA==?=
+Message-Id: <GUEO1NBW5PU4.LIQKAWZ27WIY2@10-165-17-49>
+To: ctyxaydungala@gmail.com
+Content-Type: text/html; charset=utf-8
+Content-Id: <GUEO1NBW5PU4.6YL6NNPW99K4@10-165-17-49>
+Content-Transfer-Encoding: quoted-printable
+
+
+<table style=3D"width:1000px;margin-left:20px;">
+	<tr>
+		<td style=3D"color:white;background-color:#074a8e;height:30px;padding-l=
+eft:20px"> C=C3=94NG TY TNHH QU=E1=BB=90C PH=C3=9A S=C6=A0N L=C3=82M </td=
+>
+	</tr>
+	<tr>
+		<td style=3D"padding-left:20px"> K=C3=ADnh g=E1=BB=ADi qu=C3=BD kh=C3=A1=
+ch h=C3=A0ng : <b>C=C3=94NG TY TNHH MTV X=C3=82Y D=E1=BB=B0NG A.L.A</b>
+		</td>
+	</tr>
+	<tr>
+		<td style=3D"padding-left:20px"> C=C3=94NG TY TNHH QU=E1=BB=90C PH=C3=9A=
+ S=C6=A0N L=C3=82M g=E1=BB=ADi h=C3=B3a =C4=91=C6=A1n =C4=91i=E1=BB=87n t=
+=E1=BB=AD =C4=91=E1=BA=BFn qu=C3=BD kh=C3=A1ch h=C3=A0ng, chi ti=E1=BA=BF=
+t nh=C6=B0 sau: </td>
+	</tr>
+	<tr>
+		<td style=3D"padding-left:20px">
+			<p>=E2=80=A2 M=E1=BA=ABu s=E1=BB=91: <b>1/001</b>
+			</p>
+			<p>=E2=80=A2 K=C3=BD hi=E1=BB=87u: <b>C25TSL</b>
+			</p>
+			<p>=E2=80=A2 S=E1=BB=91 h=C3=B3a =C4=91=C6=A1n: <b>00000056</b>
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td style=3D"padding-left:20px">
+			<p>- =C4=90=E1=BB=83 xem nhanh h=C3=B3a =C4=91=C6=A1n: <a href=3D'http=
+s://3603183327-tt78.vnpt-invoice.com.vn/Email/EmailInvoiceView?token=3D3k=
+L5gWojIxRdyMu01J1kPlyjGkIcPkD4I9ZBOxXEXGOiogcGCVwkNvCQEBhUh0jP'>Nh=E1=BA=A5=
+n t=E1=BA=A1i =C4=91=C3=A2y</a>
+			</p>
+			<p>- =C4=90=E1=BB=83 t=E1=BA=A3i h=C3=B3a =C4=91=C6=A1n d=E1=BA=A1ng P=
+DF: <a href=3D'https://3603183327-tt78.vnpt-invoice.com.vn/Email/PdfDownl=
+oad?token=3D3kL5gWojIxRdyMu01J1kPlyjGkIcPkD4I9ZBOxXEXGOiogcGCVwkNvCQEBhUh=
+0jP'>Nh=E1=BA=A5n t=E1=BA=A1i =C4=91=C3=A2y</a>
+			</p>
+			<p>- =C4=90=E1=BB=83 t=E1=BA=A3i =C4=91=E1=BB=8Bnh d=E1=BA=A1ng XML: <=
+a href=3D'https://3603183327-tt78.vnpt-invoice.com.vn/invoice/getinvoice?=
+token=3DqccOZDjnyV%2fzYFDQPI%2bnhLlltHtZ%2fRXCD2%2fstGGnJzR2ng3s9Eeav%2fq=
+mLFOSsA0dcAziZPTnt5e5xGOC0mBTUg%3d%3d'>Nh=E1=BA=A5n t=E1=BA=A1i =C4=91=C3=
+=A2y</a>
+			</p>
+			<p>=C4=90=E1=BB=83 tra c=E1=BB=A9u h=C3=B3a =C4=91=C6=A1n, vui l=C3=B2=
+ng truy c=E1=BA=ADp v=C3=A0o li=C3=AAn k=E1=BA=BFt: <a href=3D"https://36=
+03183327-tt78.vnpt-invoice.com.vn">https://3603183327-tt78.vnpt-invoice.c=
+om.vn,</a>
+				<br/> ho=E1=BA=B7c tra c=E1=BB=A9u b=E1=BA=B1ng m=C3=A3 tra c=E1=BB=A9=
+u nhanh c=E1=BB=A7a h=C3=B3a =C4=91=C6=A1n n=C3=A0y : 223451001C25TSL5693=
+9090</p>
+			<p>Xin ch=C3=A2n th=C3=A0nh c=E1=BA=A3m =C6=A1n Qu=C3=BD kh=C3=A1ch v=C3=
+=A0 ch=C3=BAc Qu=C3=BD kh=C3=A1ch c=C3=B3 =C4=91=C6=B0=E1=BB=A3c nhi=E1=BB=
+=81u th=C3=A0nh c=C3=B4ng khi s=E1=BB=AD d=E1=BB=A5ng s=E1=BA=A3n ph=E1=BA=
+=A9m d=E1=BB=8Bch v=E1=BB=A5 c=E1=BB=A7a ch=C3=BAng t=C3=B4i</p>
+			<p style=3D"color:red">=C4=90=C3=A2y l=C3=A0 Email t=E1=BB=B1 =C4=91=E1=
+=BB=99ng, qu=C3=BD kh=C3=A1ch vui l=C3=B2ng kh=C3=B4ng tr=E1=BA=A3 l=E1=BB=
+=9Di Email n=C3=A0y .</p>
+			<p>Tr=C3=A2n tr=E1=BB=8Dng !!!<b/>
+			</p>
+		</td>
+	</tr>
+</table>

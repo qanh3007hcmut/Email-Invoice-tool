@@ -1,0 +1,164 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a98:db99:0:b0:21c:10c3:3c59 with SMTP id w25csp1277542eil;
+        Wed, 8 Jan 2025 23:44:50 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHvkL3enqr4xt9yT05k66CAAKwmWZHyJxDf39yWjlxRw3HtBEtrNo5Omvp95W9CLg6QGaWN
+X-Received: by 2002:ac8:584e:0:b0:467:6375:6884 with SMTP id d75a77b69052e-46c710f9ef7mr68895121cf.48.1736408690408;
+        Wed, 08 Jan 2025 23:44:50 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1736408690; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=j6D8BMaRml+Id1vVBNOR9QANfMm8zdP0KZIPQxlr1EctV+O16bgD4dPfyPOPbMSusU
+         m8TdYDbwf0i4RgFJrnGZY8dnCydSqlGa9e6u4e895FIkf9bg5SPPsNoRMgldH/WlC4bF
+         cEpA3s17l+kONpEJOEF2UZD+D5kOe5j8p79Gg5hm8hmEuGVjaZ2wfMWFy3rNVPBRRLA2
+         lNwbhvqVYbQIxNNHTfetJIcwCY1zhaWhL3oFigHEL7I6G+3HsBqKLC1bVQuVWuFozOny
+         jcW2DKcTbMudrXgqeJYw/U+GJruVwDCub99UMk45V9o5OIZiUZerngPwsMAvcuO7aPm0
+         Afbw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=tsLnvPCMhaG3re/s98SYT4QUia5DGeCvFUyiCmAFLfY=;
+        fh=dZNfMTI7EPXoiMy1dX/kSh8Vy51fXqJ0yiHOCHguUbQ=;
+        b=QA9ag8W8uCqod1FU2MZN6P5qOK6W7wchFCwTWLZWJqhdgErhWoh42KHSBqBJ6uV9gA
+         b1NQdfXuNbbmmu43xAAaDCOPxBFSPVHeLy+CldGSSotBE9Jkj+CbcXEX8kfDjz0N7/RQ
+         7fL8Pk2HymS6lNATKvscBxgeZPGlW2exyE8p9AL4E7ozSPWzTpyoAbCGQ/Vyh77KoJzJ
+         NzreSjR3fUYv7Pn7AfSkVQbJiw5bukP8thvez8CaG/1KdPM6v4gi0SVuoLSclginz6jN
+         Da8AUnYlVnZCzu3O3mrs5iyqcZrBwg18xHjUoPoPbVa4S4kdGwMtMeX9hqzrcljicj/b
+         rb1Q==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@atis.com.vn header.s=selector1 header.b=E+t5ZZAu;
+       arc=pass (i=1 spf=pass spfdomain=atis.com.vn dmarc=pass fromdomain=atis.com.vn);
+       spf=pass (google.com: domain of noreply@atis.com.vn designates 2a01:111:f403:2011::723 as permitted sender) smtp.mailfrom=noreply@atis.com.vn;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=atis.com.vn
+Return-Path: <noreply@atis.com.vn>
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (mail-tyzapc01on20723.outbound.protection.outlook.com. [2a01:111:f403:2011::723])
+        by mx.google.com with ESMTPS id d75a77b69052e-46a3eb98828si548666201cf.297.2025.01.08.23.44.49
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 08 Jan 2025 23:44:50 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@atis.com.vn designates 2a01:111:f403:2011::723 as permitted sender) client-ip=2a01:111:f403:2011::723;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@atis.com.vn header.s=selector1 header.b=E+t5ZZAu;
+       arc=pass (i=1 spf=pass spfdomain=atis.com.vn dmarc=pass fromdomain=atis.com.vn);
+       spf=pass (google.com: domain of noreply@atis.com.vn designates 2a01:111:f403:2011::723 as permitted sender) smtp.mailfrom=noreply@atis.com.vn;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=atis.com.vn
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=jY6zNTA24pKAGxbXbF0gjdBaBZ08a847NJVldMGNysQnpC+MhdJIFdwomi/2udkDwOK/XP6iRVOKfOaIqj6dcqu6aT2ZLW3MPt1Gp4Q86FEOPQTBMeN+GeUE2h9myW21vlXcXb8PNN/zwR1VidI7Vb0G4jUKkJGGPBsZ6+oc/VrAXKddnX344j0R5c3+7evfCbgHSpl8MXjQ+1GMH7h/B8XbXc7U4F8y1Xrr4NCcQl2dVcu7E7aIZkCBARk0KJ50YZNtLYT1B5wSL9X/9kQ5VrQqx/VA8VQvAmaCiGiD0xADEAVJxCmDL7pj757G3h+MndOq2iaUK8/i9EVI2mgDmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tsLnvPCMhaG3re/s98SYT4QUia5DGeCvFUyiCmAFLfY=;
+ b=qy9vDBrKsk9JrQ2I0Q8pOrAOE/yLBA9fpOSgixbBL/AY5AdMuHAl9YVpQbN7tcnHjweYy+/0hf0YnOcdbXme8YyUtSWYCKJUaW4x+BIjjam+HVrrS4euouNbSPunuebc6j/xSleF/zdNBnUalf3DcJd2F1uyKXpM5UOyNesYmzfj5uEDY9MgfhLJqrnSEnSkaBof3zUmwB0DC894toGn/AXAZafM5smj8+mQnVIoGwk9ccjq/T0UrYsfr8MmmzsE/kyNi8soIapHxE3a9tTnJz+s7z+ur98R2D4yS7gpMQ2GNMpQIW/IenYKEcpCzBAcQQlBN8U2BheGnmPMH0MXzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 118.70.139.13) smtp.rcpttodomain=gmail.com smtp.mailfrom=atis.com.vn;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=atis.com.vn;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=atis.com.vn;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tsLnvPCMhaG3re/s98SYT4QUia5DGeCvFUyiCmAFLfY=;
+ b=E+t5ZZAumDYFBVKBejliUNH6wddYBWecLe2corj/L3jenh9+DHLXvYxFPqj9CSLdST6ribqlQJECHyfX4hmhLxYF8AFUWj0CO8ZA8n5zRCRSifzde53N2u31+17P82bYzvT/IW4gPu0vTfEYxnNDqagDRfCKXdfC2YXVcoYEOpu06trLeCZ6c7S6Ip2nqVTWHkGbfTxCzgQmiM8MrqnVCh47hfzIbifuwsl1w1HHeT81Cq4DVJumXD3Ow1uVpsTUrIMTxs9H5ycJ31zgeRc2d7yZRa5wwlnP4iQ/6MzQaOVk5jTuyhxXVH6e592cg4nBDR4h1bmR9mNzT2W84La+cQ==
+Received: from SGXP274CA0020.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b8::32) by
+ JH0PR06MB6386.apcprd06.prod.outlook.com (2603:1096:990:17::7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8335.10; Thu, 9 Jan 2025 07:44:45 +0000
+Received: from SG1PEPF000082E4.apcprd02.prod.outlook.com
+ (2603:1096:4:b8:cafe::90) by SGXP274CA0020.outlook.office365.com
+ (2603:1096:4:b8::32) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8335.12 via Frontend Transport; Thu,
+ 9 Jan 2025 07:44:45 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 118.70.139.13)
+ smtp.mailfrom=atis.com.vn; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=atis.com.vn;
+Received-SPF: Pass (protection.outlook.com: domain of atis.com.vn designates
+ 118.70.139.13 as permitted sender) receiver=protection.outlook.com;
+ client-ip=118.70.139.13; helo=mail.atis.com.vn; pr=C
+Received: from mail.atis.com.vn (118.70.139.13) by
+ SG1PEPF000082E4.mail.protection.outlook.com (10.167.240.7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8335.7 via Frontend Transport; Thu, 9 Jan 2025 07:44:44 +0000
+Received: from dr-ein-app02 (10.102.2.62) by ATIS-EX.atis.local (10.6.1.31)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.13; Thu, 9 Jan
+ 2025 14:44:43 +0700
+Date: Thu, 9 Jan 2025 14:44:43 +0700
+From: <noreply@atis.com.vn>
+To: <ctyxaydungala@gmail.com>
+Message-ID: <1541880547.1142.1736408683414@dr-ein-app02>
+Subject: =?UTF-8?Q?Th=C3=B4ng_tin_h=C3=B3a_=C4=91=C6=A1?=
+ =?UTF-8?Q?n_t=E1=BB=9Bi_KH_C=C3=94NG_TY_?=
+ =?UTF-8?Q?TNHH_M=E1=BB=98T_TH=C3=80NH_VI?=
+ =?UTF-8?Q?=C3=8AN_X=C3=82Y_D=E1=BB=B0NG_A.L.A?=
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Return-Path: noreply@atis.com.vn
+X-Originating-IP: [10.102.2.62]
+X-ClientProxiedBy: ATIS-EX.atis.local (10.6.1.31) To ATIS-EX.atis.local
+ (10.6.1.31)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SG1PEPF000082E4:EE_|JH0PR06MB6386:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2a8ccc94-1169-431f-b5e9-08dd30817bef
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|82310400026|61400799027|36860700013|376014|8096899003;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?aGlMV3QwZm0zdkNnV3hQWXVMeTlvSVk4NEl6WS9iZTlJUGlrRmlQcWlBMWpY?=
+ =?utf-8?B?TGNvUklDc2pPeUxudHBQc1VXa2FhTW1mR3hpdm1vWTRjVWxYSU0xbEMyR0k0?=
+ =?utf-8?B?Q21MMGIxRmE3SG5RR3ZXRG9OS2w3SkVHNnNEU2R6bURtS1dzZ1A5TUpaRmhN?=
+ =?utf-8?B?bTFmdVI5cUJZNlFzbW5pTVV2S0hLNi92d3A5YkZhY2VCSmhnN1Z6ZU1ZSkxP?=
+ =?utf-8?B?cEYyaGpVWGdZNi9NRkNlS0s1UjVCUUpUdjNxeGRyd0lBTmVjS3FqMW9DWFJI?=
+ =?utf-8?B?bUNGUXAwNDJaN2FsbmhnTlk2WUtocjlYM2g0OUgwR0pobS9pQThKSUZCeFFq?=
+ =?utf-8?B?MHZHcHhTeEF1bytGdjJnWmNJb3BXenFBOC9vWjB3aCtkZnA0MW1LaUtxZ3BF?=
+ =?utf-8?B?VDlLeFpheHE1NWZvdzg5Szlzbk42Y1NPRCtId1VsTy9pbzNldDdTYkJ1MFli?=
+ =?utf-8?B?YmdZU0xMSEl4VWowbWxYTFVNMW5vSmREL0JzUDViTmVZZ1VXRHNGVlFnR21J?=
+ =?utf-8?B?SmhVL3krcGNOOURPckNDSmZNNjR6bTA1M3ZZYk1HWjJkVklIdlkvb0VoVmFD?=
+ =?utf-8?B?NW9EMnRrVlhNN24xUURFeUk5Q3Z4L2JzZHpQNG5EL2lMWXhpSGxJSjN2N01i?=
+ =?utf-8?B?dTNEMmxaUmU2b0pTbFd3S2hrTVE2RyszN29hNHl2MGRzR0RrdXY5QU1OK1pE?=
+ =?utf-8?B?bkxhN1k2YjRHOHZZUTYweUVMU3hrZVlxd2N4dnZiemZkNTVvaTBJNzBieEwy?=
+ =?utf-8?B?akhKVkJmVmJNTkRnbUpTUEpTRzhJTXN4LzBCOXhFemM2VnZZeDYvSitwUzV5?=
+ =?utf-8?B?L0hwQXJOSnlzWEVIekU5VkNWS3JnVEEwMEFJMWZKY29DZzRoMU1WK1lNUXBT?=
+ =?utf-8?B?amNVS0llVEhrR2kzMUpEeC9OYTN5b3lZdmxtc1FTTlpMaGl1WTBVWFFyQTZ4?=
+ =?utf-8?B?U3YwY3lUL1BmZ01HemJkSFdtVHRWN3lmUGpjVHVFMlpvamJHNHg2R05vTlJD?=
+ =?utf-8?B?MklseGh6TzFnV0trUUFiWDdNM2tBSmdaMVpjbyt1OUl1K05WeEF0VTRSN05w?=
+ =?utf-8?B?VkJGY2QrMHJnOU1LVHNPWkp0enF1c25xZ1ljM1JLa09NbVFxc3dBSzgrL1JD?=
+ =?utf-8?B?anFndytPTmtYNnI4RTQ5ZTR3VUJwMGZ2ZkFwQWw4Mm9ZMFE2MkVzS05FV3Yr?=
+ =?utf-8?B?ZjRwYnNvUERYeENhY1F3RENsWmtOUi9hRkR0d1A1WS9Gbm1BNWZjWFdjZ01p?=
+ =?utf-8?B?VW10eEVOM2RFN1ZPN0VCREI5M2QzWm9GRnJERWZMNVBSRnM2MVhTR3dtTnhE?=
+ =?utf-8?B?TWVTdjR5T1FSWGRaNmw3T2d2MkdFbDZiMVhwWXVpcVZYWDMvQ3pXMHN4S1VQ?=
+ =?utf-8?B?cW8reWE0RzdQODFBMXdwUmFMcUJ0dkxiR25tdkU2cW5xTlhsc2xCeGVmS0lF?=
+ =?utf-8?B?RWFmVEZ5UHdJVVREbXlERE5odDhGYWxyaGhQaG1NdkhXUDNXR2d5Vnd4S1lU?=
+ =?utf-8?B?SEdlQ2JLRHBNS29tUWpDZnBmZ2pVSkdyME5zTzBCTG5TQzk2bWJjdWVMN1Vo?=
+ =?utf-8?B?bENJa0pnYmJCOFNGaElaeTBIdjl6Q3NmSVZMMWkzVUNRL2U0cnk4aDdLOUkw?=
+ =?utf-8?B?bU9QZFhTR0o3cXl4NTBtTm5vY0lTRFIxeFo1MDVHZ3ZJSWpycGkxZlF0cUoz?=
+ =?utf-8?B?U2NETFRvaGhOSVhlbldBbUZrRHplNHhtQXdXUEU4YUJKNk5MZUhNUzVwMHJQ?=
+ =?utf-8?B?MGJKOFpyUkZWZlEvSURmRjhYZ0l4cGF6L1RoaVFOWkM0aldqaUhXUFpmYURv?=
+ =?utf-8?B?cnRKemhUdFVXU1IzWW9DcnI4M0U4UnpzVVovQXF2NHBXYlFRMVhCenhTTDcw?=
+ =?utf-8?B?aUU4U2dvMWRTb2hxdEdJaHNKUzBHdmJ4WVVPTk0xRGs4YXBxNUNkSVFVc25T?=
+ =?utf-8?Q?byFidoevxIU=3D?=
+X-Forefront-Antispam-Report:
+	CIP:118.70.139.13;CTRY:VN;LANG:vi;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.atis.com.vn;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(61400799027)(36860700013)(376014)(8096899003);DIR:OUT;SFP:1102;
+X-OriginatorOrg: atis.com.vn
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jan 2025 07:44:44.3450
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a8ccc94-1169-431f-b5e9-08dd30817bef
+X-MS-Exchange-CrossTenant-Id: 82294445-7085-4f0d-a540-4795b9b1547d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=82294445-7085-4f0d-a540-4795b9b1547d;Ip=[118.70.139.13];Helo=[mail.atis.com.vn]
+X-MS-Exchange-CrossTenant-AuthSource:
+	SG1PEPF000082E4.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB6386
+
+K=C3=ADnh g=E1=BB=ADi qu=C3=BD kh=C3=A1ch: C=C3=94NG TY TNHH M=E1=BB=98T TH=
+=C3=80NH VI=C3=8AN X=C3=82Y D=E1=BB=B0NG A.L.A <br>N=E1=BB=99i dung H=C4=90=
+: DO.TTKD012_02/M03/2500595326 - B=E1=BA=A3o hi=E1=BB=83m b=E1=BA=AFt bu=E1=
+=BB=99c TNDS c=E1=BB=A7a ch=E1=BB=A7 xe<br>DO.TTKD012_02/M03/2500595326 - B=
+=E1=BA=A3o hi=E1=BB=83m Tai n=E1=BA=A1n l=C3=A1i xe v=C3=A0 ng=C6=B0=E1=BB=
+=9Di ng=E1=BB=93i tr=C3=AAn xe<br> <br>M=C3=A3 tra c=E1=BB=A9u: 2z4CLHdAWaa=
+vB <br>Link tra c=E1=BB=A9u: https://tracuuhoadon.atis.com.vn/?s=3D2z4CLHdA=
+WaavB <br>n=C4=90=C3=A2y l=C3=A0 email g=E1=BB=ADi t=E1=BB=B1 =C4=91=E1=BB=
+=99ng t=E1=BB=AB h=E1=BB=87 th=E1=BB=91ng, qu=C3=BD kh=C3=A1ch vui l=C3=B2n=
+g kh=C3=B4ng tr=E1=BA=A3 l=E1=BB=9Di email n=C3=A0y. <br>Tr=C3=A2n tr=E1=BB=
+=8Dng!

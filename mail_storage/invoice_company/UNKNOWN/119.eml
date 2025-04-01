@@ -1,0 +1,190 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a05:640c:1b56:b0:21c:10c3:3c59 with SMTP id z22csp572830eiu;
+        Thu, 23 Jan 2025 18:14:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHIt/70EULWoZgmDWbRf6r0YC00WAv3eXtFolOU0s+IPz6Ju1iZHK3cHXdtgfXEjDm4K9Ne
+X-Received: by 2002:a17:902:d501:b0:20c:9821:6998 with SMTP id d9443c01a7336-21c352c798emr495561065ad.10.1737684854477;
+        Thu, 23 Jan 2025 18:14:14 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1737684854; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=Ou0P1VrDvTY9gOolbpvm/yGBWtsna6yF2xm5kmJSbyGMkm9pJbXlLFQ5pBrdH+OLlc
+         TsxkcROuzJt/Y3oAqH4xDkwKBAkzJyO2EJ7K1qXVaRsW08IYawnMPcjWqgFIU5nTxnwW
+         DbqPjME5XFWH8A483yP/oBTtK8agsZ1QnK37+NRepQpFVZ1QBJ5WNEkgnYUT3KWQCMJ7
+         h/25okpxLSMzqoEO+OEyWAHnTPdU1FSj9t+2q3u5nPmKfsTNZkueMAWBcfq5XZUjp3xL
+         y8Hm6785eGx2boVT0Ts8rqvWLulW/EgfL5zrQJxWmRLtelenuXgXnQSksgCVTN/BZHSn
+         ryYA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:content-transfer-encoding:subject:date:to:from
+         :mime-version:dkim-signature;
+        bh=XXodrImgMW7j4Q/uCXziVi1kkl7KUoBJQdrtYcqW6ns=;
+        fh=dZNfMTI7EPXoiMy1dX/kSh8Vy51fXqJ0yiHOCHguUbQ=;
+        b=DW1lvVw6t7E12FuC1c2ddOKBkFelU52vXp+3FIodZh+bkpcK3Dt7QYHTImVMKpMbL6
+         N8e566isHAzgTKkSJ+NFzafJ8Oct0suETE7FiqiGGk8ZBn8N/B03sbpxZoGE7mAYM9P9
+         U3pGxpPHYRAzfVHwyKDaKqtCLf9wOkHMAKKh13I8RhYR7LS94j7UEnFbQs2W3JQ5Keoi
+         iQEtfvWkUH+2vWHUJwkoxsCU5m1g+PSIUtrZOWeKBEaCxaBvEi1OynOACQSZUpUVhJkN
+         4+4mK2O4njOKvuk8yBd4UJtO9q0FUCrr5livIIH65eK9VjV8ZJuJG0UR+F6zUhqUswwP
+         /0zQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@petrolimex.com.vn header.s=selector1 header.b=sRtvIbDD;
+       arc=pass (i=1 spf=pass spfdomain=petrolimex.com.vn);
+       spf=pass (google.com: domain of petrolimex@petrolimex.com.vn designates 2a01:111:f403:c40f::7 as permitted sender) smtp.mailfrom=PETROLIMEX@petrolimex.com.vn
+Return-Path: <PETROLIMEX@petrolimex.com.vn>
+Received: from SEYPR02CU001.outbound.protection.outlook.com (mail-koreacentralazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c40f::7])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-2f7ffa260aasi970748a91.23.2025.01.23.18.14.14
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 23 Jan 2025 18:14:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of petrolimex@petrolimex.com.vn designates 2a01:111:f403:c40f::7 as permitted sender) client-ip=2a01:111:f403:c40f::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@petrolimex.com.vn header.s=selector1 header.b=sRtvIbDD;
+       arc=pass (i=1 spf=pass spfdomain=petrolimex.com.vn);
+       spf=pass (google.com: domain of petrolimex@petrolimex.com.vn designates 2a01:111:f403:c40f::7 as permitted sender) smtp.mailfrom=PETROLIMEX@petrolimex.com.vn
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=QhzbB2cMLfpA1ujOuR2A8NJZTukP5JxczlwIHb+BIJxPLJZO8bAm9942WQ1/wSlryJagz8bp2jkKeY4k1QLHvgbPMfu9fBve09h9IecwIB/Z5ydy41wOLpWaPLPGnOWYunQBlUfpvHPlNkCvWlYVLgVWRE8pQmMa1tkBtYGypykgy6tE18Sgc3iMnuwpfxw4jTeAm186c0os2mzEtRHVlyq5ZrZT4+OV1FvUPbE3EtCHLdO4ioCj8J4LPn6wjAAQ7QwKJUnKqOFuEh5OMXBtODi7woYY6+eC9qX01/KU28XEQ/zkLq3rF0IxngF1q8ZUTiKQa3tuGvMsjX+JSU4OwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=XXodrImgMW7j4Q/uCXziVi1kkl7KUoBJQdrtYcqW6ns=;
+ b=HvDOdNVVSGIAXBl5yWxUDkREallgUbdEaLAJo5F78xe6MaRvjwp8xur873ppEvLHNK2m1iJR48vz0NEG6XjzWvllzzH/ym+Ts5o3dQMRJTSZEyDUtSgrlJAuOEw7PSOzSyksukUF09oG2YuS7Avd5c7L3ovMlhD58QqWwb3cKvIWjSlw3KoYojI14YOf+fBmLpxCyu/IvzgOnexlfiDKuiwSM8aCtGBQCr1Go0KSCsnP7cv7No5cLgaC4zP5KHFTG3HPrku/mSWuQ3lhwilh3rgUBEKJiuqmD14zm2iQjuDu5k+mB4Zoosa5awpkO+ahNctelepGBIbFN+fGQJSJ/Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 118.70.245.150) smtp.rcpttodomain=gmail.com smtp.mailfrom=petrolimex.com.vn;
+ dmarc=bestguesspass action=none header.from=petrolimex.com.vn; dkim=none
+ (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=petrolimex.com.vn;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XXodrImgMW7j4Q/uCXziVi1kkl7KUoBJQdrtYcqW6ns=;
+ b=sRtvIbDDY+bjhldJ52r0Fi/XSIH022myqoeTdEsNArIcwaLXaanZQbmRIK6a3fYtZK0ghQrHK9ScMEL9fbP9zAXqBEDgfoWrZLG+qzDa+6GsoKRc1GWHavVL711DA5seYLOHWGuhWRfXZ+tso8KJVMswOMutggvbukMTOsKE+IuiIiLWNnvkQ+UPW7ELnEAS090yHesESL6rHqhsLbTcCHHVNBzJcRVXoOz4TTKMrvCThtF6YQM6d8gqA5COb2zdIkXDWV7Ab+uO2uUmq8d/QSwjadADQCd8S6KpnI1hnLTelO3BE1Oe3K52+tUofNg9Umn3eiQt9mS9Hfh9JT7sjg==
+Received: from KU1PR03CA0031.apcprd03.prod.outlook.com (2603:1096:802:19::19)
+ by TYZPR06MB6770.apcprd06.prod.outlook.com (2603:1096:400:45e::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8377.13; Fri, 24 Jan
+ 2025 02:14:12 +0000
+Received: from HK3PEPF0000021A.apcprd03.prod.outlook.com
+ (2603:1096:802:19:cafe::e7) by KU1PR03CA0031.outlook.office365.com
+ (2603:1096:802:19::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8377.19 via Frontend Transport; Fri,
+ 24 Jan 2025 02:14:11 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 118.70.245.150)
+ smtp.mailfrom=Petrolimex.com.vn; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=Petrolimex.com.vn;
+Received-SPF: Pass (protection.outlook.com: domain of Petrolimex.com.vn
+ designates 118.70.245.150 as permitted sender)
+ receiver=protection.outlook.com; client-ip=118.70.245.150;
+ helo=PETRO-EDGE2016.petrolimex.com.vn; pr=C
+Received: from PETRO-EDGE2016.petrolimex.com.vn (118.70.245.150) by
+ HK3PEPF0000021A.mail.protection.outlook.com (10.167.8.36) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8377.8 via Frontend Transport; Fri, 24 Jan 2025 02:14:11 +0000
+Received: from HQ-MB08.petrolimex.com.vn (10.0.0.32) by
+ PETRO-EDGE2016.petrolimex.com.vn (10.0.2.4) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.37; Fri, 24 Jan 2025 09:13:59 +0700
+Received: from HQ-MB06.petrolimex.com.vn (10.0.0.37) by
+ HQ-MB08.petrolimex.com.vn (10.0.0.32) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.37; Fri, 24 Jan 2025 09:13:58 +0700
+Received: from HQ-HDDT-SV01 (10.0.3.100) by HQ-MB06.petrolimex.com.vn
+ (10.0.0.37) with Microsoft SMTP Server id 15.1.2507.37 via Frontend
+ Transport; Fri, 24 Jan 2025 09:13:58 +0700
+MIME-Version: 1.0
+From: PETROLIMEX <Petrolimex@Petrolimex.com.vn>
+To: <ctyxaydungala@gmail.com>
+Date: Fri, 24 Jan 2025 09:13:56 +0700
+Subject: =?utf-8?B?VGjDtG5nIGLDoW8gcGjDoXQgaMOgbmggQ8OUTkcgVFkgWMSC?=
+ =?utf-8?B?TkcgROG6plUgxJDhu5JORyBOQUk=?=
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: base64
+Message-ID: <76046046-812a-43d6-8563-747c16cd7f33@HQ-MB06.petrolimex.com.vn>
+Return-Path: Petrolimex@Petrolimex.com.vn
+X-TM-AS-Product-Ver: SMEX-14.0.0.1158-9.0.1002-28942.004
+X-TM-AS-Result: No-10-2.297500-8.000000
+X-TMASE-MatchedRID: pGLU5a8z+niHjw1fhbnrKVPcfe4o0a26imzWYYKiqn9yL4BMIC0EEP5+
+	agJ2kysbjaw7apmokF5itzfafzhYegMUEnxBaOs1myiLZetSf8n5kvmj69FXvAYnglAWdCYb2Jg
+	tAuVNHB5auiyaIRhDrRrW6Lff4sXUrpJ584TGL5vgjvs+WKaxYZNf2LYQT2ioqrhXKjPyWaAMDk
+	aL2pJzEhJlmQyYyyJMAdutuar/A4nvdn0SsbFWx/2uR3Me6WYkjOEEY7FmurnV4KAb/OQleLL5g
+	r6W7ar4fEryu4Dntms=
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10-2.297500-8.000000
+X-TMASE-Version: SMEX-14.0.0.1158-9.0.1002-28942.004
+X-TM-SNTS-SMTP: 655AE9E893EB55C0BBE334997DD8596CF9F64D86DB7C34C3C69FA109B0A5D2FD2000:8
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: HK3PEPF0000021A:EE_|TYZPR06MB6770:EE_
+X-MS-Office365-Filtering-Correlation-Id: a8faa608-0ddc-4d95-93b7-08dd3c1ccaba
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|1800799024|82310400026|376014|36860700013|8096899003;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?MS8zZS84Yjd2SDNuK0ViZWRodUVPOEZzQnRocmU2VFhWNXRTcE9GTVg3blpW?=
+ =?utf-8?B?VUtsUVp6aWFxbFBrNHBuMzA5MS9hU3VCUVByL3p2c2srNU1EOHM3S1lxUDdQ?=
+ =?utf-8?B?aCt5VW1PbXNWWDYrTllickl6VVU0TUhCK1FmQXpEQXVla2l3QUhiSVlnaGtF?=
+ =?utf-8?B?KzRBdHRYNjRmN0tWcE9Za1c1a0RKUHpJV3ZOb3pyRGZHSXJRb2VZRUgzMEha?=
+ =?utf-8?B?WWphbXdZV0h3OEpuV0gzQUxNMy9zT2lxR3VrVFFkZWQrc0lma2RYUnJ0aUlG?=
+ =?utf-8?B?VVhjYndxalk1MXlOcUdXVWprd1FnZkJJQXFpeWdoUUtLK095dE9OT3kyelJj?=
+ =?utf-8?B?UmYycG9IUDZpS0pXWTZJVjNoczdtYU5BNkY1N3g1UEc1anFGWkFoOEdrVFFh?=
+ =?utf-8?B?TDZSOHZOeGlwSHh6bEo2T1Jkam9QS2lPMExzcnNQYWQvTHZKNFdCTUQ0Q2xw?=
+ =?utf-8?B?MjE3OTh0VEZJQm9BUDRKd2lKQmJyT3RMdWZLR1dydU0rM1NaOXo3YzUrb0FV?=
+ =?utf-8?B?TU5POVJYWU5RaFFmZnlJcVZwZG9LTFpUQ2xHWlZsSFRHOWNOOVZXWkVWWVJM?=
+ =?utf-8?B?cVFKVEVadkpXMzZ1YWljSnBBNHBTdWRncG91MHZKM0oxYUZITHEvWnJ3cUxW?=
+ =?utf-8?B?N3dWYzcxT3lsd3AxNytzcXo1NnF2VEpCWUFmOWJzVnJWdktBZkVyMm12eFly?=
+ =?utf-8?B?NWZHa1psZXlwVklVSXM2ZWYya0ZyVGZhWEFtZXpCQ0hBdjNCdVBwZ2pZT0R2?=
+ =?utf-8?B?VWQ1RkUzMkdGQlFieHBYWDg2SDVZTXRQV3ZTbGlseXl0Ums2UFRvL2w1eEVY?=
+ =?utf-8?B?U1FQeWV1SzlUSDB6dmlCZWxkRDVWV0pZOGVQRmE2T2VLdFB5WnN6d1VFMHRV?=
+ =?utf-8?B?eTlOZzJZbGtkenBMQzFGaUZOWHVvUVd4a3lGYmNza2ozcm1hdTVMMUZ6dlBD?=
+ =?utf-8?B?NnNpaHkyaUZQYlkwVVB4R2xlbUNGNm1ISEFnUk9CT1psVTJtaEp0TVlvNDNT?=
+ =?utf-8?B?dzl2cjViejV2aC9Eb2F5aXBmMHh0MDJaVEE0MitmWmNaZWlqa3hIRDEzRkhU?=
+ =?utf-8?B?WTYzMk9uVnJROGxzNlNNTXpNQnY4RXhKRWh2WUZXckFUaXVpNm9ISmxNc0tD?=
+ =?utf-8?B?bFU1T3o4bDNvZ1JncHlMS0dtaU53U1EvdE9WZ01oVmF6ZEQ2YUF5TVpPdVVV?=
+ =?utf-8?B?cVVXQ0R6UVAwRHZhQ0dMSGZ5ektqbmR3NFdVMEdKZzAzMWIyNFl5MC9LL1Vo?=
+ =?utf-8?B?Y1hDUmlYV29KVzA5STNEZWQ5ZklKbktSOTFLcUdHbEg1QVFIZStDUGhGRWdH?=
+ =?utf-8?B?Z2Y1TFpBNlFiRzBzRVVZUDNsZ01hL25YSU9IVVdXY2FSMGNaWjBoVGlISHJu?=
+ =?utf-8?B?LzBpTFRia2M3N3g3aVQxby83Vlp0R3JqaDIzUHdXelRYdHJhQmxVMERBbVpY?=
+ =?utf-8?B?bEkrTGpYWng2cEJ4Q1hYTXd5YnI3bnpwL2ZtQjNsQ3cyQS9FbXdtMWl0SW5E?=
+ =?utf-8?B?ZVpnM0tWTVlhOW1MSGNXMmI4V2JmdHRwK0hvOVBGQVVGTWdHK0tSNmRvc1Zk?=
+ =?utf-8?B?blI1MHFRZjU3ZVdTQjZSSjV5dWw2WTZYbWtxVE04Y1VGNkhEZndtL3N0WFpq?=
+ =?utf-8?B?RS95ZXVwS1MweCtVRUloM01GeXBpRXc2b2tSSllydDdZZ01rNjRLdDBkUmF0?=
+ =?utf-8?B?Um00N29EcUhWVTMzZTU0RUlwVVJsV1ZONXM5UVdFNlZBUVpFMkZsQjF1eXpT?=
+ =?utf-8?B?eHpMRGlScUVLaXV5cXg4TS9KMmxFek9NaTNhUjF0NElOTUpCWTQzL2NJWTRm?=
+ =?utf-8?B?dXZldU5RNUpuRHNtMzUzUlV2cllZTkpnbXJwQ2NKdFNBOHd2UGt4NUVrbjIz?=
+ =?utf-8?B?N002bEJ6TndMYS9LaEVvQVBqU1EyM0d4dlhpYjhkSTU2RTRTK2Myb0lCeWUv?=
+ =?utf-8?Q?9QX6zhFnVGU=3D?=
+X-Forefront-Antispam-Report:
+	CIP:118.70.245.150;CTRY:VN;LANG:vi;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:PETRO-EDGE2016.petrolimex.com.vn;PTR:mail.petrolimex.com.vn;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(376014)(36860700013)(8096899003);DIR:OUT;SFP:1102;
+X-OriginatorOrg: petrolimex.com.vn
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Jan 2025 02:14:11.3048
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a8faa608-0ddc-4d95-93b7-08dd3c1ccaba
+X-MS-Exchange-CrossTenant-Id: a27b01cf-d03e-440b-a8c4-4201fbd9fac4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a27b01cf-d03e-440b-a8c4-4201fbd9fac4;Ip=[118.70.245.150];Helo=[PETRO-EDGE2016.petrolimex.com.vn]
+X-MS-Exchange-CrossTenant-AuthSource:
+	HK3PEPF0000021A.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB6770
+
+PHA+PGI+S8OtbmggZ+G7rWkgUXXDvSBraMOhY2ggaMOgbmchPC9iPjwvcD48cD5YaW4g
+dHLDom4gdHLhu41uZyBj4bqjbSDGoW4gUXXDvSBraMOhY2ggaMOgbmcgxJHDoyB0aW4g
+ZMO5bmcgc+G6o24gcGjhuqltIHbDoCBk4buLY2ggduG7pSBj4bunYSBQRVRST0xJTUVY
+LiBDaMO6bmcgdMO0aSB4aW4gdGjDtG5nIGLDoW8gxJHGoW4gduG7iyBDw5RORyBUWSBY
+xIJORyBE4bqmVSDEkOG7kk5HIE5BSSDEkcOjIHBow6F0IGjDoG5oICRpbnZOYW1lIMSR
+aeG7h24gdOG7rSBjaG8gcXXDvSBraMOhY2guIFRow7RuZyB0aW4gY2hpIHRp4bq/dCBD
+w5RORyBUWSBYxIJORyBE4bqmVSDEkOG7kk5HIE5BSSBwaMOhdCBow6BuaDo8L3A+PHA+
+TeG6q3Ugc+G7kTogPHNwYW4gc3R5bGU9ImNvbG9yOnJlZCI+ICAgICA8Yj4xLzAwMjwv
+Yj4gICA8L3NwYW4+IDwvcD4gPHA+ICAgS8O9IGhp4buHdTogPHNwYW4gc3R5bGU9ImNv
+bG9yOnJlZCI+ICAgICA8Yj5LMjVUQUE8L2I+ICAgPC9zcGFuPiA8L3A+IDxwPiAgIFPh
+u5EgaMOzYSDEkcahbjogPHNwYW4gc3R5bGU9ImNvbG9yOnJlZCI+ICAgICA8Yj4wMDA0
+NTU0MTwvYj4gICA8L3NwYW4+IDwvcD4gPHA+ICAgTcOjIHRyYSBj4bupdTogPGI+ICAg
+ICA8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj5EVkhaVkpRNkYqPC9zcGFuPiAgIDwvYj4g
+PC9wPiA8cD4gICBRdcO9IGtow6FjaCB2dWkgbMOybmcgdHJ1eSBj4bqtcCDEkeG7i2Eg
+Y2jhu4kgd2Vic2l0ZSBwb3J0YWwgIDxhIGhyZWY9Imh0dHBzOi8vaG9hZG9uLnBldHJv
+bGltZXguY29tLnZuIj5saW5rPC9hPiAgxJHhu4MgdHJhIGPhu6l1ICRpbnZOYW1lIGPh
+u6dhIG3DrG5oLiA8L3A+IDxwPiAgIDxiPiAgICAgPHNwYW4gc3R5bGU9ImNvbG9yOiAj
+RkYwMDAwOyI+Q2jDuiDDvTogPC9zcGFuPiAgICAgPHNwYW4+ICAgICAgIDxpPiAgICAg
+ICAgIDxiPsSQw6J5IGzDoCBtYWlsIHThu7EgxJHhu5luZyB04burIGjhu4cgdGjhu5Fu
+Zy4gUXXDvSBraMOhY2ggdnVpIGzDsm5nIGtow7RuZyB0cuG6oyBs4budaSBtYWlsLjwv
+Yj4gICAgICAgPC9pPiAgICAgPC9zcGFuPiAgIDwvYj4gPC9wPiA8cD5UcsOibiB0cuG7
+jW5nIGPhuqNtIMahbi48L3A+IA==
+

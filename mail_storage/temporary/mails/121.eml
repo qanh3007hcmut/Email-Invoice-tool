@@ -1,0 +1,340 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a05:640c:1b56:b0:21c:10c3:3c59 with SMTP id z22csp608933eiu;
+        Thu, 23 Jan 2025 19:45:27 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFr1zv9a2FQfxsa7336UOyPLIhAU4tyrdQV902CEy0qZj+ws9X5TwO+L3df+bTNZxHTfKhP
+X-Received: by 2002:a05:6a20:7f95:b0:1e1:adb8:c011 with SMTP id adf61e73a8af0-1eb697b47c8mr8795634637.18.1737690326731;
+        Thu, 23 Jan 2025 19:45:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737690326; cv=none;
+        d=google.com; s=arc-20240605;
+        b=AcVTfADwVxeu4ZtaWEPwHlDkMvIq8AuaWLHO7i0624EJRqlFh/Rxw/5OYmtQt0cy20
+         kgxZYkFbDtsr8PPsGYjfT5GpGu7Q0FlW/tdZRI5t+EhyTWAonRw2+8G3LfW3AQi+Re+b
+         b5BtmIXf55a2craM9fWRBOgSygOUPp+Usx6gJlB4C6jPwfZYDg5vgyfit7OW9EEKG4nP
+         W+55fMm0+Ix8RwDNlqK2pVaI1OMYgzoSJzBZenhV0kOf3LU/mTjtlQYkpXKdQ1n0tfFS
+         YccBpTM3S34fVG/ZGqJL/lwLm1W9RB/8JGJbntpXcC4bKIEfV6DiaYqb7lnq/Wreo0Wo
+         lDgg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature;
+        bh=2R6D5M/glS5AcTFmTx8gsmzV7/HeeuW0tYwilYND2t0=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=LPPqQCg0rEugSB9S4yoFQ12N5Zg33b1CziEVvxkxo1Dah55b4KSlXzl+Y/RUEtMrZE
+         nJP4S8+OQ/SiXopocExPKuVmdlx1nF4Ym3VV8iQSZ5CLQxaFUesFEBInxAHv4zrAzCUm
+         TrtB994bnabBo3uQMCs+tyhQB/nHnCFQAKFoavUnGyRZxAHV27nmphYCTq/Q9WEq4WRJ
+         8ZkN9chIc+dWNCCVej4QiOZ4zurMZtAHJ2X6fY0dp31w16s0Kjlpc9XQCgpWB+tXye9A
+         /6L06WRAP/QDva4GOgw473CF+lsiHw3s/VU6Rn7n6M449yXcC9pi3Mr0Bx8OmZA/+PYi
+         TnDA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=PPGiJwQp;
+       spf=pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=thuedientu@gdt.gov.vn
+Return-Path: <thuedientu@gdt.gov.vn>
+Received: from DC-NET-MAILGW02-Public.vp.tct.vn (mail2.gdt.gov.vn. [103.9.200.38])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-72f8a78f3a1si1612454b3a.330.2025.01.23.19.45.25
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Thu, 23 Jan 2025 19:45:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) client-ip=103.9.200.38;
+Authentication-Results: mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=PPGiJwQp;
+       spf=pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=thuedientu@gdt.gov.vn
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=gdt.gov.vn; i=@gdt.gov.vn; q=dns/txt; s=mail;
+  t=1737690327; x=1769226327;
+  h=from:to:message-id:subject:mime-version:date;
+  bh=g++Cc/eckaEZ5SjVI2FneYVkmn3NJaQC4ygq3x0kbMs=;
+  b=PPGiJwQpq7cSzGaNKbV7mJtqk1DSrgQI17BwiZSq8bqXyaVs3IKOnepv
+   yfySwM0zlawtiS+yeYvCvFPGAxbWMJVWPRe2mVYfSnDwoIvnlLpYXVWiG
+   akRBMI33StTFl3aOq4pnY8iSl2S5A4cGtn+N4924QaNCJBGLwTjAiZrxP
+   AlL+Ujsml2tS4iATYYwzGBOiRwK6OVHSAnoQYI9q0ClOdWY/Khtzbdd6c
+   r8glp8DZRtJsZ6lSFBvy519DFhwSrRYyQnJfs4/iygi3tAVWeC+bU/YKs
+   az3dEINdjUgMaZWskeH3B6yc3o8Hd1IUk4LG4uyzsfBNSba7r4XSpgcHB
+   g==;
+X-CSE-ConnectionGUID: 0HlzGzKsTlCVJerA8aRi4w==
+X-CSE-MsgGUID: gJghZYxeS1e6uaJ2wRNBpg==
+Date: 24 Jan 2025 10:45:21 +0700
+Received: from unknown (HELO gdt-etaxjobapp03) ([10.64.67.88])
+  by DC-NET-MAILGW02-Private.vp.tct.vn with ESMTP; 24 Jan 2025 10:45:21 +0700
+From: Dich vu nop ho so thue qua mang <thuedientu@gdt.gov.vn>
+To: ctyxaydungala@gmail.com
+Message-ID: <1504915858.2515433.1737690320487@gdt-etaxjobapp03>
+Subject: Thong bao thue
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2515432_-1068681171.1737690320487"
+
+------=_Part_2515432_-1068681171.1737690320487
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<meta charset=3D"utf-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><style>
+@font-face {
+    font-family: "Cambria Math" ;
+    panose-1: 2 4 5 3 5 4 6 3 2 4;
+}
+p.commont,li.commont, div.commont {
+=09margin: 0in;
+=09margin-bottom: .0001pt;
+=09font-size: 13.0pt;
+=09font-family: "Times New Roman", serif;
+}
+a:link, span.hyper_link {
+    color: blue;
+    text-decoration: underline;
+}
+a:visited, span.hyper_link_ollowed {
+    color: #954F72;
+    text-decoration: underline;
+}
+@page page_section {
+    size: 8.5in 11.0in;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+}
+div.page_section {
+    page: page_section;
+    width: 68%;
+}
+</style>
+<div class=3D"page_section">
+<div align=3D"right" style=3D"margin-right: 10px; ">
+     <div style=3D"border: 1px solid;width: 200px; padding:2px 2px 2px 2px;=
+" align=3D"center">M=E1=BA=ABu s=E1=BB=91: <b>01-1/TB-T=C4=90T</b>     <br>=
+(Ban h=C3=A0nh k=C3=A8m theo Th=C3=B4ng t=C6=B0 s=E1=BB=91 19/2021/TT-BTC n=
+g=C3=A0y 18/3/2021 c=E1=BB=A7a B=E1=BB=99 tr=C6=B0=E1=BB=9Fng B=E1=BB=99 T=
+=C3=A0i ch=C3=ADnh)</div>
+</div>
+<br clear=3D"ALL">
+<br clear=3D"ALL">
+<br clear=3D"ALL">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"border-col=
+lapse:collapse;">
+     <tbody>
+         <tr>
+             <td valign=3D"top" style=3D"width:3in;padding:0in 5.4pt 0in 5.=
+4pt">
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%"><span lang=3D"NL">B=E1=BB=98 T=C3=80I CH=C3=8DNH</=
+span></p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%"><b><span lang=3D"NL">T=E1=BB=94NG C=E1=BB=A4C THU=
+=E1=BA=BE</span></b></p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%">------------</p>
+                 <p class=3D"commont" align=3D"center" style=3D"line-height=
+:105%"><span style=3D"line-height:105%">S=E1=BB=91: 0124104459370/2025/TB-T=
+=C4=90T</span></p>
+             </td>
+             <td valign=3D"top" style=3D"width:1in;padding:0in 5.4pt 0in 5.=
+4pt"></td>
+             <td valign=3D"top" style=3D"width:4.25in;padding:0in 5.4pt 0in=
+ 5.4pt">
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%"><b><span lang=3D"NL">C=E1=BB=98NG HO=C3=80 X=C3=83=
+ H=E1=BB=98I CH=E1=BB=A6 NGH=C4=A8A VI=E1=BB=86T NAM</span></b></p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%"><b><span lang=3D"NL">=C4=90=E1=BB=99c l=E1=BA=ADp-=
+ T=E1=BB=B1 do- H=E1=BA=A1nh ph=C3=BAc</span></b></p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%">------------------</p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center"><i><span lang=3D"NL">H=C3=A0 n=E1=BB=99i, ng=C3=A0y 24 th=C3=A1ng 1=
+ n=C4=83m 2025</span></i></p>
+                 <p class=3D"commont" align=3D"center" style=3D"text-align:=
+center;line-height:105%"><span lang=3D"NL" style=3D"font-size:14.0pt;line-h=
+eight:105%">&nbsp;</span></p>
+             </td>
+         </tr>
+     </tbody>
+ </table><p class=3D"commont" align=3D"center" style=3D"margin-bottom:6.0pt=
+;text-align:center"><b><span style=3D"font-size:14.0pt">TH=C3=94NG B=C3=81O=
+ </span></b></p>
+<p class=3D"commont" align=3D"center" style=3D"margin-bottom:.25in;text-ali=
+gn:center"><b><span style=3D"font-size:14.0pt">V/v: Ti=E1=BA=BFp nh=E1=BA=
+=ADn h=E1=BB=93 s=C6=A1 thu=E1=BA=BF =C4=91i=E1=BB=87n t=E1=BB=AD TT19</spa=
+n></b></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-indent:28.35pt"><spa=
+n style=3D"font-size:14.0pt">C=C4=83n c=E1=BB=A9 quy =C4=91=E1=BB=8Bnh t=E1=
+=BA=A1i Lu=E1=BA=ADt Qu=E1=BA=A3n l=C3=BD thu=E1=BA=BF ng=C3=A0y 13/6/2019;=
+</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-indent:28.35pt"><spa=
+n style=3D"font-size:14.0pt">C=C4=83n c=E1=BB=A9 quy =C4=91=E1=BB=8Bnh t=E1=
+=BA=A1i Th=C3=B4ng t=C6=B0 s=E1=BB=91 19/2021/TT-BTC ng=C3=A0y 18/3/2021 c=
+=E1=BB=A7a B=E1=BB=99 tr=C6=B0=E1=BB=9Fng B=E1=BB=99 T=C3=A0i ch=C3=ADnh h=
+=C6=B0=E1=BB=9Bng d=E1=BA=ABn giao d=E1=BB=8Bch =C4=91i=E1=BB=87n t=E1=BB=
+=AD trong l=C4=A9nh v=E1=BB=B1c thu=E1=BA=BF.</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify: inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0p=
+t">C=C4=83n c=E1=BB=A9 h=E1=BB=93 s=C6=A1 khai thu=E1=BA=BF/BCTC/BCAC c=E1=
+=BB=A7a ng=C6=B0=E1=BB=9Di n=E1=BB=99p thu=E1=BA=BF C=C3=94NG TY TNHH M=E1=
+=BB=98T TH=C3=80NH VI=C3=8AN X=C3=82Y D=E1=BB=B0NG A.L.A g=E1=BB=ADi t=E1=
+=BB=9Bi c=C6=A1 quan thu=E1=BA=BF Th=C3=A0nh ph=E1=BB=91 Long Kh=C3=A1nh - =
+Chi c=E1=BB=A5c Thu=E1=BA=BF khu v=E1=BB=B1c Long Kh=C3=A1nh - C=E1=BA=A9m =
+M=E1=BB=B9  l=C3=BAc 10 gi=E1=BB=9D 44 ph=C3=BAt, ng=C3=A0y&nbsp;24&nbsp; t=
+h=C3=A1ng&nbsp;1&nbsp; n=C4=83m&nbsp;2025.</span></p><p class=3D"commont" s=
+tyle=3D"margin-bottom:6.0pt;text-align:justify;text-justify:inter-ideograph=
+;text-indent:28.35pt"><span style=3D"font-size:14.0pt">-=09T=C3=AAn t=E1=BB=
+=9D khai/Ph=E1=BB=A5 l=E1=BB=A5c:01/GTGT - T=E1=BB=9C KHAI THU=E1=BA=BE GI=
+=C3=81 TR=E1=BB=8A GIA T=C4=82NG (M=E1=BA=ABu s=E1=BB=91 01/GTGT)</span></p=
+>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">-=09Lo=E1=BA=A1i t=E1=BB=9D khai:Ch=C3=ADnh th=E1=BB=A9c</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">-=09K=E1=BB=B3 t=C3=ADnh thu=E1=BA=BF:Q4/2024</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">-=09L=E1=BA=A7n n=E1=BB=99p ho=E1=BA=B7c l=E1=BA=A7n b=E1=BB=95 sung:1</s=
+pan></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">-=09M=C3=A3 giao d=E1=BB=8Bch =C4=91i=E1=BB=87n t=E1=BB=AD:11320250294770=
+455</span></p>
+<p class=3D"commont" style=3D"margin-top:6.0pt;margin-right:0in;margin-bott=
+om:6.0pt;margin-left:0in;text-align:justify;text-justify:inter-ideograph;te=
+xt-indent:28.35pt"><span style=3D"font-size:14.0pt">H=E1=BB=93 s=C6=A1 khai=
+ thu=E1=BA=BF (HSKT) =C4=91i=E1=BB=87n t=E1=BB=AD =C4=91=C3=A3 =C4=91=C6=B0=
+=E1=BB=A3c c=C6=A1 quan thu=E1=BA=BF ti=E1=BA=BFp nh=E1=BA=ADn v=C3=A0o l=
+=C3=BAc 10 gi=E1=BB=9D 44 ph=C3=BAt, ng=C3=A0y&nbsp;24&nbsp; th=C3=A1ng&nbs=
+p;1&nbsp; n=C4=83m&nbsp;2025.</span></p>
+<p class=3D"commont" style=3D"margin-top:6.0pt;margin-right:0in;margin-bott=
+om:6.0pt;margin-left:0in;text-align:justify;text-justify:inter-ideograph;te=
+xt-indent:28.35pt"><span style=3D"font-size:14.0pt">H=E1=BB=93 s=C6=A1 khai=
+ thu=E1=BA=BF s=E1=BA=BD =C4=91=C6=B0=E1=BB=A3c c=C6=A1 quan thu=E1=BA=BF t=
+i=E1=BA=BFp t=E1=BB=A5c ki=E1=BB=83m tra v=C3=A0 tr=E1=BA=A3 Th=C3=B4ng b=
+=C3=A1o ch=E1=BA=A5p nh=E1=BA=ADn ho=E1=BA=B7c kh=C3=B4ng ch=E1=BA=A5p nh=
+=E1=BA=ADn h=E1=BB=93 s=C6=A1 trong th=E1=BB=9Di gian 01 (m=E1=BB=99t) ng=
+=C3=A0y l=C3=A0m vi=E1=BB=87c k=E1=BB=83 t=E1=BB=AB ng=C3=A0y c=C6=A1 quan =
+thu=E1=BA=BF ti=E1=BA=BFp nh=E1=BA=ADn h=E1=BB=93 s=C6=A1 c=E1=BB=A7a ng=C6=
+=B0=E1=BB=9Di n=E1=BB=99p thu=E1=BA=BF ghi tr=C3=AAn Th=C3=B4ng b=C3=A1o n=
+=C3=A0y.</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">N=E1=BA=BFu c=C3=B3 v=C6=B0=E1=BB=9Bng m=E1=BA=AFc, xin vui l=C3=B2ng tru=
+y c=E1=BA=ADp theo =C4=91=C6=B0=E1=BB=9Dng d=E1=BA=ABn https://thuedientu.g=
+dt.gov.vn ho=E1=BA=B7c li=C3=AAn h=E1=BB=87 v=E1=BB=9Bi Th=C3=A0nh ph=E1=BB=
+=91 Long Kh=C3=A1nh - Chi c=E1=BB=A5c Thu=E1=BA=BF khu v=E1=BB=B1c Long Kh=
+=C3=A1nh - C=E1=BA=A9m M=E1=BB=B9  =C4=91=E1=BB=83 =C4=91=C6=B0=E1=BB=A3c h=
+=E1=BB=97 tr=E1=BB=A3.</span></p>
+<p class=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-j=
+ustify:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt=
+">C=C6=A1 quan thu=E1=BA=BF th=C3=B4ng b=C3=A1o =C4=91=E1=BB=83 ng=C6=B0=E1=
+=BB=9Di n=E1=BB=99p thu=E1=BA=BF C=C3=94NG TY TNHH M=E1=BB=98T TH=C3=80NH V=
+I=C3=8AN X=C3=82Y D=E1=BB=B0NG A.L.A bi=E1=BA=BFt, th=E1=BB=B1c hi=E1=BB=87=
+n./.</span></p>
+<p class=3D"commont" align=3D"right" style=3D"text-align:center"></p><p cla=
+ss=3D"commont" style=3D"margin-bottom:6.0pt;text-align:justify;text-justify=
+:inter-ideograph;text-indent:28.35pt"><span style=3D"font-size:14.0pt">M=C3=
+=A3 d=E1=BB=8Bch v=E1=BB=A5 c=C3=B4ng: 732.75.18.G12-250124-17130245559560<=
+/span></p>
+
+------=_Part_2515432_-1068681171.1737690320487
+Content-Type: application/pdf; name="Thong bao thue.xml"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Thong bao thue.xml"
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48VEJhb1RodWVEVHUgeG1sbnM9
+Imh0dHA6Ly9rZWtoYWl0aHVlLmdkdC5nb3Yudm4vVEJhb1RodWUiIHhtbG5zOnhzaT0iaHR0cDov
+L3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICAgIDxUQmFvVGh1ZSBpZD0i
+X05PREVfVE9fU0lHTiI+DQogICAgICAgIDxUVGluQ2h1bmc+DQogICAgICAgICAgICA8Q1FUPg0K
+ICAgICAgICAgICAgICAgIDxtYUNRVD43MTMwMjwvbWFDUVQ+DQogICAgICAgICAgICAgICAgPHRl
+bkNRVD5UaMOgbmggcGjhu5EgTG9uZyBLaMOhbmggLSBDaGkgY+G7pWMgVGh14bq/IGtodSB24bux
+YyBMb25nIEtow6FuaCAtIEPhuqltIE3hu7kgPC90ZW5DUVQ+DQogICAgICAgICAgICAgICAgPERW
+dT4NCiAgICAgICAgICAgICAgICAgICAgPG1hRFZ1PkVUQVg8L21hRFZ1Pg0KICAgICAgICAgICAg
+ICAgICAgICA8dGVuRFZ1PkVUQVggMS4wPC90ZW5EVnU+DQogICAgICAgICAgICAgICAgICAgIDxw
+YmFuRFZ1PjEuMDwvcGJhbkRWdT4NCiAgICAgICAgICAgICAgICA8L0RWdT4NCiAgICAgICAgICAg
+IDwvQ1FUPg0KICAgICAgICAgICAgPE5OaGFuVEJhb1RodWU+DQogICAgICAgICAgICAgICAgPG1h
+Tk5oYW4+MzYwMjUxMDU2NDwvbWFOTmhhbj4NCiAgICAgICAgICAgICAgICA8dGVuTk5oYW4+Q8OU
+TkcgVFkgVE5ISCBN4buYVCBUSMOATkggVknDik4gWMOCWSBE4buwTkcgQS5MLkE8L3Rlbk5OaGFu
+Pg0KICAgICAgICAgICAgICAgIDxkaWFDaGlOTmhhbj4yMDAsIFRow61jaCBRdeG6o25nIMSQ4bup
+Yywga2h1IHBo4buRIDY8L2RpYUNoaU5OaGFuPg0KICAgICAgICAgICAgPC9OTmhhblRCYW9UaHVl
+Pg0KICAgICAgICAgICAgPERhaUx5VGh1ZT4NCiAgICAgICAgICAgICAgICA8bWFETFQgeHNpOm5p
+bD0idHJ1ZSIvPg0KICAgICAgICAgICAgICAgIDx0ZW5ETFQgeHNpOm5pbD0idHJ1ZSIvPg0KICAg
+ICAgICAgICAgPC9EYWlMeVRodWU+DQogICAgICAgICAgICA8VFRpblRCYW9UaHVlPg0KICAgICAg
+ICAgICAgICAgIDxtYVRCYW8+ODQzPC9tYVRCYW8+DQogICAgICAgICAgICAgICAgPHRlblRCYW8+
+Vi92OiBUaeG6v3Agbmjhuq1uIGjhu5Mgc8ahIHRodeG6vyDEkWnhu4duIHThu60gVFQxOTwvdGVu
+VEJhbz4NCiAgICAgICAgICAgICAgICA8cGJhblRCYW8+Mi41LjY8L3BiYW5UQmFvPg0KICAgICAg
+ICAgICAgICAgIDxzb1RCYW8+MDEyNDEwNDQ1OTM3MC8yMDI1PC9zb1RCYW8+DQogICAgICAgICAg
+ICAgICAgPG5nYXlUQmFvPjIwMjUtMDEtMjQ8L25nYXlUQmFvPg0KICAgICAgICAgICAgPC9UVGlu
+VEJhb1RodWU+DQogICAgICAgIDwvVFRpbkNodW5nPg0KICAgICAgICA8TkR1bmdUQmFvPg0KICAg
+ICAgICAgICAgPHRyYW5nVGhhaT5ZPC90cmFuZ1RoYWk+DQogICAgICAgICAgICA8bmdheUhvU28+
+MjAyNS0wMS0yNFQxMDo0NDo1OS4zNzYrMDc6MDA8L25nYXlIb1NvPg0KICAgICAgICAgICAgPEhv
+U29UaHVlPg0KICAgICAgICAgICAgICAgIDxDVGlldEhvU29UaHVlIGlkPSIiPg0KICAgICAgICAg
+ICAgICAgICAgICA8dG9raGFpLXBodWx1Yz4wMS9HVEdUIC0gVOG7nCBLSEFJIFRIVeG6viBHScOB
+IFRS4buKIEdJQSBUxIJORyAoTeG6q3Ugc+G7kSAwMS9HVEdUKTwvdG9raGFpLXBodWx1Yz4NCiAg
+ICAgICAgICAgICAgICAgICAgPGxvYWlUb0toYWk+Q2jDrW5oIHRo4bupYzwvbG9haVRvS2hhaT4N
+CiAgICAgICAgICAgICAgICAgICAgPGt5VGluaFRodWU+UTQvMjAyNDwva3lUaW5oVGh1ZT4NCiAg
+ICAgICAgICAgICAgICAgICAgPGxhbk5vcD4xPC9sYW5Ob3A+DQogICAgICAgICAgICAgICAgPC9D
+VGlldEhvU29UaHVlPg0KICAgICAgICAgICAgPC9Ib1NvVGh1ZT4NCiAgICAgICAgICAgIDxtYUdp
+YW9EaWNoRFR1PjExMzIwMjUwMjk0NzcwNDU1PC9tYUdpYW9EaWNoRFR1Pg0KICAgICAgICAgICAg
+PEx5RG8+DQogICAgICAgICAgICAgICAgPENUaWV0THlEbyBpZD0iIj4NCiAgICAgICAgICAgICAg
+ICAgICAgPG1hTmhvbUxvaS8+DQogICAgICAgICAgICAgICAgICAgIDx0ZW5OaG9tTG9pLz4NCiAg
+ICAgICAgICAgICAgICAgICAgPG1hTG9pLz4NCiAgICAgICAgICAgICAgICAgICAgPHRlbkxvaS8+
+DQogICAgICAgICAgICAgICAgICAgIDx0dGluTG9pVHJlblRLaGFpLz4NCiAgICAgICAgICAgICAg
+ICAgICAgPGh1b25nRGFuWHVMeS8+DQogICAgICAgICAgICAgICAgICAgIDxnaGlDaHUvPg0KICAg
+ICAgICAgICAgICAgIDwvQ1RpZXRMeURvPg0KICAgICAgICAgICAgPC9MeURvPg0KICAgICAgICAg
+ICAgPGR1b25nRGFuPmh0dHBzOi8vdGh1ZWRpZW50dS5nZHQuZ292LnZuPC9kdW9uZ0Rhbj4NCiAg
+ICAgICAgICAgIDxob3RsaW5lLz4NCiAgICAgICAgICAgIDxlbWFpbCB4c2k6bmlsPSJ0cnVlIi8+
+DQogICAgICAgICAgICA8bWFEVkM+NzMyLjc1LjE4LkcxMi0yNTAxMjQtMTcxMzAyNDU1NTk1NjA8
+L21hRFZDPg0KICAgICAgICA8L05EdW5nVEJhbz4NCiAgICA8L1RCYW9UaHVlPg0KPENLeURUdT48
+U2lnbmF0dXJlIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjIj48U2ln
+bmVkSW5mbz48Q2Fub25pY2FsaXphdGlvbk1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMu
+b3JnL1RSLzIwMDEvUkVDLXhtbC1jMTRuLTIwMDEwMzE1I1dpdGhDb21tZW50cyIvPjxTaWduYXR1
+cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjcnNh
+LXNoYTEiLz48UmVmZXJlbmNlIFVSST0iI19OT0RFX1RPX1NJR04iPjxUcmFuc2Zvcm1zPjxUcmFu
+c2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjZW52ZWxv
+cGVkLXNpZ25hdHVyZSIvPjwvVHJhbnNmb3Jtcz48RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0
+cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI3NoYTEiLz48RGlnZXN0VmFsdWU+aXF4VWpW
+clovMXBGU0dSdE1HcStwdmw4RnhVPTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJ
+bmZvPjxTaWduYXR1cmVWYWx1ZT5GWHRDcVFNdkJXMzZVNEJ0d09MMWJSYVArWXBFYjFnZExZY1g5
+VjZ5NUxiTlJuQ1U5cXNudmFrVjRwOTBMdFJwVi9Ia1VGQkpPRDZXDQpiajMrdUFpUW9zSy9NNXlU
+elRwTjU3RXJFTXB3SWw5QkQzMnQ0UHhTSTJhKyt3d1NCM3pBQ3l6blc5SmgzdndoZ0kxVTRTNDM0
+ZGhQDQp5eXlkcHJiMjFJcDdZUGhzUnluaVc2TnRiTVF5cnhpUFhOdFpqVFYzSmQxeXp3MFpvU0xH
+ckNPN1ZNbEUwakZMQmQ2V2pBN2w2ZEd1DQp3bi9oNDVmWGhpVVA3OTllRkM4aG5ua3hVZnRkNmNI
+ZUxWQlBxa24ydG5JTThRaGhmRTE0Q1ZaMGJPSUFkaGtuN21PSWlXUFg0eE9UDQo2cUNyTlZZMjg3
+enFaRTMzdEVPTTZBSTcrWkcxaDRsT0NwK2dFdz09PC9TaWduYXR1cmVWYWx1ZT48S2V5SW5mbz48
+S2V5VmFsdWU+PFJTQUtleVZhbHVlPjxNb2R1bHVzPjM4OVIzVjhDc2NsU291SWpPazVWUUhTTXRV
+cjc0Qm81SDJ0eGZTbUdvd3JtSmN1bzJva255R0c0RHY3bFBVMU0zVjNHS3R1YjNFSkINCmdIc2Nq
+Mno1MUlPT1IrajZ6WnEvN3c5c3JyeEZFZzdqUkFGWlg1d2ZoL3V0ODZyemFaU0JVLzJod1lZYVdw
+eTgyOUFKK0dSZmVTTSsNCkFRWnVON3dtUzArdDRUd2FrR21FMmVwOGQ0K2pjWFltQSswRmVZRUFx
+d2xoTUpZUGJnVytOalBNTUIrRFRlNzNCa1BxTHJITStLTkUNCmxCT0gvUkl3MlJuVllQNTZlVy9S
+cUI4NFhFOUpoRWJMbGVDN2dqOXAwMU5tMXpRa25MOGp3RGV4UHBESkNzQ09sMkhMZWhHWmVvemsN
+Cm4vMmZoRi9JbGNyaloxdUFaMHhod2ZzNVRKTVMreXkzWlhRdFlRPT08L01vZHVsdXM+PEV4cG9u
+ZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+PC9LZXlWYWx1ZT48WDUwOURhdGE+PFg1
+MDlTdWJqZWN0TmFtZT5DTj1U4buVbmcgY+G7pWMgVGh14bq/LE89TVNUOjAxMDAyMzEyMjYsQz1W
+TjwvWDUwOVN1YmplY3ROYW1lPjxYNTA5Q2VydGlmaWNhdGU+TUlJRmZqQ0NCR2FnQXdJQkFnSURh
+enkxTUEwR0NTcUdTSWIzRFFFQkJRVUFNRmt4Q3pBSkJnTlZCQVlUQWxaT01SMHdHd1lEVlFRSw0K
+REJSQ1lXNGdRMjhnZVdWMUlFTm9hVzVvSUhCb2RURXJNQ2tHQTFVRUF3d2lRMjhnY1hWaGJpQmph
+SFZ1WnlCMGFIVmpJSE52SUVKdg0KSUZSaGFTQmphR2x1YURBZUZ3MHhOekExTURRd09EUTBOVGhh
+RncweU56QTFNREl3T0RRME5UaGFNRVF4Q3pBSkJnTlZCQVlUQWxaTw0KTVJjd0ZRWURWUVFLREE1
+TlUxUTZNREV3TURJek1USXlOakVjTUJvR0ExVUVBd3dUVk9HN2xXNW5JR1BodTZWaklGUm9kZUc2
+dnpDQw0KQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFOL1BVZDFmQXJI
+SlVxTGlJenBPVlVCMGpMVksrK0FhT1I5cg0KY1gwcGhxTUs1aVhMcU5xSko4aGh1QTcrNVQxTlRO
+MWR4aXJibTl4Q1FZQjdISTlzK2RTRGprZm8rczJhdis4UGJLNjhSUklPNDBRQg0KV1YrY0g0Zjdy
+Zk9xODJtVWdWUDlvY0dHR2xxY3ZOdlFDZmhrWDNralBnRUdiamU4Smt0UHJlRThHcEJwaE5ucWZI
+ZVBvM0YySmdQdA0KQlhtQkFLc0pZVENXRDI0RnZqWXp6REFmZzAzdTl3WkQ2aTZ4elBpalJKUVRo
+LzBTTU5rWjFXRCtlbmx2MGFnZk9GeFBTWVJHeTVYZw0KdTRJL2FkTlRadGMwSkp5L0k4QTNzVDZR
+eVFyQWpwZGh5M29SbVhxTTVKLzluNFJmeUpYSzQyZGJnR2RNWWNIN09VeVRFdnNzdDJWMA0KTFdF
+Q0F3RUFBYU9DQW1Jd2dnSmVNQWtHQTFVZEV3UUNNQUF3RVFZSllJWklBWWI0UWdFQkJBUURBZ1dn
+TUFzR0ExVWREd1FFQXdJRQ0KOERBcEJnTlZIU1VFSWpBZ0JnZ3JCZ0VGQlFjREFnWUlLd1lCQlFV
+SEF3UUdDaXNHQVFRQmdqY1VBZ0l3SHdZSllJWklBWWI0UWdFTg0KQkJJV0VGVnpaWElnVTJsbmJp
+QnZaaUJDVkVNd0hRWURWUjBPQkJZRUZDVWVNQThuNTNUMXJ3ZEtvRlhVeGMweHF1SWNNSUdWQmdO
+Vg0KSFNNRWdZMHdnWXFBRko0NG10WXBsWWxxQlg4cS8xOEJsN1JYTUdheW9XK2tiVEJyTVFzd0NR
+WURWUVFHRXdKV1RqRWRNQnNHQTFVRQ0KQ2d3VVFtRnVJRU52SUhsbGRTQkRhR2x1YUNCd2FIVXhQ
+VEE3QmdOVkJBTU1ORU52SUhGMVlXNGdZMmgxYm1jZ2RHaDFZeUJ6YnlCag0KYUhWNVpXNGdaSFZ1
+WnlCRGFHbHVhQ0J3YUhVZ0tGSnZiM1JEUVNtQ0FRTXdDUVlEVlIwU0JBSXdBREJmQmdnckJnRUZC
+UWNCQVFSVA0KTUZFd0h3WUlLd1lCQlFVSE1BR0dFMmgwZEhBNkx5OXZZM053TG1OaExtSjBZeTh3
+TGdZSUt3WUJCUVVITUFLR0ltaDBkSEE2THk5ag0KWVM1aWRHTXZjR3RwTDNCMVlpOWpaWEowTDJK
+MFl5NWpjblF3TUFZSllJWklBWWI0UWdFRUJDTVdJV2gwZEhBNkx5OWpZUzVpZEdNdg0KY0d0cEwz
+QjFZaTlqY213dlluUmpMbU55YkRBd0JnbGdoa2dCaHZoQ0FRTUVJeFloYUhSMGNEb3ZMMk5oTG1K
+MFl5OXdhMmt2Y0hWaQ0KTDJOeWJDOWlkR011WTNKc01GNEdBMVVkSHdSWE1GVXdKNkFsb0NPR0lX
+aDBkSEE2THk5allTNWlkR012Y0d0cEwzQjFZaTlqY213dg0KWW5SakxtTnliREFxb0NpZ0pvWWth
+SFIwY0RvdkwyTmhMbWR2ZGk1MmJpOXdhMmt2Y0hWaUwyTnliQzlpZEdNdVkzSnNNQTBHQ1NxRw0K
+U0liM0RRRUJCUVVBQTRJQkFRQVphVytIUit0S0h6VzM2K21zcWNTWWpnKzBGK2ZuRWZ6M3hucG5m
+RXpZWXNkWGllRE9HLzBaN3kwTA0KcHJFUXRqM21iYnRBeldpRjNEeENIR1Uxd3JkSm9wdkd1V1Yv
+TEVTTk1uQUpTbE04VFpJUHZXOVpjS0VkNEZOcE1ZQmJUYVk0cFRQeQ0KSmlQSko3TEFiVWNtSmZi
+c3dUSHVZWVpwRGFYcUtSRHdEUkU0c2NNNkdzOVU4SGF3ekRXVmtHZFUvOEZzcmI5TTlsU3psTERZ
+VHZncw0KK3dkWXlCNGhSV2toOURNSnNoRHNvYmIxT2xGbVNSTkVwQWJjQ0F4MTd1V25qR2pzQUwv
+VHgxRkx1dWpzcGlXQllnblgxVGNuUkhlQQ0KaGhDR0RFRkE0Yllqbi9jOXNHTkhUeEVBRWNDdXhJ
+Y1dweEVkbXhxRk5kYUdZSUhKekVRS2kzVmI8L1g1MDlDZXJ0aWZpY2F0ZT48L1g1MDlEYXRhPjwv
+S2V5SW5mbz48L1NpZ25hdHVyZT48L0NLeURUdT48L1RCYW9UaHVlRFR1Pg==
+------=_Part_2515432_-1068681171.1737690320487--

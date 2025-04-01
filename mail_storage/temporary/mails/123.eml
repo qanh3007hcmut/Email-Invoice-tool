@@ -1,0 +1,479 @@
+Delivered-To: ctyxaydungala@gmail.com
+Received: by 2002:a05:640c:1b56:b0:21c:10c3:3c59 with SMTP id z22csp815035eiu;
+        Fri, 24 Jan 2025 03:34:37 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFNfPaBikSmIBap7I9ELOolb0/sC6C2Yo/R7iDJDUbPziTj4DAHXaLlmXSrlWjsP2Pa7tq9
+X-Received: by 2002:a05:6a20:7491:b0:1e1:bef7:af57 with SMTP id adf61e73a8af0-1eb214a4638mr45252540637.21.1737718477172;
+        Fri, 24 Jan 2025 03:34:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737718477; cv=none;
+        d=google.com; s=arc-20240605;
+        b=HAqxiYECAkFD9+ffhxx8e+QCMzNc5HG1ZrxbiHmDGsgKXwvnzFzp0O61x5elvO7u5T
+         YKZC15cT/7rR7dLjl982zkWriGSqEsu8lXOqFVak8SFPe9NgpVx2iPmwH4wix4d5nEpT
+         l/y3u4GGXWYgJiOBMmmYap49CPm9LuOnjhYYmmPGI3BbOXKEN1BGwFT+FSN0brKMyidx
+         d1iSFiKFAr4pbOHCbhoDpA85HMMzETqEoT729vJz6QBSiBahkYt9myAbq99O10rTRuPK
+         EgW3bUKCCk9K8ZTrRVUZ7WJnz4FavjUiA7JbuGrOIYEZ5Sxm8rhOoen3Bxj12wLH+HXZ
+         1tAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature;
+        bh=by/2ZXYJULv+Diw3rKlVryd60U4Sd3d/a8UVsz+gThg=;
+        fh=WkFt3SGSeTywgm1/8KpMW9sxoT/s7zZ37KbvhyQeXnI=;
+        b=FqI9dJci8gr/W2xhd+NfizjHPc4a0IyvqOxqluJvCjzX+7hH5Wyfv+cLFoUDZ1m79h
+         UcjKoRqqa22Y8kBHx9WcxrA4oSI5191WiN8+4J2P0YIcgt//MmjxMnFNCfk/VrBQ8mQf
+         NhS74oVH0qoDV5NAm18GubdAwvBeSXGOFffAKYQCih5Be0LoujaI/XKhgngW4aO2WCWi
+         HmlgLvNEZ+GXSgdJGlKgyWxizTAOmcGgC/zmhmchxwbjJ4nF0oj2tozCK9whwlJFTQi1
+         5VLn8BS72cYL8ByZAlK5HvtzIYFjfxGB6vypW3tzlFZGxIu1uwhZJSOR22LR0bWgT3cY
+         hcUA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=WFCsJwVH;
+       spf=pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=thuedientu@gdt.gov.vn
+Return-Path: <thuedientu@gdt.gov.vn>
+Received: from DC-NET-MAILGW02-Public.vp.tct.vn (mail2.gdt.gov.vn. [103.9.200.38])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac48e663dfcsi2474170a12.48.2025.01.24.03.34.36
+        for <ctyxaydungala@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Fri, 24 Jan 2025 03:34:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) client-ip=103.9.200.38;
+Authentication-Results: mx.google.com;
+       dkim=permerror (no key for signature) header.i=@gdt.gov.vn header.s=mail header.b=WFCsJwVH;
+       spf=pass (google.com: domain of thuedientu@gdt.gov.vn designates 103.9.200.38 as permitted sender) smtp.mailfrom=thuedientu@gdt.gov.vn
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=gdt.gov.vn; i=@gdt.gov.vn; q=dns/txt; s=mail;
+  t=1737718477; x=1769254477;
+  h=from:to:message-id:subject:mime-version:date;
+  bh=fpQLLMiSPysGn08cBeZaRkTiZarPMHNVBHWrAcaCbgI=;
+  b=WFCsJwVHyXxurYOSqt27tT3czC/v1nZbwFLJpbu4QZtTuaArHE1g4Ag6
+   7J+niFP89RsVMygZWmc9z0vvE8pnmicMFBrSSq0Ea7M4vSPYo6U6NP/e2
+   KbCTSp1uNktoUkfM6z2JgKw7dlWycPYtZIe7XlStCWuWxTR9rQEJed+xG
+   Pt1Hnnwi+wX7HszS5ySXT0ykDg8HSTKUE8SpZR7OSyjcT7b1+QktyiIHz
+   imzPypMoydvU++n14M5UUX1rCXVyeIQZpW25VDQrd7czfZgGmkjUCXDbW
+   8O2WuIlU9jjvKTuhhUlARrAB31r4IDm7M0RQQut8r17hm7AgkZ79eHfEw
+   g==;
+X-CSE-ConnectionGUID: 118inWPtSQWlwaCuwu3IMw==
+X-CSE-MsgGUID: GiDgQuwIRBGo8j++jmtryw==
+Date: 24 Jan 2025 18:34:31 +0700
+Received: from unknown (HELO gdt-etaxjob2) ([10.64.67.201])
+  by DC-NET-MAILGW02-Private.vp.tct.vn with ESMTP; 24 Jan 2025 18:34:31 +0700
+From: Dich vu Thue dien tu Tong cuc Thue <thuedientu@gdt.gov.vn>
+To: ctyxaydungala@gmail.com
+Message-ID: <-1208544548.480395.1737718471277@gdt-etaxjob2>
+Subject: Thong bao thue
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_480394_599573607.1737718471277"
+
+------=_Part_480394_599573607.1737718471277
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<?xml version=3D"1.0" encoding=3D"UTF-8"?><div xmlns:java=3D"http://xml.apa=
+che.org/xalan/java" style=3D"margin: auto; position: relative; width: 100%;=
+"><p style=3D"line-height: 1.5; padding-top: 6pt; height: 11pt; direction: =
+ltr; padding-bottom: 0pt">=C2=A0</p><div style=3D"border: 1px solid; float:=
+ right; min-height: 19px; padding: 10px; position: relative; top: -13px; wi=
+dth: 285px; text-align:center;font-size: 13px;"><span style=3D"font-size: 1=
+2px;line-height: 1.5; padding-top: 6pt; height: 11pt; direction: ltr; paddi=
+ng-bottom: 0pt">
+=09=09=09=09=09=09=09M=E1=BA=ABu s=E1=BB=91:=C2=A0
+=09=09=09=09=09=09=09<b>05/TB-T=C4=90T</b><br/>
+=09=09=09=09=09=09=09(<span style=3D"font-style: italic; font-size: 12px; f=
+ont-family: Times New Roman;">Ban h=C3=A0nh k=C3=A8m theo Th=C3=B4ng t=C6=
+=B0 s=E1=BB=91 110/2015/TT-BTC
+                    =09=09ng=C3=A0y 28/07/2015 c=E1=BB=A7a B=E1=BB=99 T=C3=
+=A0i ch=C3=ADnh</span>)
+=09=09=09=09=09=09</span></div><table style=3D"width: 100%; text-align: cen=
+ter;" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr style=3D"height: 22pt;=
+ text-align:center!important;vertical-align:middle !important;"><td width=
+=3D"10%" style=3D"width: 140pt; border-style: solid; border-color: #000000;=
+ border-width: 0pt; text-align:center!important;vertical-align:middle !impo=
+rtant;"><span style=3D"font-size: 14px; font-family: Times New Roman; font-=
+weight: bold;">NG=C3=82N H=C3=80NG
+=09=09=09                      <span style=3D"font-size: 14px; font-family:=
+ Times New Roman; font-weight: bold;">STB</span></span></td><td width=3D"60=
+%" style=3D"border-style: solid; border-color: #000000; border-width: 0pt; =
+padding: 0pt 5.8pt 0pt 5.8pt; text-align:center!important;vertical-align:mi=
+ddle !important;"><span style=3D"font-size: 13px; font-family: Times New Ro=
+man; font-weight: bold;">C=E1=BB=98NG HO=C3=80 X=C3=83 H=E1=BB=98I CH=E1=BB=
+=A6 NGH=C4=A8A VI=E1=BB=86T NAM</span></td></tr><tr style=3D"height: 22pt; =
+"><td style=3D"text-align:center!important;vertical-align:middle !important=
+;"><hr style=3D"margin-top: -8px; border-width: 1px thin; width: 105px; mar=
+gin:auto; "/></td><td style=3D"text-align:center!important;vertical-align:m=
+iddle !important;"><span style=3D"font-size: 14px; font-family: Times New R=
+oman; font-weight: bold;">=C4=90=E1=BB=99c l=E1=BA=ADp - T=E1=BB=B1 do - H=
+=E1=BA=A1nh ph=C3=BAc</span><hr style=3D"border-width: 1px thin; margin-top=
+: 8px; width: 165px; margin:auto;"/></td></tr><tr style=3D"height: 27pt; li=
+ne-height: 40px;"><td style=3D"width: 140pt; border-style: solid; border-co=
+lor: #000000; border-width: 0pt; text-align:center!important;vertical-align=
+:middle !important;"><span style=3D"font-size: 13px; font-family: Times New=
+ Roman; ">S=E1=BB=91:
+=09=09=09                      <span style=3D"font-size: 13px; font-family:=
+ Times New Roman; ">NTDT_STB000002765053</span>
+=09=09=09                      /TB-T=C4=90T</span></td><td style=3D"border-=
+style: solid; border-color: #000000; border-width: 0pt; padding: 0pt 5.8pt =
+0pt 5.8pt; text-align:center!important;vertical-align:middle !important;"><=
+span style=3D"font-size: 13px; font-family: Times New Roman; font-style: it=
+alic">Ha=CC=80 N=C3=B4=CC=A3i,=C2=A0
+=09=09=09=09=09=09=09=09=09ng=C3=A0y 23 th=C3=A1ng 1 n=C4=83m 2025</span></=
+td></tr></tbody></table><p style=3D"line-height: 1.5; padding-top: 6pt; hei=
+ght: 11pt; direction: ltr; padding-bottom: 0pt; text-align: center">=C2=A0<=
+/p><p style=3D"line-height: 1.5; padding-top: 6pt; direction: ltr; padding-=
+bottom: 0pt ;text-align: center"><span style=3D"font-size: 15px; font-famil=
+y: Times New Roman; font-weight: bold;">TH=C3=94NG B=C3=81O</span></p><p st=
+yle=3D"line-height: 1.5; padding-top: 6pt; direction: ltr; padding-bottom: =
+0pt ;text-align: center"><span style=3D"font-size: 15px; font-family: Times=
+ New Roman; font-weight: bold;">V/v: X=C3=A1c nh=E1=BA=ADn tr=E1=BA=A1ng th=
+=C3=A1i giao d=E1=BB=8Bch n=E1=BB=99p thu=E1=BA=BF =C4=91i=E1=BB=87n t=E1=
+=BB=AD</span></p><p style=3D"line-height: 1.5; padding-top: 6pt; height: 11=
+pt; direction: ltr; padding-bottom: 0pt; text-align: center">=C2=A0</p><p s=
+tyle=3D"line-height: 1.5; padding-top: 6pt; direction: ltr; padding-bottom:=
+ 0pt"><span style=3D"font-size: 15px;font-family: Times New Roman; ">
+=09=09                =C2=A0=C2=A0=C2=A0=C2=A0K=C3=ADnh g=E1=BB=ADi:
+=09=09              </span><span style=3D"font-size: 15px; font-family: Tim=
+es New Roman; font-style: italic">CONG TY TNHH MOT THANH VIEN XAY DUNG A.L.=
+A</span></p><p style=3D"font-size: 15px; font-family: Times New Roman; marg=
+in-left: 77px; font-style: italic">M=C3=A3 s=E1=BB=91 thu=E1=BA=BF:
+              =09=09=09<span style=3D"font-size: 15px; font-family: Times N=
+ew Roman; font-style: italic">3602510564</span></p><p style=3D"line-height:=
+ 1.5; padding-top: 6pt; direction: ltr; padding-bottom: 0pt ;font-size: 15p=
+x;font-family: Times New Roman; ">
+            =09=09=09=C2=A0=C2=A0=C2=A0=C2=A0V=C3=A0o
+            =09=09=0919 gi=E1=BB=9D 45 ph=C3=BAt 22 gi=C3=A2y, ng=C3=A0y 23=
+ th=C3=A1ng 1 n=C4=83m 2025,
+=09=09=09=09=09=09<span style=3D"font-size: 15px; font-family: Times New Ro=
+man; ">
+=09=09=09=09=09=09=09Ng=C3=A2n h=C3=A0ng
+=09=09=09=09=09=09=09<span><span style=3D"font-size: 15px; font-family: Tim=
+es New Roman; ">STB</span></span>
+=09=09=09=09=09=09=09th=C3=B4ng b=C3=A1o tr=E1=BA=A1ng th=C3=A1i th=E1=BB=
+=B1c hi=E1=BB=87n th=E1=BB=A7 t=E1=BB=A5c n=E1=BB=99p thu=E1=BA=BF =C4=91i=
+=E1=BB=87n t=E1=BB=AD c=E1=BB=A7a ng=C6=B0=E1=BB=9Di n=E1=BB=99p thu=E1=BA=
+=BF, c=E1=BB=A5 th=E1=BB=83 nh=C6=B0 sau:
+=09=09=09=09=09=09</span></p></div><div xmlns:java=3D"http://xml.apache.org=
+/xalan/java"><p style=3D"line-height: 1.5; padding-top: 6pt; height: 11pt; =
+direction: ltr; padding-bottom: 0pt; text-align: center;">=C2=A0</p><table =
+style=3D"border-collapse: collapse; border-color: #000000; border-style: so=
+lid; border-width: 1pt; float: left; margin-top: 10px;" width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0"><tbody><tr style=3D"border-collapse: collap=
+se; border-color: #000000; border-style: solid; border-width: 1pt; text-ali=
+gn: center;"><td style=3D"width: 47.7pt; border-style: solid; border-color:=
+ #000000; border-width: 0.5pt; padding: 2px;text-align: center !important">=
+<span style=3D"align: center; font-size: 15px; font-family: Times New Roman=
+;">STT</span></td><td style=3D"width: 47.7pt; border-style: solid; border-c=
+olor: #000000; border-width: 0.5pt; padding: 2px;text-align: center !import=
+ant"><span style=3D"align: center; font-size: 15px; font-family: Times New =
+Roman;">N=E1=BB=99i dung</span></td><td style=3D"width: 47.7pt; border-styl=
+e: solid; border-color: #000000; border-width: 0.5pt; padding: 2px;text-ali=
+gn: center !important"><span style=3D"align: center; font-size: 15px; font-=
+family: Times New Roman;">Gi=C3=A1 tr=E1=BB=8B</span></td></tr><tr style=3D=
+"border-collapse: collapse; border-color: #000000; border-style: solid; bor=
+der-width: 1pt; text-align: center;"><td style=3D"width: 47.7pt; border-sty=
+le: solid; border-color: #000000; border-width: 0.5pt; padding: 2px;text-al=
+ign: center !important"><span style=3D"align: center; font-size: 15px; font=
+-family: Times New Roman;">1</span></td><td style=3D"width: 47.7pt; border-=
+style: solid; border-color: #000000; border-width: 0.5pt; padding: 2px;text=
+-align: center !important"><span style=3D"align: left; font-size: 15px; fon=
+t-family: Times New Roman;">S=E1=BB=91 GNT</span></td><td style=3D"height:2=
+3px;text-align: left;border-style: solid; border-color: #000000; border-wid=
+th: 0.5pt;"><span style=3D"font-size: 15px; font-family: Times New Roman;">=
+00000360251056401202528235683</span></td></tr><tr style=3D"border-collapse:=
+ collapse; border-color: #000000; border-style: solid; border-width: 1pt; t=
+ext-align: center;"><td style=3D"width: 47.7pt; border-style: solid; border=
+-color: #000000; border-width: 0.5pt; padding: 2px;text-align: center !impo=
+rtant"><span style=3D"align: center; font-size: 15px; font-family: Times Ne=
+w Roman;">2</span></td><td style=3D"width: 47.7pt; border-style: solid; bor=
+der-color: #000000; border-width: 0.5pt; padding: 2px;text-align: center !i=
+mportant"><span style=3D"align: left; font-size: 15px; font-family: Times N=
+ew Roman;">M=C3=A3 hi=E1=BB=87u ch=E1=BB=A9ng t=E1=BB=AB</span></td><td sty=
+le=3D"height:23px;text-align: left;border-style: solid; border-color: #0000=
+00; border-width: 0.5pt;"><span style=3D"font-size: 15px; font-family: Time=
+s New Roman;"/></td></tr><tr style=3D"border-collapse: collapse; border-col=
+or: #000000; border-style: solid; border-width: 1pt; text-align: center;"><=
+td style=3D"width: 47.7pt; border-style: solid; border-color: #000000; bord=
+er-width: 0.5pt; padding: 2px;text-align: center !important"><span style=3D=
+"align: center; font-size: 15px; font-family: Times New Roman;">3</span></t=
+d><td style=3D"width: 47.7pt; border-style: solid; border-color: #000000; b=
+order-width: 0.5pt; padding: 2px;text-align: center !important"><span style=
+=3D"align: left; font-size: 15px; font-family: Times New Roman;">S=E1=BB=91=
+ ch=E1=BB=A9ng t=E1=BB=AB</span></td><td style=3D"height:23px;text-align: l=
+eft;border-style: solid; border-color: #000000; border-width: 0.5pt;"><span=
+ style=3D"font-size: 15px; font-family: Times New Roman;">OW2501237727192</=
+span></td></tr><tr style=3D"border-collapse: collapse; border-color: #00000=
+0; border-style: solid; border-width: 1pt; text-align: center;"><td style=
+=3D"width: 47.7pt; border-style: solid; border-color: #000000; border-width=
+: 0.5pt; padding: 2px;text-align: center !important"><span style=3D"align: =
+center; font-size: 15px; font-family: Times New Roman;">4</span></td><td st=
+yle=3D"width: 47.7pt; border-style: solid; border-color: #000000; border-wi=
+dth: 0.5pt; padding: 2px;text-align: center !important"><span style=3D"alig=
+n: left; font-size: 15px; font-family: Times New Roman;">MST th=E1=BB=A5 h=
+=C6=B0=E1=BB=9Fng</span></td><td style=3D"height:23px;text-align: left; bor=
+der-style: solid; border-color: #000000; border-width: 0.5pt;"><span style=
+=3D"font-size: 15px; font-family: Times New Roman;">3602510564</span></td><=
+/tr><tr style=3D"border-collapse: collapse; border-color: #000000; border-s=
+tyle: solid; border-width: 1pt; text-align: center;"><td style=3D"width: 47=
+.7pt; border-style: solid; border-color: #000000; border-width: 0.5pt; padd=
+ing: 2px;text-align: center !important"><span style=3D"align: center; font-=
+size: 15px; font-family: Times New Roman;">5</span></td><td style=3D"width:=
+ 47.7pt; border-style: solid; border-color: #000000; border-width: 0.5pt; p=
+adding: 2px;text-align: center !important"><span style=3D"align: left; font=
+-size: 15px; font-family: Times New Roman;">T=C3=AAn ng=C6=B0=E1=BB=9Di th=
+=E1=BB=A5 h=C6=B0=E1=BB=9Fng</span></td><td style=3D"height:23px;text-align=
+: left; border-style: solid; border-color: #000000; border-width: 0.5pt;"><=
+span style=3D"font-size: 15px; font-family: Times New Roman;">CONG TY TNHH =
+MOT THANH VIEN XAY DUNG A.L.A</span></td></tr><tr style=3D"border-collapse:=
+ collapse; border-color: #000000; border-style: solid; border-width: 1pt; t=
+ext-align: center;"><td style=3D"width: 47.7pt; border-style: solid; border=
+-color: #000000; border-width: 0.5pt; padding: 2px;text-align: center !impo=
+rtant"><span style=3D"align: center; font-size: 15px; font-family: Times Ne=
+w Roman;">6</span></td><td style=3D"width: 47.7pt; border-style: solid; bor=
+der-color: #000000; border-width: 0.5pt; padding: 2px;text-align: center !i=
+mportant"><span style=3D"align: left; font-size: 15px; font-family: Times N=
+ew Roman;">T=C3=A0i kho=E1=BA=A3n tr=C3=ADch n=E1=BB=A3</span></td><td styl=
+e=3D"height:23px;text-align: left; border-style: solid; border-color: #0000=
+00; border-width: 0.5pt;"><span style=3D"font-size: 15px; font-family: Time=
+s New Roman;">050082506443</span></td></tr><tr style=3D"border-collapse: co=
+llapse; border-color: #000000; border-style: solid; border-width: 1pt; text=
+-align: center;"><td style=3D"width: 47.7pt; border-style: solid; border-co=
+lor: #000000; border-width: 0.5pt; padding: 2px;text-align: center !importa=
+nt"><span style=3D"align: center; font-size: 15px; font-family: Times New R=
+oman;">7</span></td><td style=3D"width: 97.1pt; border-style: solid; border=
+-color: #000000; border-width: 0.5pt; padding: 0pt 5.8pt 0pt 5.8pt;text-ali=
+gn: center !important"><span style=3D"align: left; font-size: 15px; font-fa=
+mily: Times New Roman;">N=E1=BB=99p cho KBNN</span></td><td style=3D"height=
+:23px;text-align: left; border-style: solid; border-color: #000000; border-=
+width: 0.5pt;"><span style=3D"font-size: 15px; font-family: Times New Roman=
+;">KBNN Long Khanh - Dong Nai</span></td></tr><tr style=3D"border-collapse:=
+ collapse; border-color: #000000; border-style: solid; border-width: 1pt; t=
+ext-align: center;"><td style=3D"width: 47.7pt; border-style: solid; border=
+-color: #000000; border-width: 0.5pt; padding: 2px;text-align: center !impo=
+rtant"><span style=3D"align: center; font-size: 15px; font-family: Times Ne=
+w Roman;">8</span></td><td style=3D"width: 74.4pt; border-style: solid; bor=
+der-color: #000000; border-width: 0.5pt; padding: 0pt 5.8pt 0pt 5.8pt;text-=
+align: center !important"><span style=3D"align: left; font-size: 15px; font=
+-family: Times New Roman;">Ng=C3=A0y n=E1=BB=99p thu=E1=BA=BF =C4=91i=E1=BB=
+=87n t=E1=BB=AD</span></td><td style=3D"height:23px;text-align: left; borde=
+r-style: solid; border-color: #000000; border-width: 0.5pt;"><span style=3D=
+"font-size: 15px; font-family: Times New Roman;">23/01/2025 19:45:00</span>=
+</td></tr><tr style=3D"border-collapse: collapse; border-color: #000000; bo=
+rder-style: solid; border-width: 1pt; text-align: center;"><td style=3D"wid=
+th: 47.7pt; border-style: solid; border-color: #000000; border-width: 0.5pt=
+; padding: 2px;text-align: center !important"><span style=3D"align: center;=
+ font-size: 15px; font-family: Times New Roman;">9</span></td><td style=3D"=
+width: 54.2pt; border-style: solid; border-color: #000000; border-width: 0.=
+5pt; padding: 0pt 5.8pt 0pt 5.8pt text-align: center;text-align: center !im=
+portant"><span style=3D"align: left; font-size: 15px; font-family: Times Ne=
+w Roman;">T=E1=BB=95ng s=E1=BB=91 kho=E1=BA=A3n</span></td><td style=3D"hei=
+ght:23px;text-align: left; border-style: solid; border-color: #000000; bord=
+er-width: 0.5pt;"><span style=3D"font-size: 15px; font-family: Times New Ro=
+man;">1</span></td></tr><tr style=3D"border-collapse: collapse; border-colo=
+r: #000000; border-style: solid; border-width: 1pt; text-align: center;"><t=
+d style=3D"width: 47.7pt; border-style: solid; border-color: #000000; borde=
+r-width: 0.5pt; padding: 2px;text-align: center !important"><span style=3D"=
+align: center; font-size: 15px; font-family: Times New Roman;">10</span></t=
+d><td style=3D"width: 61.4pt; border-style: solid; border-color: #000000; b=
+order-width: 0.5pt; padding: 0pt 5.8pt 0pt 5.8pt text-align: center;text-al=
+ign: center !important"><span style=3D"align: left; font-size: 15px; font-f=
+amily: Times New Roman;">T=E1=BB=95ng s=E1=BB=91 ti=E1=BB=81n n=E1=BB=99p N=
+SNN (VND)</span></td><td style=3D"height:23px;text-align: left; border-styl=
+e: solid; border-color: #000000; border-width: 0.5pt;"><span id=3D"tongtien=
+" style=3D"font-size: 15px; font-family: Times New Roman;">3.000.000</span>=
+</td></tr><tr style=3D"border-collapse: collapse; border-color: #000000; bo=
+rder-style: solid; border-width: 1pt; text-align: center;"><td style=3D"wid=
+th: 47.7pt; border-style: solid; border-color: #000000; border-width: 0.5pt=
+; padding: 2px;text-align: center !important"><span style=3D"align: center;=
+ font-size: 15px; font-family: Times New Roman;">11</span></td><td style=3D=
+"width: 61.4pt; border-style: solid; border-color: #000000; border-width: 0=
+.5pt; padding: 0pt 5.8pt 0pt 5.8pt text-align: center;text-align: center !i=
+mportant"><span style=3D"align: left; font-size: 15px; font-family: Times N=
+ew Roman;">Tr=E1=BA=A1ng th=C3=A1i</span></td><td style=3D"height:23px;text=
+-align: left;border-style: solid; border-color: #000000; border-width: 0.5p=
+t;"><span style=3D"font-size: 15px; font-family: Times New Roman;">N=E1=BB=
+=99p thu=E1=BA=BF th=C3=A0nh c=C3=B4ng</span></td></tr><tr style=3D"border-=
+collapse: collapse; border-color: #000000; border-style: solid; border-widt=
+h: 1pt; text-align: center;"><td style=3D"width: 47.7pt; border-style: soli=
+d; border-color: #000000; border-width: 0.5pt; padding: 2px;text-align: cen=
+ter !important"><span style=3D"align: center; font-size: 15px; font-family:=
+ Times New Roman;">12</span></td><td style=3D"width: 47.7pt; border-style: =
+solid; border-color: #000000; border-width: 0.5pt; padding: 2px;text-align:=
+ center !important"><span style=3D"align: left; font-size: 15px; font-famil=
+y: Times New Roman;">L=C3=BD do</span></td><td style=3D"height:23px;text-al=
+ign: left;border-style: solid; border-color: #000000; border-width: 0.5pt;"=
+/></tr></tbody></table><div style=3D"float: left; position: relative; width=
+: 100%; display: inline;"><p style=3D"line-height: 1.5; padding-top: 6pt; d=
+irection: ltr; padding-bottom: 0pt;"><span style=3D"font-size: 15px; font-f=
+amily: Times New Roman;">
+=09=09=09=09=09=09=C2=A0=C2=A0=C2=A0=C2=A0=C4=90=E1=BB=83 tra c=E1=BB=A9u t=
+h=C3=B4ng tin =C4=91=C3=A3 n=E1=BB=99p n=C3=B3i tr=C3=AAn, xin vui l=C3=B2n=
+g truy c=E1=BA=ADp theo =C4=91=C6=B0=E1=BB=9Dng d=E1=BA=ABn:=C2=A0</span><s=
+pan style=3D"font-size: 15px; font-family: Times New Roman; font-style: ita=
+lic"><b><a href=3D"http://thuedientu.gdt.gov.vn" style=3D"color:#666;">http=
+://thuedientu.gdt.gov.vn</a></b></span><span style=3D"font-size: 15px; font=
+-family: Times New Roman; ">.</span></p></div></div><div xmlns:java=3D"http=
+://xml.apache.org/xalan/java" style=3D"clear: both;">=C2=A0</div>
+------=_Part_480394_599573607.1737718471277
+Content-Type: application/xml; name="Thong bao thue.xml"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Thong bao thue.xml"
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48VEhPTkdCQU8+PE5EVU5HX1RC
+QU8+PFRIT05HQkFPX0hEUj48UEJBTl9UTElFVV9YTUw+NC4wLjE8L1BCQU5fVExJRVVfWE1MPjxN
+QV9USE9OR0JBTz4wMTwvTUFfVEhPTkdCQU8+PE1BVV9USE9OR0JBTz4wNS9UQi1OSFRNPC9NQVVf
+VEhPTkdCQU8+PFRFTl9USE9OR0JBTz5WL3YgWMOhYyBuaOG6rW4gdHLhuqFuZyB0aMOhaSBnaWFv
+IGThu4tjaDwvVEVOX1RIT05HQkFPPjxTT19USE9OR0JBTz5OVERUX1NUQjAwMDAwMjc2NTA1Mzwv
+U09fVEhPTkdCQU8+PE5HQVlfVEhPTkdCQU8+MjMvMDEvMjAyNSAxOTo0NToyMjwvTkdBWV9USE9O
+R0JBTz48TVNUX05OT1A+MzYwMjUxMDU2NDwvTVNUX05OT1A+PFRFTl9OTk9QPkNPTkcgVFkgVE5I
+SCBNT1QgVEhBTkggVklFTiBYQVkgRFVORyBBLkwuQTwvVEVOX05OT1A+PE1BX0NRVD43MTMwMjwv
+TUFfQ1FUPjxNU1RfTlRIQVkvPjxURU5fTlRIQVkvPjwvVEhPTkdCQU9fSERSPjxUSE9OR0JBT19D
+VElFVD48Uk9XX0NUSUVUPjxJRF9DSFVOR1RVPjAwMTEyNDc3NDA1OTk8L0lEX0NIVU5HVFU+PFNP
+X0dOVD4wMDAwMDM2MDI1MTA1NjQwMTIwMjUyODIzNTY4MzwvU09fR05UPjxNQUhJRVVfQ1RVLz48
+U09fQ1RVPk9XMjUwMTIzNzcyNzE5MjwvU09fQ1RVPjxTSElFVV9LSE9CQUNfTk9QPjE3NjY8L1NI
+SUVVX0tIT0JBQ19OT1A+PFRFTl9LSE9CQUNfTk9QPktCTk4gTG9uZyBLaGFuaCAtIERvbmcgTmFp
+PC9URU5fS0hPQkFDX05PUD48U1RLX0tIT0JBQ19OT1AvPjxNQV9OR0hBTkdfTk9QPlNUQjwvTUFf
+TkdIQU5HX05PUD48U1RLX05HSEFOR19OT1A+MDUwMDgyNTA2NDQzPC9TVEtfTkdIQU5HX05PUD48
+VE9OR1NPTU9OPjE8L1RPTkdTT01PTj48VE9OR1RJRU5OT1A+MzAwMDAwMDwvVE9OR1RJRU5OT1A+
+PFBISS8+PE5HQVlfWExZPjIzLzAxLzIwMjUgMTk6NDU6MDA8L05HQVlfWExZPjxNQV9UVEhBST4x
+MTwvTUFfVFRIQUk+PFRFTl9UVEhBST5O4buZcCB0aHXhur8gdGjDoG5oIGPDtG5nPC9URU5fVFRI
+QUk+PE1BX05HVVlFTlRFPlZORDwvTUFfTkdVWUVOVEU+PE1BX1RIQU1DSElFVT4xMTIyMDI1MDI5
+NDUwNTI0NzwvTUFfVEhBTUNISUVVPjwvUk9XX0NUSUVUPjwvVEhPTkdCQU9fQ1RJRVQ+PC9ORFVO
+R19UQkFPPjxTaWduYXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNp
+ZyMiIElkPSJzaWduYXR1cmVQcm9wZXJ0aWVzIj48U2lnbmVkSW5mbz48Q2Fub25pY2FsaXphdGlv
+bk1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRu
+I1dpdGhDb21tZW50cyIvPjxTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3Lncz
+Lm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNyc2Etc2hhMjU2Ii8+PFJlZmVyZW5jZSBVUkk9IiI+
+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDIv
+MDYveG1sZHNpZy1maWx0ZXIyIj48WFBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDIv
+MDYveG1sZHNpZy1maWx0ZXIyIiBGaWx0ZXI9ImludGVyc2VjdCI+Ly9ORFVOR19UQkFPPC9YUGF0
+aD48L1RyYW5zZm9ybT48VHJhbnNmb3JtIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAw
+MC8wOS94bWxkc2lnI2VudmVsb3BlZC1zaWduYXR1cmUiLz48L1RyYW5zZm9ybXM+PERpZ2VzdE1l
+dGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI3NoYTI1NiIv
+PjxEaWdlc3RWYWx1ZT5DRHhIYmo4WUNIRytrYTl3Z0xvb2g3TVc3U0tqaW9sZnJsM2EybVJ4bjFr
+PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5y
+T1UzMXBZNVAzMGJiK3A2aDJ0OXRCK2RYa0ZtMWtKVnVENjFkTytuWkxNQlp3cmQ1RjR1c2VPdk5k
+U3VUeUZBL3NJRFMrNko5Mk5NCjN6OUVva0VlNE51cW5ETlhjcitkY3NnektOc1NsVUdtZEZWQUgw
+cHdEZ2IxMDNuQlkrdWNWb010cEFsSS9DbW1VcjdLOGZQZEM4Q00KK2hBcFF3WGg0R2plTXNPWERX
+Y1pBL1BCbzBBNEoyKzlGZXVvRFQ4Tm4rYm5LQzhqQmczc3o4VG1QOHpsWVpwMTV6SHN6MEQ4L2xm
+WgpYZkVjMThnTC8zS3o5ZzRMVVlvVXZQM21zK0lOVXZtMUdnT3p5RDRuRkEzUVhsQng2R1lpdlhj
+bS90anNQZnVTbkR5NkxEK2VKcW5OClU5VG9tODVWb3VyNWc2OUFXSFI0N0g5c3c3T1NRNEhuYVdJ
+b0J3PT08L1NpZ25hdHVyZVZhbHVlPjxLZXlJbmZvPjxYNTA5RGF0YT48WDUwOVN1YmplY3ROYW1l
+PlVJRD1NU1Q6MDMwMTEwMzkwOCwgQ049TkfDgk4gSMOATkcgVEjGr8agTkcgTeG6oEkgQ+G7lCBQ
+SOG6pk4gU8OASSBHw5JOIFRIxq/GoE5HIFTDjU4sIFNUPVRIw4BOSCBQSOG7kCBI4buSIENIw40g
+TUlOSCwgQz1WTjwvWDUwOVN1YmplY3ROYW1lPjxYNTA5Q2VydGlmaWNhdGU+TUlJRmFqQ0NCRktn
+QXdJQkFnSVFWQUVCQkVlRWljS3lwL2hmbU9pRXRUQU5CZ2txaGtpRzl3MEJBUXNGQURDQmlURUxN
+QWtHQTFVRQpCaE1DVms0eEVqQVFCZ05WQkFnTUNVakRvQ0JPNGJ1WmFURVlNQllHQTFVRUNnd1BS
+bEJVSUVOdmNuQnZjbUYwYVc5dU1SOHdIUVlEClZRUUxEQlpHVUZRZ1NXNW1iM0p0WVhScGIyNGdV
+M2x6ZEdWdE1Tc3dLUVlEVlFRRERDSkdVRlFnUTJWeWRHbG1hV05oZEdsdmJpQkIKZFhSb2IzSnBk
+SGtnVTBoQk1qVTJNQjRYRFRJME1EWXlOakE1TURneE9Wb1hEVEkxTURReE56RXdNelV6TUZvd2da
+d3hDekFKQmdOVgpCQVlUQWxaT01TUXdJZ1lEVlFRSURCdFVTTU9BVGtnZ1VFamh1NUFnU09HN2tp
+QkRTTU9OSUUxSlRrZ3hSekJGQmdOVkJBTU1QazVICnc0Sk9JRWpEZ0U1SElGUkl4cS9Hb0U1SElF
+M2h1cUJKSUVQaHU1UWdVRWpodXFaT0lGUERnRWtnUjhPU1RpQlVTTWF2eHFCT1J5QlUKdzQxT01S
+NHdIQVlLQ1pJbWlaUHlMR1FCQVF3T1RWTlVPakF6TURFeE1ETTVNRGd3Z2dFaU1BMEdDU3FHU0li
+M0RRRUJBUVVBQTRJQgpEd0F3Z2dFS0FvSUJBUUN1RXBqdlpmZzNDa3RqK1NrdUNXQXloNlNnVlkz
+ZE82K0I0REtsQzlNOHlhSmRyZ2cxS2grc1BIdHYzUS9aCktubVRZWXhKV3U2V21QMU1QenRCUlRo
+OGdRNTZHeDM5dWNaUDhENEoxLzFzNHRpOTN2TkpSbVpPVWRHeTFybkhwUHBwQ3U4Yms1dmEKZHRq
+NWFpa3d6U1FEb2d1ZDVyVEtudzYvV0VsMVlCTHN2UEljMG05RzRGc0VqejNRbHdDTmxCakZ0Sk9r
+YzNwR0ZBcjFwa1h3WVp5Kwo0UlhJN3NMbGhVajJPaHVHVU1ZVXB6MUR0dTNGdzVnSzhJQ1ptMGVL
+WVhuSmxlLzU2Ni91MVV3Q2w5VTUyblZJbC9RdDQySzU3ODJYCjFjVWpWVmgrejlzY1hyWk5Bbjhl
+ZmF5elFHR0pSQU9UWC82T3pYU0sxdXdoa2VaWGQrVW5BZ01CQUFHamdnRzNNSUlCc3pBTUJnTlYK
+SFJNQkFmOEVBakFBTUI4R0ExVWRJd1FZTUJhQUZNUllBNHFid1FiSUFMbTdGS0I0di9LWjhhRW1N
+SUdpQmdnckJnRUZCUWNCQVFTQgpsVENCa2pBeUJnZ3JCZ0VGQlFjd0FvWW1hSFIwY0hNNkx5OXli
+MjkwWTJFdVoyOTJMblp1TDJOeWRDOTJibkpqWVRJMU5pNXdOMkl3Ck53WUlLd1lCQlFVSE1BS0dL
+MmgwZEhCek9pOHZjbTl2ZEdOaExtZHZkaTUyYmk5amNuUXZSbEJVTFVOQlgxTklRVEkxTmk1d04y
+SXcKSXdZSUt3WUJCUVVITUFHR0YyaDBkSEE2THk5dlkzTndNeTVtYVhNdVkyOXRMblp1TUU4R0Ex
+VWRJQVJJTUVZd1JBWUxLd1lCQkFHQgo3UU1CQkFFd05UQXpCZ2dyQmdFRkJRY0NBUlluYUhSMGNE
+b3ZMMlJwWTJoMmRXUnBaVzUwZFM1bWNIUXVZMjl0TG5adUwyTndjeTVvCmRHMXNNRFFHQTFVZEpR
+UXRNQ3NHQ0NzR0FRVUZCd01DQmdnckJnRUZCUWNEQkFZS0t3WUJCQUdDTndvRERBWUpLb1pJaHZj
+dkFRRUYKTUNjR0ExVWRId1FnTUI0d0hLQWFvQmlHRm1oMGRIQTZMeTlqY213ekxtWnBjeTVqYjIw
+dWRtNHdIUVlEVlIwT0JCWUVGQ25xUThuTgp5MGNjQmxGRHYvZ2VhRGZkUFUzMk1BNEdBMVVkRHdF
+Qi93UUVBd0lFOERBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQVo0Myt4eVRPClQvRTNHbG41cmho
+Ri9FTVM5aE80eDd0dTh3RVprcDdZUERsa3VTeUoxMTZ5QmNXTlRsTUVlWC9wWXhJOUJ6V3p6MFIy
+MGRnejdpUHEKYkd3N0h0ME92clJ4a1ZXOHdXbTVNeUUwUFNnK1hncjB3YjZQTTBGYjVxK3gvNDYz
+MDI3OVhNeW1aS1lRajNodGVBTHJsQ2dTSUs3QwpLOVpRamllbkNZeGhDUFdSbm93aUo5SUQvSlVI
+SXF1Mzd5eW8zcDd2Y2hXOWdvck11M1RrR2duZVh2Q0FCTldhNEhScm82NWQ4YUI4ClVSQ3FKWUxl
+U0VBbmZWVU5DZDNHVFNUL2hUU0Vod1J3NWtRSWNyQ0Jna3hZL21HKzJtam8zZDF2ZDczQTFXZ1hr
+MTkyR01EUmVmdCsKZGw0eEdyV2F0MUo2NlkvSVVMc05ObmJ3RUJMMXFBPT08L1g1MDlDZXJ0aWZp
+Y2F0ZT48WDUwOUNlcnRpZmljYXRlPk1JSUdZVENDQkVtZ0F3SUJBZ0lRTU16L3VHMGxZZElZSnJP
+R1FYNUJaekFOQmdrcWhraUc5dzBCQVFzRkFEQ0JvekVMTUFrR0ExVUUKQmhNQ1ZrNHhNekF4QmdO
+VkJBb01LazFwYm1semRISjVJRzltSUVsdVptOXliV0YwYVc5dUlHRnVaQ0JEYjIxdGRXNXBZMkYw
+YVc5dQpjekU4TURvR0ExVUVDd3d6VG1GMGFXOXVZV3dnUTJWdWRISmxJRzltSUVScFoybDBZV3dn
+VTJsbmJtRjBkWEpsSUVGMWRHaGxiblJwClkyRjBhVzl1TVNFd0h3WURWUVFEREJoV2FXVjBibUZ0
+SUU1aGRHbHZibUZzSUZKdmIzUWdRMEV3SGhjTk1qQXdOREUzTVRBek5UTXcKV2hjTk1qVXdOREUz
+TVRBek5UTXdXakNCaVRFTE1Ba0dBMVVFQmhNQ1ZrNHhFakFRQmdOVkJBZ01DVWpEb0NCTzRidVph
+VEVZTUJZRwpBMVVFQ2d3UFJsQlVJRU52Y25CdmNtRjBhVzl1TVI4d0hRWURWUVFMREJaR1VGUWdT
+VzVtYjNKdFlYUnBiMjRnVTNsemRHVnRNU3N3CktRWURWUVFERENKR1VGUWdRMlZ5ZEdsbWFXTmhk
+R2x2YmlCQmRYUm9iM0pwZEhrZ1UwaEJNalUyTUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NB
+UThBTUlJQkNnS0NBUUVBcjRIQUNYbWZBT0FldVBSTDZBdXNwTkpIeWQ2YzZDN21RbE1DZ2UvU1Ur
+QzhpbHBndVF5SQpWb2orV3RyN1ZrNVdwT3FVN0E1cVlwT1VUcS9DMWpTTURuVTBGM1VJOGptRjFx
+NHcvYkNkMHJYMmt4U1k2TmtFbGpNUXMwenpxaCtECmJrSGMvOCtxUE5DRTAxNTNObFZ4dWt1ZzFq
+L1FmSGt1QlVUNVNMaThOcDdtbk12TEZ2MDcwMVZ3bFhybk9VbVpRYmJ6c0F3eU9FajkKZnZ0b0ZJ
+M3I1WUloOUE5NWZsWGtIYU1razdrMFdROVA2SmNCNDRaVzJYR2hpeER6MzRVVnBRVG4ra0QvVXIy
+RXJFbHo3MFl0VmZpMQpwTTJxcDRtNFNEbXBmL0dwbTRVVFh2RS9xTmNWK2xsWkZWSkV2OFhjSzZw
+NW4yTFV6Zlo3N1hGeUFwT3h0UUlEQVFBQm80SUJwekNDCkFhTXdRZ1lJS3dZQkJRVUhBUUVFTmpB
+ME1ESUdDQ3NHQVFVRkJ6QUNoaVpvZEhSd2N6b3ZMM0p2YjNSallTNW5iM1l1ZG00dlkzSjAKTDNa
+dWNtTmhNalUyTG5BM1lqQ0I0QVlEVlIwakJJSFlNSUhWZ0JSKzhJZnRzYmlkK3dpRGI2UVcvZkc0
+ckdLYkFhR0JxYVNCcGpDQgpvekVMTUFrR0ExVUVCaE1DVms0eE16QXhCZ05WQkFvTUtrMXBibWx6
+ZEhKNUlHOW1JRWx1Wm05eWJXRjBhVzl1SUdGdVpDQkRiMjF0CmRXNXBZMkYwYVc5dWN6RThNRG9H
+QTFVRUN3d3pUbUYwYVc5dVlXd2dRMlZ1ZEhKbElHOW1JRVJwWjJsMFlXd2dVMmxuYm1GMGRYSmwK
+SUVGMWRHaGxiblJwWTJGMGFXOXVNU0V3SHdZRFZRUUREQmhXYVdWMGJtRnRJRTVoZEdsdmJtRnNJ
+Rkp2YjNRZ1EwR0NFUUNWa3J1TQo3cTFhSkthNDl4MTlNanRhTUJJR0ExVWRFd0VCL3dRSU1BWUJB
+ZjhDQVFBd053WURWUjBmQkRBd0xqQXNvQ3FnS0lZbWFIUjBjSE02Ckx5OXliMjkwWTJFdVoyOTJM
+blp1TDJOeWJDOTJibkpqWVRJMU5pNWpjbXd3RGdZRFZSMFBBUUgvQkFRREFnR0dNQjBHQTFVZERn
+UVcKQkJURVdBT0ttOEVHeUFDNXV4U2dlTC95bWZHaEpqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0Fn
+RUFwdkRrQkFQamJmakV6ZHByak1FQwo0NWJKeUNMUkxuOGxqU1FSbVpzREFTVVZWZzJKbkFNdlNC
+QjlQeWxudjJHY2VlaWlnUEZ5c09VdkFuOHg2Zk1IUEFLV2RQNVQ4UFBhCjhQbE40M1BGTkcxV1Ft
+eDhkdStDL3ZlamJYbVBxSHNaVVkvcFVxUUt0RGRiTWRRT2lXWGRKd1E2aHdqVERUVVFsejk2S1Y4
+UGNoNEMKRnZJbW45NW9oaG5zVjV2V1JkK204SVVaWnBvRnpiZ01wdGJLZnF1bEhLN21ZSVpNcHJo
+SmlaUnVPdHk0R29yVUpEMU1aU1J5OUZCWQplSURsN2U1cmdvVDdCR1BvTUZkTFU1ZUxpYWIwWk5v
+aStyZmRFOXVHS08vTmw0V3I0Q2JPQUl1RkNEaml2VTdtcFJnV0plamx0c0MrCm5FWWY0YjBEbjVy
+OWlEZEs5ZkJvTkhMWjhMUEt0N0tabVRJaFdpcS90Vi9STlF2aFd4TG5hZVFYUmNTNy9zVUtOY09S
+SDc3dlV6M1UKY0JqeC9ybjhaUlhUWjM5b0Q3MmFkQmRwQ2pLSUdDdFlCK082TXZNKys5Yjc2QkFy
+TDdSRWtMcGtrR1hZVjlld21sVkVUZWRzQTMzKwpsbGNCTU5ENGMxeW5ZNi9mdk9VVzdqTXZSKzNn
+bmZ0V2ZyUXFrdmloQ2o1Mjg4OEIzRDE3b1RDcVhPQUlUT2loRW5WNlMyc2xIbSt2CkR1K2hCQUFK
+bnZXazY5SFhuZ3hCL1Z4eFJkQ2gxUmxETFV4UFJsUzNha0V3ZDB1MEE3N2orcGh6UkFwdHhGMitH
+TzY0YWQ5UTRZYUQKQ3NqbmZueUZ3U0lQcUJrZjBHYTUvMnpOS1dxM1hGK09NREcrTHBNVnJLK3dK
+OHJiaDJPSEN2MD08L1g1MDlDZXJ0aWZpY2F0ZT48WDUwOUNlcnRpZmljYXRlPk1JSUcvRENDQk9T
+Z0F3SUJBZ0lSQUpXU3U0enVyVm9rcHJqM0hYMHlPMW93RFFZSktvWklodmNOQVFFTEJRQXdnYU14
+Q3pBSkJnTlYKQkFZVEFsWk9NVE13TVFZRFZRUUtEQ3BOYVc1cGMzUnllU0J2WmlCSmJtWnZjbTFo
+ZEdsdmJpQmhibVFnUTI5dGJYVnVhV05oZEdsdgpibk14UERBNkJnTlZCQXNNTTA1aGRHbHZibUZz
+SUVObGJuUnlaU0J2WmlCRWFXZHBkR0ZzSUZOcFoyNWhkSFZ5WlNCQmRYUm9aVzUwCmFXTmhkR2x2
+YmpFaE1COEdBMVVFQXd3WVZtbGxkRzVoYlNCT1lYUnBiMjVoYkNCU2IyOTBJRU5CTUI0WERURTBN
+RFF4TlRFMk1qa3kKTUZvWERUTTVNRFF4TlRFMk1qa3lNRm93Z2FNeEN6QUpCZ05WQkFZVEFsWk9N
+VE13TVFZRFZRUUtEQ3BOYVc1cGMzUnllU0J2WmlCSgpibVp2Y20xaGRHbHZiaUJoYm1RZ1EyOXRi
+WFZ1YVdOaGRHbHZibk14UERBNkJnTlZCQXNNTTA1aGRHbHZibUZzSUVObGJuUnlaU0J2ClppQkVh
+V2RwZEdGc0lGTnBaMjVoZEhWeVpTQkJkWFJvWlc1MGFXTmhkR2x2YmpFaE1COEdBMVVFQXd3WVZt
+bGxkRzVoYlNCT1lYUnAKYjI1aGJDQlNiMjkwSUVOQk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFB
+T0NBZzhBTUlJQ0NnS0NBZ0VBdUt4YWV3Z3cyWEI2YWZVZgo0emVWVGhRRGwvRzl4ajU2VW9UKzhL
+Ylc3QmVJamtVZXZ3bFVtSzUvajRIUWFJdU5nN2c5b2lRYVUyR3Q3V00vZlRSOHAvUGtRVDd5Cnp1
+WTB1THpTeFVPM2Q4THhCbkZSaHovNVZuazZjZldjc1pVd0NFZ1UvTEhyblZ1UmpJWXNmZmRjM1lE
+Z1VKa2Nibm54UnE2elRGOUIKRzJ4SDNmM0M2OEM0WTN5RVJhZTVNQ3VrcE5FTFhoNkdjdFJSMkZr
+U2hGZUlUekpVWlNndUNFSkpBajVxWVczcmFrSnVkNFhqRkZWZwpNbmw2Kzc4UFl4dmxBQThvRlFy
+VWJBeXdXcTZMem42emNwbytPWnVXZkY3TkZWR0VjQXREdU4xb3l2c3QrSDY4ZjZnaVo0K2RLSTRk
+CkJjckZrWUorcHRmOTgrRGV2L0lqNm9uak9MZ1ZnRS82THdwckRJVlk3WDB2ZHFHRzdOYmg2Z2Fl
+dWdDRzUvbVl0SVZrSGh3UEsrS2MKVFBFVFlaSkRZeFQzclVJYWhhWWgxUXArTGZFRFhUSkkyWEdL
+ZXk5bEJrbUZnZEdwWlk2NXAzeHZyWVcrTkhjY2J0UHNSK3N3Y3V1RwpSVjdVUC9uZG1SWDA4R2lh
+TVRmS3JrUjdWNVJ2ZmVyRGlRL3ZlemZxMmhEUEhpekZhcXh0SW1UVXU4d0Z2WEdibzExaHNycUxD
+YUtRCnhaVG9vbllwN0VDVllGRHVldUw3RTZVcDRjWGxlcjFxTHZwM3crUVpWUjRyNThJS3Z4VnJ0
+SGFSaVpVc2JEYTMzNWRBbFdqZ2FKSTgKUVdaNEhPSFZaTFFqclgrSmtqRFBKVE1ITnh1TUVrRWxy
+Q1NGM3JYcVVLWi9KTXZxS2VZMTZqUURhSDBDQXdFQUFhT0NBU2N3Z2dFagpNQTRHQTFVZER3RUIv
+d1FFQXdJQmhqQVBCZ05WSFJNQkFmOEVCVEFEQVFIL01CMEdBMVVkRGdRV0JCUis4SWZ0c2JpZCt3
+aURiNlFXCi9mRzRyR0tiQVRDQjRBWURWUjBqQklIWU1JSFZnQlIrOElmdHNiaWQrd2lEYjZRVy9m
+RzRyR0tiQWFHQnFhU0JwakNCb3pFTE1Ba0cKQTFVRUJoTUNWazR4TXpBeEJnTlZCQW9NS2sxcGJt
+bHpkSEo1SUc5bUlFbHVabTl5YldGMGFXOXVJR0Z1WkNCRGIyMXRkVzVwWTJGMAphVzl1Y3pFOE1E
+b0dBMVVFQ3d3elRtRjBhVzl1WVd3Z1EyVnVkSEpsSUc5bUlFUnBaMmwwWVd3Z1UybG5ibUYwZFhK
+bElFRjFkR2hsCmJuUnBZMkYwYVc5dU1TRXdId1lEVlFRRERCaFdhV1YwYm1GdElFNWhkR2x2Ym1G
+c0lGSnZiM1FnUTBHQ0VRQ1ZrcnVNN3ExYUpLYTQKOXgxOU1qdGFNQTBHQ1NxR1NJYjNEUUVCQ3dV
+QUE0SUNBUUJOTnVuWEt2WXZheHpnT1BiS3NtSkxaMWdxSHBKZUh6VDc0SXpCSERncAo4YmdiTER0
+cUgrUFpWK3c3RHd2ZlpEOHh1RktRSno5djVURHB6L0NZd3JoQStCVXN4eU1ielM2S3YxbE5hNDJK
+YTYzQmxFUTFBQVZZCitaWDNtRmJWdW1PVjQza0xRZ3pRYXlZS1BvbHExbzdReHozbDJ6Z3poZzRv
+NDM2VmZlazhMcmgvV2NQNWV6eUM4VHQ3VkNhVU9sL2YKdVNhQ1BZdlpiVjdiWncvRXlqNHhLMXVk
+N1VxMk9wNTR2U1RlZ29oMCtaVzI4U1FFZ0g0OUJqeWpRVHY1NnNUUm9sV1o0V3hiSHRiQgpKd1Rq
+N3ZsaWtzZWJ2dmxqb1JZbzl3ZzI5QXVZL0FydzNOTmhUeUliVUZPNzVjb2xhYUY4aSs1YUF2bVBR
+emZJazltMWJ6SzE1Vk9rCjh0OFFuVjhpNEk0MmpETGJWemJaRlFaSGJMTDhnaitMVEhWWmM5c2ZL
+bWZoa0gySERzbmdiNlV2S0R1V0hCNStYUTVRb1NpeUdWSjAKTWVVWW9oUEk2Y2doWlhiSWZsSEd5
+c2U5aGJBUk03VWJyaXNmL1AvL0ZETGxKM1VMNythTElrOWZ3Nm43V3kwV2NnTitReGpmZHhVTQo5
+VlNDeDcwNSt1WC9hTjR5MGc1TE1OQ2hET3pwQllVZzZzbW04QTBXMkxJQU13MFE5VTlUTG5ITzhP
+dnczaWt1TzVyZlRTV3diWW15CnQxNU5zRnA4TE0vUTBOdTlRcWFNTk55MjNZYlFaWmxmRm9ybUk5
+aW9XRXBqRGJXcVU5WXlINm9IcEdqc0JiU29SNEcwSVVzZnhhRGQKRTNDWEl4NDhwUm9sU2RkZWF5
+dlI1c2RPc05yaEpPQUZ3Zz09PC9YNTA5Q2VydGlmaWNhdGU+PC9YNTA5RGF0YT48L0tleUluZm8+
+PE9iamVjdD48U2lnbmF0dXJlUHJvcGVydGllcz48U2lnbmF0dXJlUHJvcGVydHkgSWQ9IlRpbWVT
+aWduYXR1cmVOSFRNIiBUYXJnZXQ9InNpZ25hdHVyZVByb3BlcnRpZXMiPjxEYXRlVGltZVN0YW1w
+PjIzMDEyMDI1MTk0NTIyPC9EYXRlVGltZVN0YW1wPjwvU2lnbmF0dXJlUHJvcGVydHk+PC9TaWdu
+YXR1cmVQcm9wZXJ0aWVzPjwvT2JqZWN0PjwvU2lnbmF0dXJlPjwvVEhPTkdCQU8+
+------=_Part_480394_599573607.1737718471277--
